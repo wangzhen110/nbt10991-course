@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="mQo1R8AySi9ulNGFFgEggQ">
+<head data-page-node-id="TAb0LaGGeSWBuW7K2f3jig">
+<meta charset="UTF-8" data-page-node-id="KatGmBRJy7zHox4V0ZiAu6">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="2ah8SXbojGjMOA6FTHvcJJ">
+<meta name="theme-color" content="#1a56db">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="塔架升降机">
+<meta name="description" content="NBT 10991-2022 风力发电机组 塔架升降机 · 权威题库互动学习">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>NBT 10991—2022 风力发电机组 塔架升降机 · 互动学习课程</title>
+<style>
+:root{
+  --bg:#f5f6f8;
+  --panel:#ffffff;
+  --line:#e3e6ec;
+  --line-soft:#eef0f4;
+  --ink:#1c2128;
+  --ink-2:#4a5361;
+  --ink-3:#7b8493;
+  --accent:#0f5fd8;
+  --accent-soft:#e8f0fd;
+  --ok:#128a52;
+  --ok-soft:#e6f6ee;
+  --bad:#d0342c;
+  --bad-soft:#fdeceb;
+  --warn:#b7791f;
+  --warn-soft:#fdf5e6;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Microsoft YaHei","PingFang SC","Segoe UI",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;
+}
+button{font-family:inherit;cursor:pointer}
+.hidden{display:none !important}
+
+/* ---------- 顶栏 ---------- */
+.topbar{
+  background:var(--panel);border-bottom:1px solid var(--line);
+  padding:14px 26px;display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;z-index:20;
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:44px;height:44px;border-radius:10px;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;letter-spacing:.5px;
+}
+.brand-text h1{font-size:18px;font-weight:700;letter-spacing:.2px}
+.brand-text p{font-size:12.5px;color:var(--ink-3)}
+.topstats{display:flex;gap:26px}
+.stat{text-align:center;min-width:56px}
+.stat-num{display:block;font-size:19px;font-weight:700;color:var(--accent)}
+.stat-lbl{font-size:11.5px;color:var(--ink-3)}
+
+/* ---------- 布局 ---------- */
+.layout{display:flex;min-height:calc(100vh - 73px)}
+.sidebar{
+  width:250px;background:var(--panel);border-right:1px solid var(--line);
+  padding:16px 12px;position:sticky;top:73px;height:calc(100vh - 73px);overflow-y:auto;flex-shrink:0;
+}
+.modes{display:flex;gap:6px;margin-bottom:16px}
+.mode-btn{
+  flex:1;padding:8px 0;border:1px solid var(--line);background:#fff;border-radius:8px;
+  font-size:13px;color:var(--ink-2);transition:.15s;
+}
+.mode-btn:hover{border-color:var(--accent);color:var(--accent)}
+.mode-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.chap-title{font-size:11.5px;color:var(--ink-3);letter-spacing:1px;margin:6px 6px 8px;font-weight:600}
+.chap-nav{display:flex;flex-direction:column;gap:2px}
+.chap-item{
+  padding:9px 10px;border-radius:8px;font-size:13.5px;color:var(--ink-2);cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid transparent;
+}
+.chap-item:hover{background:var(--line-soft)}
+.chap-item.active{background:var(--accent-soft);color:var(--accent);border-color:#cfe0fa;font-weight:600}
+.chap-item .cnum{font-size:11px;color:var(--ink-3);font-weight:400}
+.chap-item.active .cnum{color:var(--accent)}
+.side-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft)}
+.mini-btn{
+  width:100%;padding:8px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  font-size:12.5px;color:var(--ink-2);
+}
+.mini-btn:hover{border-color:var(--bad);color:var(--bad)}
+.tip{font-size:11px;color:var(--ink-3);margin-top:8px;line-height:1.5}
+
+.content{flex:1;padding:24px 28px 60px;min-width:0}
+
+/* ---------- 讲解播放器 ---------- */
+.lec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;gap:16px;flex-wrap:wrap}
+.lec-chap{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:1px}
+.lec-head h2{font-size:21px;font-weight:700}
+.lec-ctrl{display:flex;gap:8px}
+.ctrl-btn{
+  padding:8px 16px;border:1px solid var(--line);background:#fff;border-radius:8px;
+  font-size:13.5px;color:var(--ink-2);transition:.15s;
+}
+.ctrl-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ctrl-btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ctrl-btn.primary:hover{background:#0d4fb5;color:#fff}
+.ctrl-btn.ghost{background:transparent}
+.ctrl-btn.big{padding:11px 22px;font-size:14.5px}
+.ctrl-btn:disabled{opacity:.4;cursor:not-allowed}
+.player{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.progress{height:3px;background:var(--line-soft)}
+.progress-bar{height:100%;background:var(--accent);width:0;transition:width .35s ease}
+.slide{padding:34px 40px;min-height:330px}
+.slide h3{font-size:18px;margin-bottom:14px;color:var(--accent);font-weight:700}
+.slide p{font-size:15px;color:var(--ink-2);margin-bottom:12px}
+.slide ul,.slide ol{margin:0 0 12px 22px;color:var(--ink-2)}
+.slide li{margin-bottom:7px;font-size:14.5px}
+.slide .kv{
+  background:var(--accent-soft);border-left:3px solid var(--accent);padding:12px 16px;
+  border-radius:0 8px 8px 0;margin:14px 0;font-size:14px;color:var(--ink);
+}
+.slide .nums{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.slide .num{
+  background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-width:118px;
+}
+.slide .num b{display:block;font-size:17px;color:var(--accent)}
+.slide .num span{font-size:12px;color:var(--ink-3)}
+.slide table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0}
+.slide th,.slide td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+.slide th{background:var(--line-soft);font-weight:600}
+.slide .src{margin-top:16px;font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:10px}
+
+/* 宽表格：横向滚动容器 + 滑动提示 + 右侧渐隐 */
+.tbl-wrap{position:relative}
+.tbl-tip{
+  font-size:11.5px;line-height:1.5;color:var(--warn);background:var(--warn-soft);
+  border-radius:6px;padding:5px 10px;margin:6px 0 4px;text-align:center;
+}
+.tbl-wrap.scrollable::after{
+  content:'';position:absolute;top:0;right:0;bottom:0;width:26px;
+  background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.92));
+  pointer-events:none;opacity:0;transition:opacity .2s;
+}
+.tbl-wrap.scrollable:not(.at-end)::after{opacity:1}
+/* 已向左滑动时，左侧显示渐隐，提示还能往回滑 */
+.tbl-wrap.scrollable::before{
+  content:'';position:absolute;top:0;left:0;bottom:0;width:26px;
+  background:linear-gradient(to left,rgba(255,255,255,0),rgba(255,255,255,.92));
+  pointer-events:none;opacity:0;transition:opacity .2s;z-index:1;
+}
+.tbl-wrap.scrollable:not(.at-start)::before{opacity:1}
+.slide-nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 40px;border-top:1px solid var(--line-soft);background:#fafbfc;
+}
+.slide-nav span{font-size:12.5px;color:var(--ink-3)}
+.dots{display:flex;gap:5px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--line);cursor:pointer}
+.dot.on{background:var(--accent);width:18px;border-radius:4px}
+.lec-after{margin-top:16px;text-align:right}
+
+/* ---------- 答题 ---------- */
+.quiz-bar{
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;
+}
+.quiz-bar select{
+  padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:#fff;
+  font-size:13.5px;color:var(--ink);font-family:inherit;
+}
+.shuffle{font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:5px;cursor:pointer}
+.quiz-range{margin-left:auto;font-size:12.5px;color:var(--ink-3)}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px}
+.qmeta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tag{
+  font-size:11.5px;padding:3px 9px;border-radius:20px;background:var(--line-soft);color:var(--ink-2);
+}
+.tag.type{background:var(--accent-soft);color:var(--accent)}
+.tag.src{background:var(--warn-soft);color:var(--warn)}
+.qtext{font-size:17px;font-weight:600;line-height:1.7;margin-bottom:18px}
+.options{display:flex;flex-direction:column;gap:9px}
+.opt{
+  display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border:1px solid var(--line);
+  border-radius:10px;background:#fff;cursor:pointer;transition:.15s;font-size:14.5px;color:var(--ink);
+}
+.opt:hover{border-color:var(--accent);background:#fafcff}
+.opt .letter{
+  width:24px;height:24px;border-radius:50%;border:1px solid var(--line);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:12.5px;color:var(--ink-3);margin-top:1px;
+}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.sel .letter{background:var(--accent);color:#fff;border-color:var(--accent)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .letter{background:var(--ok);color:#fff;border-color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt.wrong .letter{background:var(--bad);color:#fff;border-color:var(--bad)}
+.opt.locked{cursor:default}
+.opt-multi .letter{border-radius:6px}
+
+/* ---------- 填空题（巩固模式） ---------- */
+.fill-stats{
+  display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  padding:9px 14px;margin-bottom:14px;border:1px dashed var(--line);border-radius:10px;
+  background:var(--accent-soft);color:var(--accent);font-size:13.5px;font-weight:600;
+}
+.fill-opts{display:block}
+.fill-row{display:flex;align-items:center;gap:10px;margin:9px 0}
+.fill-no{flex-shrink:0;font-size:13px;color:var(--ink-3);font-weight:600;min-width:52px}
+.fill-input{
+  flex:1;padding:11px 14px;font-size:16px;border:2px solid var(--line);border-radius:10px;
+  outline:none;transition:.15s;color:var(--ink);background:#fff;min-width:0;
+}
+.fill-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.fill-input.right{border-color:var(--ok);background:var(--ok-soft)}
+.fill-input.wrong{border-color:var(--bad);background:var(--bad-soft);color:var(--bad)}
+.fill-input.show-ans{font-weight:700}
+.fill-input:disabled{cursor:default;opacity:1}
+
+/* 引用规范链接（跳转国家标准全文公开系统） */
+.std-link{color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer;font-weight:600}
+.std-link:hover{color:#1a5fb4;text-decoration:underline}
+.std-link:visited{color:#5b6b8c}
+/* 出处标签（点击打开课程内知识库） */
+.src-link{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--warn-soft);color:var(--warn);font-size:13.5px;font-weight:700;padding:9px 12px;border-radius:7px;cursor:pointer;text-align:left}
+.src-link:hover{background:var(--warn-soft);filter:brightness(.96)}
+.src-link .src-arrow{font-size:12px;transition:transform .15s}
+.src-link:hover .src-arrow{transform:translateX(3px)}
+/* 知识库弹窗 */
+.kb-box{max-width:min(680px,94vw);max-height:82vh;display:flex;flex-direction:column}
+.kb-body{overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+.kb-item{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
+.kb-key{font-size:14.5px;font-weight:700;color:var(--accent);margin-bottom:7px}
+.kb-text{font-size:14px;line-height:1.85;color:var(--ink-2);white-space:pre-wrap;word-break:break-word}
+
+.feedback{margin-top:18px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.fb-head{padding:11px 18px;font-weight:700;font-size:15px}
+.fb-head.ok{background:var(--ok-soft);color:var(--ok)}
+.fb-head.bad{background:var(--bad-soft);color:var(--bad)}
+.fb-body{padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.fb-label{font-size:11.5px;color:var(--ink-3);letter-spacing:1px;margin-bottom:5px;font-weight:600}
+.fb-answer{font-size:14.5px;font-weight:600;color:var(--ok)}
+.fb-explain{font-size:14.5px;color:var(--ink-2);line-height:1.8}
+.fb-source{font-size:13.5px;color:var(--warn);background:var(--warn-soft);padding:9px 12px;border-radius:7px}
+.qactions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end}
+.jump{margin-top:22px}
+.jump-label{font-size:12px;color:var(--ink-3);margin-bottom:9px}
+.jump-grid{display:flex;flex-wrap:wrap;gap:6px}
+.jump-btn{
+  width:38px;height:34px;border:1px solid var(--line);background:#fff;border-radius:7px;
+  font-size:12.5px;color:var(--ink-2);
+}
+.jump-btn:hover{border-color:var(--accent);color:var(--accent)}
+.jump-btn.done{background:var(--line-soft)}
+.jump-btn.right{background:var(--ok-soft);border-color:#bfe5d2;color:var(--ok)}
+.jump-btn.wrong{background:var(--bad-soft);border-color:#f5c6c3;color:var(--bad)}
+.jump-btn.cur{border-color:var(--accent);border-width:2px;color:var(--accent);font-weight:700}
+
+/* ---------- 统计 ---------- */
+.sec-title{font-size:16px;font-weight:700;margin:8px 0 14px}
+.stat-cards{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.scard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 22px;min-width:130px}
+.scard b{display:block;font-size:24px;color:var(--accent)}
+.scard span{font-size:12.5px;color:var(--ink-3)}
+.chap-stats{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.cs-row{display:flex;align-items:center;gap:12px;font-size:13.5px}
+.cs-name{width:210px;flex-shrink:0;color:var(--ink-2)}
+.cs-bar{flex:1;height:9px;background:var(--line-soft);border-radius:5px;overflow:hidden}
+.cs-bar i{display:block;height:100%;background:var(--accent)}
+.cs-val{width:80px;text-align:right;color:var(--ink-3);font-size:12.5px}
+.wrong-list{display:flex;flex-direction:column;gap:8px}
+.wrong-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:12px 16px;
+  font-size:13.5px;color:var(--ink-2);cursor:pointer;
+}
+.wrong-item:hover{border-color:var(--accent)}
+.wrong-item b{color:var(--ink);font-weight:600}
+.empty{color:var(--ink-3);font-size:13.5px;padding:20px 0}
+
+/* ===== 移动端导航 ===== */
+.mnav{display:none;position:sticky;top:0;z-index:60;background:var(--panel);
+  border-bottom:1px solid var(--line);padding:8px 12px;gap:8px;flex-direction:column}
+.mnav-row{display:flex;gap:8px}
+.mnav-btn{
+  flex:1;min-height:44px;border:1px solid var(--line);background:var(--panel-2,var(--panel));
+  color:var(--ink-2);border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.mnav-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.mnav-btn.ghost{flex:0 0 auto;padding:0 16px;font-weight:500}
+.mnav-sel{flex:1;min-height:44px;border:1px solid var(--line);border-radius:9px;
+  background:var(--panel);color:var(--ink);font-size:14px;padding:0 12px;
+  appearance:none;-webkit-appearance:none}
+
+/* ===== 弹窗 ===== */
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-mask{position:absolute;inset:0;background:rgba(15,23,42,.45)}
+.modal-box{
+  position:relative;background:var(--panel);border-radius:14px;width:100%;max-width:460px;
+  box-shadow:0 20px 50px rgba(15,23,42,.22);overflow:hidden;
+}
+.modal-head{display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;border-bottom:1px solid var(--line)}
+.modal-head h3{font-size:16px;color:var(--ink);margin:0}
+.modal-x{border:0;background:transparent;font-size:26px;line-height:1;color:var(--ink-3);
+  cursor:pointer;padding:0 4px}
+.modal-body{padding:18px 20px 22px}
+.modal-tip{font-size:13.5px;line-height:1.75;color:var(--ink-2);margin:0 0 16px}
+.modal-tip b{color:var(--ink)}
+.modal-acts{display:flex;flex-direction:column;gap:10px}
+.modal-acts .ctrl-btn{width:100%;min-height:44px}
+.modal-status{margin-top:14px;font-size:13.5px;color:var(--ink-2);min-height:20px}
+.modal-status.ok{color:#15803d}
+.modal-status.err{color:#b91c1c}
+.modal-sum{margin-top:8px;font-size:12.5px;color:var(--ink-3);line-height:1.7}
+
+/* ===== 装到桌面提示 ===== */
+.install-tip{
+  position:fixed;left:12px;right:12px;bottom:12px;z-index:150;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 10px 30px rgba(15,23,42,.16);
+}
+.it-text{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.it-text b{font-size:14px;color:var(--ink)}
+.it-text span{font-size:12px;color:var(--ink-3)}
+.it-btns{display:flex;gap:8px;flex:0 0 auto}
+.it-btn{min-height:38px;padding:0 16px;border-radius:9px;border:1px solid var(--accent);
+  background:var(--accent);color:#fff;font-size:13.5px;font-weight:600;cursor:pointer}
+.it-btn.ghost{background:transparent;color:var(--ink-3);border-color:var(--line)}
+
+@media(max-width:1000px){
+  .sidebar{display:none}
+  .content{padding:18px}
+  .slide{padding:24px}
+  .slide-nav{padding:12px 24px}
+  .mnav{display:flex}
+  /* 顶栏改非粘性：避免与 mnav 争抢 top:0 造成互相覆盖 */
+  .topbar{position:static;padding:12px 14px;flex-wrap:wrap;gap:0}
+  .topstats{gap:10px}
+  .stat-num{font-size:17px}
+}
+
+@media(max-width:640px){
+  /* ---- 顶栏重排：品牌独占一行，统计独占一行 ---- */
+  .topbar{padding:10px 12px}
+  .brand{flex:1 1 100%;gap:10px;min-width:0;align-items:flex-start}
+  .brand .logo{width:38px;height:38px;font-size:13px;border-radius:9px;flex-shrink:0}
+  .brand-text{min-width:0;flex:1}
+  .brand-text h1{
+    font-size:13.5px;line-height:1.45;font-weight:700;
+    /* 最多两行，超出省略，防止长标题把顶栏撑高 */
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+    overflow:hidden;word-break:break-word;
+  }
+  .brand-text p{
+    font-size:11px;line-height:1.5;margin-top:2px;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .topstats{
+    flex:1 1 100%;width:100%;gap:0;justify-content:space-around;
+    margin-top:9px;padding-top:9px;border-top:1px solid var(--line-soft);
+  }
+  .stat{min-width:0;flex:1}
+  .stat-num{font-size:16px}
+  .stat-lbl{font-size:10.5px}
+
+  /* ---- 移动端导航：修复 select 撑宽导致的横向溢出 ---- */
+  .mnav{padding:8px 12px}
+  .mnav-row{min-width:0}
+  .mnav-btn{min-width:0;padding:0 8px;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mnav-btn.ghost{flex:0 0 auto;padding:0 12px;font-size:13px}
+  /* 关键：select 在 flex 中必须 min-width:0 才能收缩，否则被最长 option 撑宽 */
+  .mnav-sel{min-width:0;width:100%;font-size:13.5px;padding:0 10px;
+    text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+
+  .content{padding:12px;padding-bottom:96px}  /* 预留底部悬浮提示的空间 */
+  .qcard{padding:16px}
+  .qtext{font-size:16px;line-height:1.65}
+  /* 选项加大触控区，避免误点 */
+  .opt{min-height:48px;padding:12px 14px;font-size:15px}
+  .slide{padding:16px}
+  .slide h3{font-size:16px}
+  .slide p,.slide li{font-size:14px}
+  .slide .num{min-width:104px;padding:9px 12px}
+  /* 宽表格改为可横向滑动查看，避免被 .player 的 overflow:hidden 裁掉 */
+  .slide table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;font-size:12.5px}
+  .slide th,.slide td{white-space:nowrap;padding:6px 9px}
+  .slide .nums{gap:8px}
+  .slide-nav{padding:10px 16px;flex-wrap:wrap;gap:8px}
+  .qactions{flex-wrap:wrap;gap:8px}
+  .qactions .ctrl-btn{flex:1;min-width:88px;min-height:46px}
+  .quiz-bar{flex-wrap:wrap;padding:10px 12px;gap:8px}
+  /* 16px 可避免 iOS 聚焦时自动放大页面 */
+  .quiz-bar select{flex:1 1 45%;min-height:44px;font-size:16px;min-width:0}
+  .shuffle{min-height:42px;display:flex;align-items:center}
+  .jump-grid{gap:5px}
+  .jump-btn{min-height:36px;font-size:12px;width:auto;min-width:38px;flex:0 0 auto}
+  .lec-ctrl{flex-wrap:wrap;gap:6px}
+  .lec-ctrl .ctrl-btn{flex:1;min-width:72px;min-height:44px;padding:9px 8px;font-size:13.5px}
+  .modal{padding:14px;align-items:flex-start;padding-top:max(14px,6vh)}
+  .modal-box{max-width:100%;max-height:86vh;display:flex;flex-direction:column}
+  .modal-body{overflow-y:auto}
+  .install-tip{flex-wrap:wrap}
+  .fb-body{padding:14px}
+  .fb-explain,.fb-answer{font-size:14px}
+}
+
+/* 安全区适配（iPhone 刘海 / 底部横条） */
+@supports(padding-bottom:env(safe-area-inset-bottom)){
+  .install-tip{bottom:calc(12px + env(safe-area-inset-bottom))}
+  .mnav{padding-top:calc(8px + env(safe-area-inset-top))}
+  @media(max-width:640px){
+    .content{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+  }
+}
+
+</style>
+</head>
+<body data-page-node-id="bDvq0lUARfJh0JZDNRk1cO">
+
+<header class="topbar" data-page-node-id="ENsotrkGFCC69eRLceDYLo">
+  <div class="brand" data-page-node-id="F3RCfbejKLFStZMfDvzIV9">
+    <div class="logo">NB</div>
+    <div class="brand-text">
+      <h1>风力发电机组 塔架升降机</h1>
+      <p>NBT 10991—2022 · 互动学习课程 · <span id="totalCount">0</span> 道权威题库</p>
+    </div>
+  </div>
+  <div class="topstats" data-page-node-id="HanIlumFnC3PDmNcccvTwm">
+    <div class="stat" data-page-node-id="vlYKHBChnb1N0w8EAv7WrQ"><span class="stat-num" id="sDone" data-page-node-id="okST6Ym4B7ENDdySFHZk0G">0</span><span class="stat-lbl" data-page-node-id="o135BIHWbyCbIjhHr15XWH">已答</span></div>
+    <div class="stat" data-page-node-id="ZpSRfxOeqrzZhnJJnXH9rW"><span class="stat-num" id="sRight" data-page-node-id="b23f5TgX7yImwHEo6GCNC2">0</span><span class="stat-lbl" data-page-node-id="UREu22Cq1mQcYHEKtdu7bu">答对</span></div>
+    <div class="stat" data-page-node-id="Egxel3fMb6BVSd8cDANgGv"><span class="stat-num" id="sRate" data-page-node-id="GE1GKDdcze1HkF9i5VsreC">—</span><span class="stat-lbl" data-page-node-id="loonbfXeChBpJuQfI5LwWX">正确率</span></div>
+    <div class="stat" data-page-node-id="C4SbjACXFmUE1oqKoHxL4K"><span class="stat-num" id="sWrong" data-page-node-id="iIvsfjFWjmRxh4IbpuWFAy">0</span><span class="stat-lbl" data-page-node-id="6GehsE3yKFvt5SqZMk9FBH">错题</span></div>
+  </div>
+</header>
+
+<!-- 移动端导航（窄屏显示，宽屏隐藏） -->
+<div class="mnav" id="mNav">
+  <div class="mnav-row">
+    <button class="mnav-btn active" data-view="lecture">讲解</button>
+    <button class="mnav-btn" data-view="quiz">答题</button>
+    <button class="mnav-btn" data-view="fill">填空</button>
+    <button class="mnav-btn" data-view="stats">统计</button>
+  </div>
+  <div class="mnav-row">
+    <select id="mChapter" class="mnav-sel"></select>
+    <button class="mnav-btn ghost" id="mSync">进度同步</button>
+  </div>
+</div>
+
+<div class="layout" data-page-node-id="Sv2j0swqd5zIzjAduNBVDY">
+  <aside class="sidebar" data-page-node-id="uVwNJRDygAOXmF6Xfdtngm">
+    <div class="modes" data-page-node-id="w2Y9AiSaQCDQcofcfK2WYH">
+      <button class="mode-btn active" data-view="lecture" data-page-node-id="vT5eYsqDYYDouJ5YwDCKdF">讲解</button>
+      <button class="mode-btn" data-view="quiz" data-page-node-id="hnIJFOmjjZzQ1Qm4WbHAPd">答题</button>
+      <button class="mode-btn" data-view="fill">填空</button>
+      <button class="mode-btn" data-view="stats" data-page-node-id="UrGAMDkPQZjWsrbLzvoBL4">统计</button>
+    </div>
+    <div class="chap-title" data-page-node-id="GrRc2D6kDjhtg6lw3TodhF">章节目录</div>
+    <nav id="chapNav" class="chap-nav" data-page-node-id="cpU0LS0S8AxdF51bFvHPR4"></nav>
+    <div class="side-foot" data-page-node-id="ei0qGwlNNXCzkBx2gliHzd">
+      <button class="mini-btn" id="btnSync2">导出 / 导入进度</button>
+      <button class="mini-btn" id="btnReset" data-page-node-id="CZZAXiOBi6pZQSFAmewwzA">清空学习记录</button>
+      <div class="tip" data-page-node-id="51Sps3rceQvSy15WLoJRsa">记录保存在本机浏览器。换设备学习请先导出，再到新设备导入。</div>
+    </div>
+  </aside>
+
+  <main class="content" data-page-node-id="aKIpwlhSejuqzuSuEpGrBW">
+
+    <!-- ============ 讲解视图 ============ -->
+    <section id="view-lecture" class="view" data-page-node-id="Mae5m9otMqvOOHkzhDpHe4">
+      <div class="lec-head" data-page-node-id="LHE7e2dqEiTTJgpyM7R7zJ">
+        <div data-page-node-id="eFRy4YWi2zKUn1whvtzL82">
+          <div class="lec-chap" id="lecChap" data-page-node-id="Cq4thN256K4niNoRUhq0yk">第 1 章</div>
+          <h2 id="lecTitle" data-page-node-id="tSXZsuTAmvvdth12vtfCpe">章节标题</h2>
+        </div>
+        <div class="lec-ctrl" data-page-node-id="DpUjemfMNPS14A1Zc9PBfQ">
+          <button class="ctrl-btn" id="lecPrev" data-page-node-id="SzHLOckD8C7vkHrSBqelpB">上一屏</button>
+          <button class="ctrl-btn" id="lecSpeak" data-page-node-id="h2H5QoPuCCcC7g9TdJGAMk">语音讲解</button>
+          <button class="ctrl-btn primary" id="lecPlay" data-page-node-id="ZCjxjSyqyJALun6BObv6eh">自动播放</button>
+          <button class="ctrl-btn" id="lecNext" data-page-node-id="ViMT2QNFbIYe3s0f5WvqSX">下一屏</button>
+        </div>
+      </div>
+      <div class="player" data-page-node-id="eAmXgYA673dPtRAU0bv7wT">
+        <div class="progress" data-page-node-id="kR1k0UMqQgdIHDClOtSSEA"><div class="progress-bar" id="lecBar" data-page-node-id="6W1Ve0VpgcN0T1JktqBcTT"></div></div>
+        <div class="slide" id="lecSlide" data-page-node-id="fMmHFeD3I3qPaxwUEhGHE5"></div>
+        <div class="slide-nav" data-page-node-id="KMcGeVo9XudXyhRIEcU5sR">
+          <span id="lecIdx" data-page-node-id="2mHRyAT146RHR9eCPovE9x">1 / 1</span>
+          <div class="dots" id="lecDots" data-page-node-id="FelqBzy2fEgyCazLosVswq"></div>
+        </div>
+      </div>
+      <div class="lec-after" data-page-node-id="rP0w9ZS23QL5yR378ARx3J">
+        <button class="ctrl-btn big" id="lecToQuiz" data-page-node-id="3P2kePxYjNeZz0L6LhX7Cb">学完了，去做本章题目 →</button>
+      </div>
+    </section>
+
+    <!-- ============ 答题视图 ============ -->
+    <section id="view-quiz" class="view hidden" data-page-node-id="YWkDdlfkJzC7oqPUUs4h4L">
+      <div class="quiz-bar" data-page-node-id="6GAJ4fJn5tKS7ZOycfuXXD">
+        <select id="fChapter" data-page-node-id="JcrFV73GHuuIwAZSPjXGqD"><option value="all" data-page-node-id="ELTL90QmmceUHCQX146rY2">全部章节</option></select>
+        <select id="fType" data-page-node-id="Fw1lUMXhvLc4qAACnrS22r">
+          <option value="all" data-page-node-id="pHprqyAlfOuCSeCfe8lq5R">全部题型</option>
+          <option value="single" data-page-node-id="efp17B4DNOljGWQjsWp20K">单选题</option>
+          <option value="multi" data-page-node-id="gtA5ZKbz67X8ddJNDamNZG">多选题</option>
+          <option value="judge" data-page-node-id="xKMOsQCX1nUWOz7MTRIoBP">判断题</option>
+        </select>
+        <select id="fScope" data-page-node-id="BGFaMcwwT85bY6xm2mC3aT">
+          <option value="all" data-page-node-id="r1kr6gvfibUooZlHR6ES8z">全部题目</option>
+          <option value="undo" data-page-node-id="Cj5XWCji1nzlaEJ5ZF3NXd">未作答</option>
+          <option value="wrong" data-page-node-id="BiSWDRisINUEBrQqz2W8g7">我的错题</option>
+          <option value="right" data-page-node-id="eCbz4RunCOREA13HlOUvIH">已答对</option>
+        </select>
+        <label class="shuffle" data-page-node-id="hmJA6uB59RUrqrJMlF9yIn"><input type="checkbox" id="fShuffle" data-page-node-id="5xjSleJqELisnIPP8gFy0x"> 随机打乱</label>
+        <span class="quiz-range" id="quizRange" data-page-node-id="PDBH4WGvHPVPGNsIWHaUD6">—</span>
+      </div>
+
+      <div class="qcard" data-page-node-id="D6btKsFw3mbjj0mCSR3Nud">
+        <div class="qmeta" data-page-node-id="x0KTBa4XRpbYNcAQt9TH5X">
+          <span class="tag" id="qChapter" data-page-node-id="obEn0B6kGghfHHZ0Uf6l3F">章节</span>
+          <span class="tag type" id="qType" data-page-node-id="NiTaL6Wd9SF1yPSJK53Vth">题型</span>
+          <span class="tag idx" id="qIdx" data-page-node-id="y3zvRtbFPkNRTTF26WtWji">1 / 1</span>
+          <span class="tag src" id="qSourceTag" data-page-node-id="TLgc6nnEydl7LKcd3LQwkR">出处</span>
+        </div>
+        <h3 class="qtext" id="qText" data-page-node-id="w8ohyqw0R3y1nsEduNkKc9"></h3>
+        <div class="options" id="qOptions" data-page-node-id="cRhA7MExXNrtepoVkJTgI9"></div>
+
+        <div class="feedback hidden" id="qFeedback" data-page-node-id="nWHEf7kv3FDPKHGdE1V67P">
+          <div class="fb-head" id="fbHead" data-page-node-id="Hm5x0hUoUDu0EPK9I5DXCP"></div>
+          <div class="fb-body" data-page-node-id="YizRIyutvAGmvPpHBTCtlA">
+            <div class="fb-block" data-page-node-id="OU1ySLrfInszAWxFsQD5mn">
+              <div class="fb-label" data-page-node-id="wYHUBIa0HxLoGoWFN47Aqw">正确答案</div>
+              <div class="fb-answer" id="fbAnswer" data-page-node-id="1QrMy0SnJrleqNk7eLBGVA"></div>
+            </div>
+            <div class="fb-block" data-page-node-id="cdrmSfe3EI8jECPZ8VDE3t">
+              <div class="fb-label" data-page-node-id="SvbnVJS66a4EwZuHX0BBcK">为什么</div>
+              <div class="fb-explain" id="fbExplain" data-page-node-id="GmVPR49EEXTEHZ4HtNab9p"></div>
+            </div>
+            <div class="fb-block" data-page-node-id="Cs47vVpkShfTdf4suoZa1V">
+              <div class="fb-label" data-page-node-id="uDEdeYYUzSGmToefBR8Ypx">出处</div>
+              <div class="fb-source" id="fbSource" data-page-node-id="uYe6JsRgU7FvCX8JljoNIT"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qactions" data-page-node-id="NsuUkVtPrMmFwvH3t5DOHo">
+          <button class="ctrl-btn" id="qPrev" data-page-node-id="UGqWaEA5WYkUSsBrICGz6W">上一题</button>
+          <button class="ctrl-btn ghost" id="qMark" data-page-node-id="AIexMOCOpGh0UPXcVOxdhk">标记错题</button>
+          <button class="ctrl-btn primary" id="qNext" data-page-node-id="rqzTzGZZLOBNOo6APK0ZST">下一题 →</button>
+        </div>
+      </div>
+
+      <div class="jump" data-page-node-id="Di6K1Y4mSwGZ94afKLr4Zm">
+        <div class="jump-label" data-page-node-id="5FcrlAXTpIkNZJ9FEN2j2A">快速跳题</div>
+        <div class="jump-grid" id="jumpGrid" data-page-node-id="OqZ9eV5bS1XH0CwLQkYVaJ"></div>
+      </div>
+    </section>
+
+    <!-- ============ 填空题视图（巩固模式） ============ -->
+    <section id="view-fill" class="view hidden">
+      <div class="quiz-bar">
+        <select id="ffChapter"><option value="all">全部章节</option></select>
+        <select id="ffScope">
+          <option value="all">全部题目</option>
+          <option value="undo">未作答</option>
+          <option value="wrong">我的错题</option>
+          <option value="right">已答对</option>
+        </select>
+        <label class="shuffle"><input type="checkbox" id="ffShuffle"> 随机打乱</label>
+        <span class="quiz-range" id="ffRange">—</span>
+      </div>
+      <div class="fill-stats" id="ffStats"></div>
+
+      <div class="qcard">
+        <div class="qmeta">
+          <span class="tag" id="fqChapter">章节</span>
+          <span class="tag type" id="fqType">填空题</span>
+          <span class="tag idx" id="fqIdx">1 / 1</span>
+          <span class="tag src" id="fqSourceTag">出处</span>
+        </div>
+        <h3 class="qtext" id="fqText"></h3>
+        <div class="options" id="fqOptions"></div>
+
+        <div class="feedback hidden" id="fqFeedback">
+          <div class="fb-head" id="ffbHead"></div>
+          <div class="fb-body">
+            <div class="fb-block">
+              <div class="fb-label">正确答案</div>
+              <div class="fb-answer" id="ffbAnswer"></div>
+            </div>
+            <div class="fb-block">
+              <div class="fb-label">为什么</div>
+              <div class="fb-explain" id="ffbExplain"></div>
+            </div>
+            <div class="fb-block">
+              <div class="fb-label">出处</div>
+              <div class="fb-source" id="ffbSource"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qactions">
+          <button class="ctrl-btn" id="fqPrev">上一题</button>
+          <button class="ctrl-btn ghost" id="fqMark">标记错题</button>
+          <button class="ctrl-btn primary" id="fqNext">提交答案</button>
+        </div>
+      </div>
+
+      <div class="jump">
+        <div class="jump-label">快速跳题</div>
+        <div class="jump-grid" id="fjumpGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ 统计视图 ============ -->
+    <section id="view-stats" class="view hidden" data-page-node-id="GYa8fN7luwQYHF5KLp4s4r">
+      <h2 class="sec-title" data-page-node-id="kWdgmSGsVbArYwYUoKQYSC">学习统计</h2>
+      <div class="stat-cards" id="statCards" data-page-node-id="XQUYrsCYJnwyGDPbWpHncK"></div>
+      <h2 class="sec-title" data-page-node-id="afpPiP2RDzF0rMIqsDskck">各章掌握情况</h2>
+      <div class="chap-stats" id="chapStats" data-page-node-id="CVwwt9AeAEYNsifHH8hbpq"></div>
+      <h2 class="sec-title" data-page-node-id="ZonDIJp510YqFQIpKfqoWj">错题清单</h2>
+      <div class="wrong-list" id="wrongList" data-page-node-id="krCQD9dm16kF6w1IRvkqdA"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- 进度同步弹窗 -->
+<div class="modal hidden" id="syncModal">
+  <div class="modal-mask" id="syncMask"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>学习进度同步</h3>
+      <button class="modal-x" id="syncClose">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-tip">
+        进度保存在<b>当前设备的浏览器</b>里，不会自动跨设备同步。换电脑或换手机时，
+        在旧设备点「导出进度」存下文件，到新设备点「导入进度」选该文件即可无缝继续。
+      </p>
+      <div class="modal-acts">
+        <button class="ctrl-btn primary" id="btnExport">导出进度（下载文件）</button>
+        <button class="ctrl-btn" id="btnImport">导入进度（选择文件）</button>
+        <input type="file" id="fileInput" accept=".json,application/json" hidden>
+      </div>
+      <div class="modal-status" id="syncStatus"></div>
+      <div class="modal-sum" id="syncSum"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 知识库弹窗（出处/引用规范点击后在课程内查看知识点，不跳外部网页） -->
+<div class="modal hidden" id="kbModal">
+  <div class="modal-mask" id="kbMask"></div>
+  <div class="modal-box kb-box">
+    <div class="modal-head">
+      <h3 id="kbTitle">知识点</h3>
+      <button class="modal-x" id="kbClose">×</button>
+    </div>
+    <div class="modal-body kb-body" id="kbBody"></div>
+  </div>
+</div>
+
+<!-- 添加到主屏幕提示 -->
+<div class="install-tip hidden" id="installTip">
+  <div class="it-text">
+    <b>装到手机桌面</b>
+    <span id="installGuide">添加后断网也能学</span>
+  </div>
+  <div class="it-btns">
+    <button class="it-btn" id="installDo">添加</button>
+    <button class="it-btn ghost" id="installNo">不用</button>
+  </div>
+</div>
+
+<script>
+
+/* ===== CH01 ===== */
+window.CH01 = {
+  id: 1,
+  title: '范围与规范性引用文件',
+  slides: [
+    { h: '本文件的定位与适用范围', body: '<p><b>NB/T 10991—2022《风力发电机组 塔架升降机》</b>是能源行业标准（报批稿阶段文件），由能源行业风电标准化技术委员会风电机械设备分技术委员会（NEA/TC 1/SC 5）归口，哈电风能、金风科技、上海电气等 18 家单位起草。</p><div class="kv">本文件规定了风力发电机组塔架升降机的<b>术语和定义、技术要求、试验与检验方法、标识、包装、运输和贮存、随机文件、安装与运行维护</b>等要求。</div><p>本文件适用于<b>风力发电机组塔架升降机的设计、制造、检验与验收</b>。升降机安装在风电机组塔架内部，沿塔架内预设的导向装置做往复运行，将作业人员由起始平台送达工作平台，是一种厢式运输设备。</p>', src: '第1章 范围；3.1' },
+    { h: '引用规范速查（上）核心标准', body: '<p>下列文件通过规范性引用构成本文件必不可少的条款。<b>注日期的引用文件仅该日期对应版本适用；不注日期的引用文件其最新版本（含修改单）适用。</b></p><table><tr><th>规范号</th><th>名称</th><th>在本文件中的用途</th></tr><tr><td>GB/T 19155—2017</td><td>高处作业吊篮</td><td>5.3.2.3 设计载荷与作用力；5.4.3.8 悬挂装置；6.11/6.12 提升机构与悬挂装置试验</td></tr><tr><td>GB 26557—2011</td><td>吊笼有垂直导向的人货两用施工升降机</td><td>5.4.5.2 防坠安全器；6.15 防坠落安全装置试验</td></tr><tr><td>GB 30862—2014</td><td>坠落防护 挂点装置</td><td>5.4.2.1 h) 轿厢内个人防坠落挂点装置；6.3.7 挂点强度试验</td></tr><tr><td>GB/T 5226.1—2019</td><td>机械电气安全 机械电气设备 第1部分：通用技术条件</td><td>5.4.7 操控装置控制功能；5.5.1 电气系统总要求</td></tr><tr><td>GB/T 20118</td><td>钢丝绳通用技术条件</td><td>5.4.3.7 a) 钢丝绳采用镀锌钢丝绳并符合其要求</td></tr><tr><td>GB/T 8918</td><td>重要用途钢丝绳</td><td>表2 钢丝绳防腐满足其 A 级要求</td></tr><tr><td>GB/T 5972</td><td>起重机 钢丝绳 保养、维护、检验和报废</td><td>10.11 钢丝绳更换应符合其规定</td></tr><tr><td>GB/T 6946</td><td>钢丝绳铝合金压制接头</td><td>5.4.3.7 b) 钢丝绳端部和鸡心环</td></tr><tr><td>NB/T 31060—2014</td><td>风力发电设备 环境条件</td><td>5.2 陆上运行环境条件（4.1）</td></tr><tr><td>NB/T 31094—2016</td><td>风力发电设备海上特殊环境条件与技术要求</td><td>5.2 海上运行环境条件（4.2）</td></tr></table>', src: '第2章 规范性引用文件' },
+    { h: '引用规范速查（下）其余引用', body: '<table><tr><th>规范号</th><th>名称</th><th>在本文件中的用途</th></tr><tr><td>GB/T 2104</td><td>钢丝绳包装、标志及质量证明书的一般规定</td><td>8.2.2 钢丝绳包装</td></tr><tr><td>GB/T 3797</td><td>电气控制设备</td><td>6.16.2 电气控制系统试验</td></tr><tr><td>GB/T 7251.1</td><td>低压成套开关设备和控制设备 第1部分：总则</td><td>6.16.2 耐压试验</td></tr><tr><td>GB/T 14048.5</td><td>低压开关设备和控制设备 第5-1部分：控制电路电器和开关元件 机电式控制电路电器</td><td>5.5.10 限位开关应符合其附录K要求</td></tr><tr><td>GB/T 13306</td><td>标牌</td><td>8.1.1 产品铭牌</td></tr><tr><td>GB/T 9174</td><td>一般货物运输包装通用技术条件</td><td>8.2.8 包装</td></tr><tr><td>GB/T 10125</td><td>人造气氛腐蚀试验 盐雾试验</td><td>表2 关键零部件盐雾试验</td></tr><tr><td>GB/T 18684</td><td>锌铬涂层 技术条件</td><td>表2 标准件（≥M8）锌铬涂层 4 级</td></tr><tr><td>GB/T 191</td><td>包装储运图示标志</td><td>8.4.7 包装储运</td></tr><tr><td>GB/T 20062</td><td>流动式起重机 作业噪声限值及测量方法</td><td>6.7 噪声测定方法</td></tr><tr><td>ISO 12944-5</td><td>色漆和清漆 防护漆体系对钢结构的防腐蚀保护 第5部分</td><td>5.7.1 陆上/海上防腐等级</td></tr><tr><td>JB/T 7929</td><td>齿轮传动装置清洁度</td><td>10.6 润滑油清洁度 J 级要求</td></tr></table><div class="kv">易混点：GB/T 2104（钢丝绳包装）与 GB/T 20118（钢丝绳通用技术条件）、GB/T 8918（重要用途钢丝绳）三者分工不同——选用看 20118、防腐验收看 8918、包装看 2104。</div>', src: '第2章 规范性引用文件' }
+  ],
+  questions: [
+    { t: 'judge', q: '本文件适用于风力发电机组塔架升降机的设计、制造、检验与验收。', a: [0], e: '正确。第1章明确本文件适用于风力发电机组塔架升降机的设计、制造、检验与验收，这是判定适用范围的直接依据。', s: '第1章 范围' },
+    { t: 'single', q: '本文件规定了下列哪些内容？', o: ['仅规定塔架升降机的试验方法', '术语和定义、技术要求、试验与检验方法、标识、包装、运输和贮存、随机文件、安装与运行维护等要求', '仅规定塔架升降机的型号与分类', '仅规定塔架升降机的安装与维护要求'], a: [1], e: '第1章首句列全了本文件的规定范围：术语和定义、技术要求、试验与检验方法、标识、包装、运输和贮存、随机文件、安装与运行维护等要求。其中"技术要求"正是第5章、"试验"是第6章的主体。', s: '第1章 范围' },
+    { t: 'single', q: '塔架升降机安装在风力发电机组的什么位置？', o: ['塔架外部', '塔架内部', '机舱顶部', '基础环外侧'], a: [1], e: '3.1 定义：塔架升降机是安装在风力发电机组塔架内部，沿塔架内预设的导向装置做往复运行，将作业人员由起始平台送达工作平台的一种厢式运输设备。"塔架内部"同时决定了它的导向、防坠落等要求的设计前提。', s: '3.1' },
+    { t: 'judge', q: '本文件不注日期的引用文件，仅该日期对应的版本适用于本文件。', a: [1], e: '错误，方向反了。第2章：注日期的引用文件，仅该日期对应的版本适用；不注日期的引用文件，其最新版本（包括所有的修改单）适用。考试高频易错点，注意两者正好相反。', s: '第2章 规范性引用文件' },
+    { t: 'single', q: '关于规范性引用文件的版本适用，下列说法正确的是：', o: ['注日期的引用文件，其最新版本适用于本文件', '不注日期的引用文件，其最新版本（包括所有的修改单）适用于本文件', '所有引用文件均采用发布当时的最新版本', '注日期与不注日期的引用文件处理方式完全相同'], a: [1], e: '第2章：注日期的引用文件仅该日期对应版本适用；不注日期的引用文件其最新版本（包括所有修改单）适用。两者处理方式不同，B 的表述与条文完全一致。', s: '第2章 规范性引用文件' },
+    { t: 'single', q: '本文件规定轿厢内个人防坠落设备的挂点装置应符合哪项标准？', o: ['GB/T 19155—2017', 'GB 26557—2011', 'GB 30862—2014', 'GB/T 5972'], a: [2], e: '5.4.2.1 h) 要求轿厢应提供用于个人防坠落设备的挂点装置，挂点装置应符合 GB 30862—2014《坠落防护 挂点装置》的要求；6.3.7 挂点强度试验也按 GB 30862—2014 第6章进行。', s: '5.4.2.1；6.3.7' },
+    { t: 'single', q: '本文件规定防坠安全器应符合哪项标准的要求？', o: ['GB 26557—2011 中 5.6.2', 'GB/T 19155—2017 中 6.3', 'GB 30862—2014 中第6章', 'GB/T 5226.1—2019 中 9.2'], a: [0], e: '5.4.5.2：防坠安全器应符合 GB 26557—2011《吊笼有垂直导向的人货两用施工升降机》中 5.6.2 的要求；6.15 防坠安全器试验按 GB 26557—2011 中 6.2.3 进行。注意区分"要求"（5.6.2）与"试验"（6.2.3）两条引用。', s: '5.4.5.2；6.15' },
+    { t: 'single', q: '本文件规定升降机的设计载荷应符合哪项标准中 6.3 设计载荷与作用力的规定？', o: ['GB 26557—2011', 'GB/T 19155—2017', 'GB/T 5972', 'GB/T 5226.1—2019'], a: [1], e: '5.3.2.3：升降机应具有额定载重量的承载能力，且强度、疲劳性能等已经验证，其设计载荷应符合 GB/T 19155—2017《高处作业吊篮》中 6.3 设计载荷与作用力的规定。悬挂装置设计则依据 GB/T 19155—2017 中 6.5 和第9章（5.4.3.8）。', s: '5.3.2.3；5.4.3.8' },
+    { t: 'single', q: '本文件规定陆上运行环境条件应符合哪项标准？', o: ['NB/T 31094—2016 中 4.2', 'NB/T 31060—2014 中 4.1', 'GB/T 19155—2017 中 6.3', 'ISO 12944-5'], a: [1], e: '5.2 运行环境条件：海上符合 NB/T 31094—2016《风力发电设备海上特殊环境条件与技术要求》中 4.2 的要求，陆上符合 NB/T 31060—2014《风力发电设备 环境条件》中 4.1 的要求。注意海/陆对应关系不要搞反。', s: '5.2' },
+    { t: 'judge', q: '本文件由能源行业风电标准化技术委员会风电机械设备分技术委员会（NEA/TC 1/SC 5）归口。', a: [0], e: '正确。前言载明：本文件由能源行业风电标准化技术委员会风电机械设备分技术委员会（NEA/TC 1/SC 5）归口，由国家能源局提出。', s: '前言' },
+    { t: 'multi', q: '下列哪些标准属于本文件规范性引用文件中与"钢丝绳"直接相关的标准？（多选）', o: ['GB/T 8918', 'GB/T 20118', 'GB/T 5972', 'GB/T 13306'], a: [0, 1, 2], e: '与钢丝绳直接相关的引用包括：GB/T 8918《重要用途钢丝绳》（防腐 A 级）、GB/T 20118《钢丝绳通用技术条件》（选用）、GB/T 5972《起重机 钢丝绳 保养、维护、检验和报废》（更换）、GB/T 2104（包装）、GB/T 6946（铝合金压制接头）。GB/T 13306《标牌》用于铭牌，与钢丝绳无关。', s: '第2章 规范性引用文件；表2；10.11' },
+    { t: 'judge', q: '本文件为首次发布。', a: [0], e: '正确。前言末句载明"本文件为首次发布"。这是行业标准立项的常见状态，无需其他依据。', s: '前言' }
+  ]
+};
+
+
+/* ===== CH02 ===== */
+window.CH02 = {
+  id: 2,
+  title: '术语和定义',
+  slides: [
+    { h: '升降机与导向系统（3.1~3.5）', body: '<p>本章给出 20 条术语，是后续所有技术条款的"语言基础"。</p><div class="kv"><b>塔架升降机</b>：安装在风力发电机组塔架内部，沿塔架内预设的导向装置做往复运行，将作业人员由起始平台送达工作平台的一种厢式运输设备。</div><p><b>运行导向系统</b>：升降机运行时在塔架内预设的导向系统，防止升降机发生<b>空中转体或剧烈晃动</b>。导向方式分为三种：</p><div class="nums"><div class="num"><b>钢丝绳</b><span>钢丝绳导向式升降机</span></div><div class="num"><b>爬梯</b><span>爬梯导向式升降机</span></div><div class="num"><b>齿轮齿条</b><span>齿轮齿条导向式升降机</span></div></div>', src: '3.1~3.5' },
+    { h: '载荷、速度与主体结构（3.6~3.10）', body: '<p>三个载荷/速度参数是最常考的数值题来源：</p><table><tr><th>术语</th><th>定义要点</th></tr><tr><td>额定载重量（kg）</td><td>由制造商规定的在正常工作工况下升降机承受的<b>最大载重量</b></td></tr><tr><td>额定速度（m/min）</td><td>装载额定载重量、在额定功率下<b>稳定运行的设计速度</b></td></tr><tr><td>极限载荷</td><td>由制造商规定的升降机本身<b>可承受的最大载荷</b></td></tr></table><div class="kv"><b>主体结构</b>主要包括：轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系统及<b>电缆收集装置</b>。<b>轿厢</b>由底板、围板、门和顶板等组成。</div><p>易混点：额定载重量 vs 极限载荷——前者是"正常工况下的最大载重量"，后者是"本身可承受的最大载荷"（承载能力上限，与 3.5 倍额定载重量极限载荷试验相关联）。</p>', src: '3.6~3.10' },
+    { h: '三种提升机构（3.11~3.13）', body: '<table><tr><th>术语</th><th>驱动原理</th></tr><tr><td>爬升式提升机构</td><td>依靠钢丝绳和驱动绳轮之间的<b>摩擦力</b>带动轿厢上下运行</td></tr><tr><td>卷扬式提升机构</td><td>在卷筒上缠绕单层或多层钢丝绳，依靠<b>卷筒驱动钢丝绳</b>带动轿厢上下运行</td></tr><tr><td>齿轮齿条式提升机构</td><td>依靠<b>驱动齿轮在齿条上运行</b>，进而带动轿厢上下运行</td></tr></table><div class="kv">三种提升机构与三种导向方式名称相近但概念不同：导向方式解决"不转体、不晃动"，提升机构解决"怎么上去"。爬升式对应"摩擦牵引"（如电梯曳引），卷扬式对应"卷筒缠绕"（如绞车），齿轮齿条式对应"齿轮啮合爬行"（如施工升降机）。</div>', src: '3.11~3.13' },
+    { h: '钢丝绳与安全装置（3.14~3.20）', body: '<p>三种钢丝绳的分工是高频考点：</p><table><tr><th>钢丝绳</th><th>作用</th></tr><tr><td>工作钢丝绳</td><td>正常工作时用于<b>承担载荷</b></td></tr><tr><td>安全钢丝绳</td><td>正常工作时不承担载荷，在工作钢丝绳失效时，通过<b>防坠落安全装置</b>承担载荷</td></tr><tr><td>导向钢丝绳</td><td>在轿厢上、下运行时起<b>导向</b>作用</td></tr></table><div class="kv"><b>安全保护装置</b>：独立可靠的一套装置，包括障碍物检测装置、联锁装置（选配）、安全锁、防坠落安全器等。<b>防坠落安全装置</b>：升降机运行失效时，使轿厢停止并保持静止状态的机械装置。</div><p><b>安全锁</b>：当轿厢下滑速度达到锁绳速度或悬挂钢丝绳松弛时，能自动锁住安全钢丝绳使轿厢停止下滑或倾斜的装置。<b>超速安全装置</b>：用于在超速发生时使轿厢停止并保持静止状态的机械装置。</p>', src: '3.14~3.20' }
+  ],
+  questions: [
+    { t: 'single', q: '运行导向系统的导向方式不包括下列哪一项？', o: ['钢丝绳', '爬梯', '齿轮齿条', '液压缸'], a: [3], e: '3.2：导向方式分为钢丝绳、爬梯、齿轮齿条三种，对应钢丝绳式、爬梯式、齿轮齿条式升降机。液压不在导向方式之列（液压和气动也不在提升机构类型内）。', s: '3.2' },
+    { t: 'single', q: '额定载重量的定义是：', o: ['由制造商规定的升降机本身可承受的最大载荷', '由制造商规定的在正常工作工况下升降机承受的最大载重量', '升降机空载时的重量', '试验时施加的最大载荷'], a: [1], e: '3.6：额定载重量是由制造商规定的在正常工作工况下升降机承受的最大载重量，单位 kg。选项 A 是极限载荷的定义；C 是自重；D 是试验载荷。', s: '3.6；3.8' },
+    { t: 'single', q: '极限载荷的定义是：', o: ['正常工作工况下的最大载重量', '试验中施加 1.5 倍额定载重量的载荷', '由制造商规定的升降机本身可承受的最大载荷', '轿厢自重'], a: [2], e: '3.8：极限载荷是由制造商规定的升降机本身可承受的最大载荷。它与 5.3.2.2"极限载荷试验时应能承受 3.5 倍额定载重量"呼应。', s: '3.8；5.3.2.2' },
+    { t: 'single', q: '额定速度的定义是：', o: ['空载时升降机的最大运行速度', '升降机装载额定载重量，在额定功率下稳定运行的设计速度', '手动下降时的速度', '安全锁触发时的速度'], a: [1], e: '3.7：额定速度（m/min）是升降机装载额定载重量、在额定功率下稳定运行的设计速度。它是主参数之一（9/18/22 m/min），也是手动下降、超速触发等速度基准。', s: '3.7；4.4' },
+    { t: 'multi', q: '主体结构主要包括下列哪些部分？（多选）', o: ['轿厢', '动力系统', '电缆收集装置', '塔架基础'], a: [0, 1, 2], e: '3.9：主体结构主要包括轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系统及电缆收集装置。塔架基础不属于升降机主体结构。', s: '3.9' },
+    { t: 'single', q: '轿厢主要由哪些部分组成？', o: ['底板、围板、门和顶板', '底板、立柱和横梁', '导轨、钢丝绳和滑轮', '卷筒、减速机和电机'], a: [0], e: '3.10：轿厢是用于承载风电机组工作人员的装置，由底板、围板、门和顶板等组成。第5.4.2 各小节（底板/围板/顶板/门）正是按这四部分展开的。', s: '3.10；5.4.2' },
+    { t: 'single', q: '爬升式提升机构依靠什么带动轿厢上下运行？', o: ['卷筒缠绕钢丝绳', '钢丝绳和驱动绳轮之间的摩擦力', '驱动齿轮与齿条啮合', '液压缸伸缩'], a: [1], e: '3.11：爬升式提升机构依靠钢丝绳和驱动绳轮之间的摩擦力带动轿厢上下运行，原理类似电梯曳引。卷筒缠绕是卷扬式（3.12），齿轮啮合是齿轮齿条式（3.13）。', s: '3.11~3.13' },
+    { t: 'single', q: '卷扬式提升机构的特点是：', o: ['依靠摩擦力驱动', '在卷筒上缠绕单层或多层钢丝绳，依靠卷筒驱动钢丝绳带动轿厢运行', '依靠齿轮在齿条上运行', '依靠液压马达驱动'], a: [1], e: '3.12：卷扬式提升机构在卷筒上缠绕单层或多层钢丝绳，依靠卷筒驱动钢丝绳带动轿厢上下运行。卷筒相关要求（法兰盘、凹槽、偏斜角）见 5.4.3.5。', s: '3.12；5.4.3.5' },
+    { t: 'single', q: '工作钢丝绳的作用是：', o: ['正常工作时用于承担载荷', '正常工作时不承担载荷，失效时通过防坠落安全装置承担载荷', '在轿厢上下运行时起导向作用', '用于手动下降'], a: [0], e: '3.14：工作钢丝绳是升降机正常工作时用于承担载荷的钢丝绳。注意与安全钢丝绳（3.15，平时不承载、失效时承载）和导向钢丝绳（3.16，起导向作用）区分。', s: '3.14~3.16' },
+    { t: 'judge', q: '安全钢丝绳在正常工作时承担载荷，在工作钢丝绳失效时通过防坠落安全装置承担载荷。', a: [1], e: '错误。3.15：安全钢丝绳正常工作时不承担载荷，在工作钢丝绳失效时，通过防坠落安全装置承担载荷。"平时不承载"正是安全钢丝绳的设计要点。', s: '3.15' },
+    { t: 'single', q: '安全保护装置包括下列哪些组成部分？', o: ['障碍物检测装置、联锁装置（选配）、安全锁、防坠落安全器等', '行程限位开关、超载检测装置、急停开关', '提升机构、制动器、卷筒', '运行导向系统、电缆收集装置'], a: [0], e: '3.17：安全保护装置系指独立可靠的一套安全保护装置，包括障碍物检测装置、联锁装置（选配）、安全锁、防坠落安全器等。行程限位开关、超载检测装置等属于 5.4.4 的安全保护装置条款，但该定义以四大件为限。', s: '3.17；5.4.4' },
+    { t: 'single', q: '安全锁在什么情况下自动锁住安全钢丝绳？', o: ['仅当轿厢下滑速度达到锁绳速度时', '当轿厢下滑速度达到锁绳速度或悬挂钢丝绳松弛时', '仅当悬挂钢丝绳松弛时', '仅当超速上升时'], a: [1], e: '3.19：安全锁是当轿厢下滑速度达到锁绳速度或悬挂钢丝绳松弛时，能自动锁住安全钢丝绳使轿厢停止下滑或倾斜的装置。两个触发条件——超速（下滑速度）或松绳，缺一不可。', s: '3.19' },
+    { t: 'judge', q: '防坠落安全装置是升降机运行失效时，使轿厢停止并保持静止状态的机械装置。', a: [0], e: '正确。3.18：防坠落安全装置是升降机运行失效时，使轿厢停止并保持静止状态的机械装置。它是机械装置（区别于电气保护），这正是"坠落防护最后一道机械防线"的定位。', s: '3.18' },
+    { t: 'single', q: '超速安全装置的作用是：', o: ['检测超载并报警', '在超速发生时使轿厢停止并保持静止状态', '防止轿厢倾斜', '记录运行次数'], a: [1], e: '3.20：超速安全装置用于在超速发生时使轿厢停止并保持静止状态的机械装置。齿轮齿条式升降机应配备超速安全装置（防坠安全器或带离心限速器双电动机系统），见 5.4.5.2。', s: '3.20；5.4.5.2' },
+    { t: 'single', q: '采用以爬梯为导向形式的升降机称为：', o: ['钢丝绳式升降机', '爬梯导向式升降机（爬梯式升降机）', '齿轮齿条导向式升降机', '卷扬式升降机'], a: [1], e: '3.4：采用以爬梯为导向形式的升降机称为爬梯导向式升降机（以下简称爬梯式升降机）。对应 3.3 钢丝绳式、3.5 齿轮齿条式。', s: '3.3~3.5' },
+    { t: 'judge', q: '运行导向系统的作用是防止升降机发生空中转体或剧烈晃动。', a: [0], e: '正确。3.2：运行导向系统是升降机运行时在塔架内预设的导向系统，防止升降机发生空中转体或剧烈晃动。导向方式分为钢丝绳、爬梯、齿轮齿条。', s: '3.2' },
+    { t: 'single', q: '齿轮齿条式提升机构的驱动原理是：', o: ['依靠摩擦力驱动', '依靠驱动齿轮在齿条上运行带动轿厢上下运行', '依靠卷筒缠绕钢丝绳', '依靠液压系统驱动'], a: [1], e: '3.13：齿轮齿条式提升机构依靠驱动齿轮在齿条上运行，进而带动轿厢上下运行。它对应齿轮齿条式升降机，且配套有防坠安全装置齿轮（5.4.3.6）。', s: '3.13' },
+    { t: 'single', q: '导向钢丝绳的作用是：', o: ['正常工作时承担载荷', '失效时承担载荷', '在轿厢上、下运行时起导向作用', '连接防坠落安全装置'], a: [2], e: '3.16：导向钢丝绳在轿厢上、下运行时起导向作用。它是钢丝绳式升降机导向系统的核心（5.4.6.2 两根导向钢丝绳从塔架顶部吊梁垂下）。', s: '3.16；5.4.6.2' }
+  ]
+};
+
+
+/* ===== CH03 ===== */
+window.CH03 = {
+  id: 3,
+  title: '型号、分类、主参数',
+  slides: [
+    { h: '型号构成（4.1）', body: '<p>升降机型号的完整格式：</p><div class="kv">TS - 额定载重量(kg) / 额定速度(m/min) - 导向方式代号</div><p>各部分的含义：</p><table><tr><th>组成</th><th>含义</th></tr><tr><td>TS</td><td>类别代号：塔架升降机（T=塔架、S=升降机，汉语拼音首字母）</td></tr><tr><td>额定载重量</td><td>kg，位于第一个"XX"</td></tr><tr><td>额定速度</td><td>m/min，位于第二个"XX"</td></tr><tr><td>导向方式代号</td><td>钢丝绳式 <b>GS</b>；爬梯式 <b>PT</b>；齿轮齿条式 <b>CL</b></td></tr></table><div class="kv">记忆技巧：GS=钢绳、PT=爬梯、CL=齿（c h i）轮齿条，取拼音首字母或缩写。</div>', src: '4.1' },
+    { h: '标识示例与分类（4.2~4.3）', body: '<p>三个官方标识示例（考试常考逆向解读）：</p><table><tr><th>型号</th><th>解读</th></tr><tr><td>TS-240/9-GS</td><td>额定载重量 240 kg、额定速度 9 m/min 的<b>钢丝绳式</b>塔架升降机</td></tr><tr><td>TS-320/18-PT</td><td>额定载重量 320 kg、额定速度 18 m/min 的<b>爬梯式</b>塔架升降机</td></tr><tr><td>TS-350/22-CL</td><td>额定载重量 350 kg、额定速度 22 m/min 的<b>齿轮齿条式</b>塔架升降机</td></tr></table><p><b>分类</b>：升降机按照导向方式分为钢丝绳式、爬梯式、齿轮齿条式三种类别，根据不同工作工况选择适用的塔架升降机。</p>', src: '4.2；4.3' },
+    { h: '主参数及其系列（4.4 表1）', body: '<div class="kv">升降机主参数优选系列（表1）：</div><table><tr><th>名称</th><th>主要参数</th></tr><tr><td>额定载重量（kg）</td><td>240，250，300，320，350，450</td></tr><tr><td>额定速度（m/min）</td><td>9，18，22</td></tr></table><div class="kv">速记：载重量 6 档（240/250/300/320/350/450 kg），速度 3 档（9/18/22 m/min）。速度 9 对应钢丝绳式示例、18 对应爬梯式、22 对应齿轮齿条式。</div>', src: '4.4；表1' }
+  ],
+  questions: [
+    { t: 'single', q: '塔架升降机型号中的类别代号"TS"代表：', o: ['提升机与升降机', '塔架与升降机（T=塔架、S=升降机，汉语拼音首字母）', '塔架与钢丝绳', '提升与输送'], a: [1], e: '4.1：类别代号 TS 中 T 为塔架、S 为升降机，取汉语拼音首字母（塔架 Tǎjià、升降机 Shēngjiàngjī）。', s: '4.1' },
+    { t: 'single', q: '型号 TS-240/9-GS 中"240"表示：', o: ['额定速度 240 m/min', '额定载重量 240 kg', '额定功率 240 W', '最大提升高度 240 m'], a: [1], e: '4.2：TS-240/9-GS 为额定载重量 240 kg、额定速度 9 m/min 的钢丝绳式塔架升降机。型号格式为 TS-额定载重量/额定速度-导向方式代号。', s: '4.2' },
+    { t: 'single', q: '型号 TS-320/18-PT 中"18"表示：', o: ['额定载重量 18 kg', '额定速度 18 m/min', '额定功率 18 kW', '18 人'], a: [1], e: '4.2：TS-320/18-PT 为额定载重量 320 kg、额定速度 18 m/min 的爬梯式塔架升降机。数字 18 位于"/"之后，是额定速度。', s: '4.2' },
+    { t: 'single', q: '下列型号中，属于齿轮齿条式塔架升降机的是：', o: ['TS-240/9-GS', 'TS-320/18-PT', 'TS-350/22-CL', 'TS-450/9-GS'], a: [2], e: '4.2：导向方式代号 GS=钢丝绳式、PT=爬梯式、CL=齿轮齿条式。TS-350/22-CL 的尾缀 CL 即齿轮齿条式。', s: '4.1；4.2' },
+    { t: 'judge', q: '型号 TS-240/9-GS 的导向方式代号"GS"表示钢丝绳式。', a: [0], e: '正确。4.1：导向方式代号为钢丝绳式 GS、爬梯式 PT、齿轮齿条式 CL。', s: '4.1' },
+    { t: 'multi', q: '升降机按照导向方式可分为下列哪些类别？（多选）', o: ['钢丝绳式', '爬梯式', '齿轮齿条式', '液压式'], a: [0, 1, 2], e: '4.3：升降机按照导向方式分为钢丝绳式、爬梯式、齿轮齿条式三种类别，根据不同工作工况选择适用。液压式不在分类之列。', s: '4.3' },
+    { t: 'multi', q: '表1 中升降机额定载重量的优选系列包括下列哪些？（多选）', o: ['240 kg', '300 kg', '350 kg', '500 kg'], a: [0, 1, 2], e: '表1：额定载重量优选系列为 240、250、300、320、350、450 kg。500 kg 不在系列内（最大档为 450 kg）。', s: '4.4；表1' },
+    { t: 'single', q: '表1 中升降机额定速度的优选系列是：', o: ['6，12，18 m/min', '9，18，22 m/min', '10，20，30 m/min', '15，22，30 m/min'], a: [1], e: '表1：额定速度优选系列为 9、18、22 m/min 三档。它与三个标识示例一一对应：9→钢丝绳式、18→爬梯式、22→齿轮齿条式。', s: '4.4；表1' },
+    { t: 'single', q: '型号 TS-350/22-CL 的完整正确解读是：', o: ['额定载重量 350 kg、额定速度 22 m/min 的齿轮齿条式塔架升降机', '额定载重量 22 kg、额定速度 350 m/min 的齿轮齿条式塔架升降机', '额定载重量 350 kg、额定速度 22 m/min 的钢丝绳式塔架升降机', '额定载重量 350 kg、额定速度 22 m/min 的爬梯式塔架升降机'], a: [0], e: '4.2：TS-350/22-CL 为额定载重量 350 kg、额定速度 22 m/min 的齿轮齿条式塔架升降机。格式固定为 TS-载重量/速度-导向代号，CL 为齿轮齿条式。', s: '4.2' },
+    { t: 'judge', q: '升降机主参数系列中，额定载重量最大档为 450 kg，额定速度最大档为 22 m/min。', a: [0], e: '正确。表1：额定载重量系列 240~450 kg（最大 450），额定速度系列 9~22 m/min（最大 22）。', s: '4.4；表1' }
+  ]
+};
+
+
+/* ===== CH04 ===== */
+window.CH04 = {
+  id: 4,
+  title: '技术要求：总则、环境与一般要求',
+  slides: [
+    { h: '设计寿命与运行环境（5.1~5.2）', body: '<div class="kv">升降机整机及主体结构设计寿命：陆上应<b>不低于 20 年</b>，海上应<b>不低于 25 年</b>。</div><p>运行环境条件：</p><table><tr><th>安装位置</th><th>应符合的标准与条款</th></tr><tr><td>海上</td><td>NB/T 31094—2016 中 4.2（海上特殊环境条件与技术要求）</td></tr><tr><td>陆上</td><td>NB/T 31060—2014 中 4.1（风力发电设备 环境条件）</td></tr></table><div class="kv">速记：海上 25 年、陆上 20 年——"海上腐蚀更重、寿命要求更高"。注意与防腐年限（5.7.1：陆上 20 年以上、海上 25 年以上）相呼应。</div>', src: '5.1；5.2' },
+    { h: '外观要求（5.3.1）', body: '<p><b>零件表面</b>：加工表面不得有锈蚀、磕碰、划伤等缺陷；外露表面应进行防锈处理。</p><p><b>可见外表面及轿厢内表面</b>：应平整、洁净；采用非不锈钢金属材料时应按规定涂底漆和面漆。</p><p><b>漆层</b>：应均匀、平滑、色泽一致，附着力强，不得有皱皮、脱皮、漏漆、流痕、气泡等缺陷。</p><p><b>铝合金件</b>：如进行表面喷塑，不得有缩孔、针孔、杂质点、漏底、涂层厚度明显不均、流挂等现象。</p><div class="kv">围板、罩壳等应平整，安装牢固可靠；警示标志、铭牌文字、控制标记等应牢固、清晰、完整，不得有油污、水渍等。</div>', src: '5.3.1' },
+    { h: '载荷体系（5.3.2）', body: '<p>载荷要求是本章核心，四档载荷必须分清：</p><table><tr><th>载荷工况</th><th>要求</th></tr><tr><td>额定载重量</td><td>制造商或供应商应明确说明；升降机应具有额定载重量的承载能力，强度、疲劳性能已经验证（设计载荷符合 GB/T 19155—2017 中 6.3）</td></tr><tr><td>极限载荷</td><td>应不小于升降机自重与额定载重量之和</td></tr><tr><td>极限载荷试验</td><td>应有承受 <b>3.5 倍</b>额定载重量的能力</td></tr><tr><td>动态试验</td><td>应有承受 <b>1.25 倍</b>额定载重量的能力</td></tr><tr><td>静态试验</td><td>应有承受 <b>1.5 倍</b>额定载重量的能力</td></tr></table><div class="kv">速记口诀：动 1.25、静 1.5、极限 3.5。"动态"在运行中（动载），"静态"静置（静力载荷试验 15 min），"极限"最大可承受。</div>', src: '5.3.2' },
+    { h: '噪音要求（5.3.3）', body: '<div class="kv">升降机在额定载重量稳定运行时，应无异常震动和声响，噪声不应大于 <b>85 dB(A)</b>。</div><p>该限值与 6.7 噪声测定方法对应：按照 GB/T 20062 规定的方法测试，在距轿厢内地面上方 1600 mm 位置以及轿厢门前方 500 mm 位置测量，测量 3 次取最大值。</p>', src: '5.3.3；6.7' }
+  ],
+  questions: [
+    { t: 'single', q: '升降机整机及主体结构的设计寿命，陆上应不低于：', o: ['10 年', '15 年', '20 年', '25 年'], a: [2], e: '5.1：升降机整机及主体结构设计寿命陆上应不低于 20 年，海上应不低于 25 年。海上要求更高。', s: '5.1' },
+    { t: 'single', q: '升降机整机及主体结构的设计寿命，海上应不低于：', o: ['20 年', '25 年', '30 年', '35 年'], a: [1], e: '5.1：海上设计寿命应不低于 25 年。海上环境腐蚀更严重，设计寿命比陆上（20 年）多 5 年。', s: '5.1' },
+    { t: 'single', q: '海上安装的升降机，其运行环境条件应符合下列哪项标准的要求？', o: ['NB/T 31060—2014 中 4.1', 'NB/T 31094—2016 中 4.2', 'GB/T 19155—2017 中 6.3', 'ISO 12944-5'], a: [1], e: '5.2：海上符合 NB/T 31094—2016《风力发电设备海上特殊环境条件与技术要求》中 4.2 的要求；陆上符合 NB/T 31060—2014《风力发电设备 环境条件》中 4.1 的要求。', s: '5.2' },
+    { t: 'judge', q: '陆上安装的升降机，其运行环境条件应符合 NB/T 31094—2016 中 4.2 的要求。', a: [1], e: '错误。5.2：海上符合 NB/T 31094—2016 中 4.2，陆上符合 NB/T 31060—2014 中 4.1。注意海/陆与标准号、条款号的对应不要混淆。', s: '5.2' },
+    { t: 'single', q: '升降机的极限载荷应满足：', o: ['不小于升降机自重与额定载重量之和', '等于额定载重量的 1.5 倍', '等于额定载重量的 3.5 倍', '不小于轿厢自重'], a: [0], e: '5.3.2.2：升降机的极限载荷应不小于升降机自重与额定载重量之和；极限载荷试验时，应有承受 3.5 倍额定载重量的能力。"极限载荷"是承载能力上限（3.8 术语），不是某个试验倍数。', s: '5.3.2.2；3.8' },
+    { t: 'single', q: '升降机在动态试验时，应有承受多少倍额定载重量的能力？', o: ['1.0 倍', '1.25 倍', '1.5 倍', '3.5 倍'], a: [1], e: '5.3.2.5：升降机在动态试验时，应有承受 1.25 倍额定载重量的能力。对应 6.3.4 动力载荷运行试验（解除超载功能后均布施加 1.25 倍额定载重量）。', s: '5.3.2.5；6.3.4' },
+    { t: 'single', q: '升降机在静态试验时，应有承受多少倍额定载重量的能力？', o: ['1.0 倍', '1.25 倍', '1.5 倍', '3.5 倍'], a: [2], e: '5.3.2.6：静态试验时应有承受 1.5 倍额定载重量的能力。对应 6.3.3 静力载荷试验（均布施加 1.5 倍额定载重量、静置 15 min）。动 1.25 / 静 1.5 / 极限 3.5，三档分清。', s: '5.3.2.6；6.3.3' },
+    { t: 'single', q: '极限载荷试验时，升降机应有承受多少倍额定载重量的能力？', o: ['1.25 倍', '1.5 倍', '2.0 倍', '3.5 倍'], a: [3], e: '5.3.2.2：极限载荷试验时应有承受 3.5 倍额定载重量的能力。对应 6.3.6 极限载荷试验（均布施加 3.5 倍额定载重量、静置 1 h，允许永久变形但无断裂）。', s: '5.3.2.2；6.3.6' },
+    { t: 'single', q: '升降机设计载荷应符合下列哪项标准中 6.3 设计载荷与作用力的规定？', o: ['GB 26557—2011', 'GB/T 19155—2017', 'GB/T 5226.1—2019', 'GB/T 20118'], a: [1], e: '5.3.2.3：升降机应具有额定载重量的承载能力，其设计载荷应符合 GB/T 19155—2017《高处作业吊篮》中 6.3 设计载荷与作用力的规定，并应充分考虑风力发电机组实际运行工况。', s: '5.3.2.3' },
+    { t: 'judge', q: '升降机零件加工表面不得有锈蚀、磕碰、划伤等缺陷，零件外露表面应进行防锈处理。', a: [0], e: '正确。5.3.1.1：升降机零件加工表面不得有锈蚀、磕碰、划伤等缺陷，零件外露表面应进行防锈处理。这是外观要求的首条总则。', s: '5.3.1.1' },
+    { t: 'multi', q: '按 5.3.1.1，漆层应满足下列哪些要求？（多选）', o: ['均匀、平滑、色泽一致', '附着力强', '不得有皱皮、脱皮、漏漆、流痕、气泡等缺陷', '漆层越厚越好'], a: [0, 1, 2], e: '5.3.1.1：漆层应均匀、平滑、色泽一致，附着力强，不得有皱皮、脱皮、漏漆、流痕、气泡等缺陷。"越厚越好"不是标准要求（厚度另有防腐工艺规定，且过厚易流挂）。', s: '5.3.1.1' },
+    { t: 'judge', q: '升降机在额定载重量稳定运行时，噪声不应大于 85 dB(A)。', a: [0], e: '正确。5.3.3：升降机在额定载重量稳定运行时，应无异常震动和声响，噪声不应大于 85 dB(A)。测试方法见 6.7（GB/T 20062，测 3 次取最大值）。', s: '5.3.3；6.7' },
+    { t: 'single', q: '关于警示标志、铭牌文字、控制标记，下列要求正确的是：', o: ['可以存在少量油污', '应牢固、清晰、完整，不得有油污、水渍等', '只需在出厂时清晰', '可以用贴纸临时标识'], a: [1], e: '5.3.1.2：警示标志、铭牌文字、控制标记等应牢固、清晰、完整，不得有油污、水渍等。这是整机外观验收的必查项（表3 外观检查）。', s: '5.3.1.2；表3' },
+    { t: 'single', q: '下列哪项载荷数值与"额定载重量下的正常运行"要求对应？', o: ['装载额定载重量，在额定功率下稳定运行，满足设计速度', '承受 1.25 倍额定载重量', '承受 1.5 倍额定载重量', '承受 3.5 倍额定载重量'], a: [0], e: '5.3.2.4：升降机装载额定载重量，在额定功率下稳定运行，满足设计速度。这是额定工况的基本定义性要求，与 3.7 额定速度定义一致；后三者分别是动态、静态、极限载荷试验倍数。', s: '5.3.2.4；3.7' }
+  ]
+};
+
+
+/* ===== CH05 ===== */
+window.CH05 = {
+  id: 5,
+  title: '主体结构：轿厢',
+  slides: [
+    { h: '主体结构组成与轿厢一般要求（5.4.1~5.4.2.1）', body: '<p>5.4.1 主体结构的组成包括：轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系统及电缆收集装置等。</p><p>5.4.2.1 轿厢一般要求（a~k）：</p><ul><li>轿厢应<b>完全封闭</b>；内部<b>自由站立高度最小 2 m</b>；</li><li>应被导向，防止其脱离或卡滞，要求<b>至少有 4 个导向部件</b>；</li><li>底板相对水平面的最大倾斜度<b>不超过 5°</b>；</li><li>齿轮齿条式升降机中，正常导向装置或滚轮失效时，轿厢应配备有效装置使轿厢仍保持在导向装置上；</li><li>通风：围板无打孔应配备通风装置；如有打孔，打孔面积<b>至少为轿厢围板面积的 4%</b>。</li></ul>', src: '5.4.1；5.4.2.1' },
+    { h: '逃生与挂点（5.4.2.1 h~k）', body: '<ul><li><b>挂点装置</b>：应提供用于个人防坠落设备的挂点装置，符合 GB 30862—2014 的要求；数量和位置应符合逃生和救援方案，且<b>不少于最大承载人数</b>；</li><li><b>逃生设施</b>：应可以手动开启轿厢门、爬梯逃生门或活板门，以进入逃生设施（例如爬梯）；设计轿厢门和底板面积时考虑逃生所需适当空间；</li><li><b>逃生距离</b>：逃生时轿厢与逃生设施之间的距离应<b>不超过 1.1 m</b>，该距离应笔直、无障碍；</li><li><b>扶手</b>：应在轿厢内靠近轿厢门站立位置区域配备扶手，安装高度宜设置在 <b>0.9 m 至 1.1 m</b> 之间。</li></ul>', src: '5.4.2.1' },
+    { h: '底板、围板与顶板（5.4.2.2~5.4.2.4）', body: '<table><tr><th>部件</th><th>关键要求</th></tr><tr><td>轿厢底板</td><td>承受 5.3.2 载荷；<b>防滑设计</b>（如网纹铝板）；防止水停滞（如自流排水）；任何开口最大直径<b>不超过 15 mm</b>；每个工作人员至少 <b>0.25 m²</b> 底板面积</td></tr><tr><td>轿厢围板</td><td>底板与顶板之间<b>全高围板</b>；脚蹬/加强筋防滑设计（如花纹板）；任意位置 <b>100 mm×100 mm</b> 面积内施加均布 <b>200 N</b> 水平力应不失效；弹性变形不应导致围板与界面碰撞；打孔不允许直径 15 mm 球体通过</td></tr><tr><td>轿厢顶板</td><td>应设有顶板，承受 5.3.2 载荷；打孔不允许 15 mm 球体通过；不允许重 <b>0.7 kg、直径 75 mm±2 mm</b> 钢球自 <b>5 m</b> 高处掉落穿透</td></tr></table><div class="kv">口诀：开口孔径"15 mm 球体"是底板/围板/顶板/轿厢门四处的统一防坠物门槛。</div>', src: '5.4.2.2~5.4.2.4' },
+    { h: '轿厢门（5.4.2.5）', body: '<ul><li>开口应<b>至少净高 1.9 m</b>（从轿厢底板处测量）、<b>净宽至少 0.4 m</b>；门应完全覆盖开口；</li><li><b>不允许使用电动操作的轿厢门</b>；应有防止坠物的措施（如踢脚板）；门孔不允许直径 15 mm 球体通过；</li><li><b>防夹验证</b>：PFPE（安全绳/缓冲器）一端挂轿厢内部挂点、另一端挂在轿厢外人员身上时，向门的关闭方向施加 <b>150 N</b> 载荷，门应无法关闭和锁止；</li><li><b>观察窗</b>：如装有无打孔的门，应配备观察窗，宜设置在距轿厢底板底面 <b>1.5 m~1.8 m</b> 位置，面积不小于 <b>25 000 mm²</b>，透明且便于打开或拆卸；</li><li><b>联锁</b>：仅当所有轿厢门处于关闭位置时才可启动并保持运行；运行过程中轿厢门无法打开；门未锁止时无法启动运行；</li><li><b>强度</b>：施加载荷 <b>300 N</b> 时弹性变形量不超过 <b>30 mm</b>。</li></ul>', src: '5.4.2.5' },
+    { h: '活板门或爬梯逃生门（5.4.2.6）', body: '<ul><li>当轿厢承载允许的最多人数时，活板门或爬梯逃生门应能够正常开启；</li><li>顶板或底板上的活板门尺寸应<b>不小于 0.4 m × 0.5 m</b>；<b>顶板活板门不应朝向轿厢内开启，底板活板门应向轿厢内开启</b>；</li><li>爬梯逃生门开启方向<b>不应朝外</b>；</li><li>爬梯导向式升降机：爬梯逃生门应采取<b>全通道</b>的方式，可直接上下攀爬到爬梯，人员随身携带的防坠器能够在逃生爬梯的防坠落系统中安全使用；</li><li>爬梯逃生门打开时，从爬梯到轿厢门槛的水平距离应<b>不超过 240 mm</b>。</li></ul><div class="kv">易混点：顶板活板门向内开 vs 底板活板门向内开——都是"向轿厢内开启"，唯独爬梯逃生门"不应朝外"（即也不朝轿厢内？不，其开启方向另有约定，记住"不应朝外"即可）。</div>', src: '5.4.2.6' }
+  ],
+  questions: [
+    { t: 'single', q: '轿厢内部自由站立高度最小应为：', o: ['1.8 m', '2.0 m', '2.2 m', '2.5 m'], a: [1], e: '5.4.2.1 b)：轿厢内部自由站立高度最小为 2 m。注意与轿厢门净高 1.9 m（5.4.2.5 a)）区分——站立高度看内部空间，门高看出入口。', s: '5.4.2.1；5.4.2.5' },
+    { t: 'single', q: '轿厢应被导向，防止其脱离或卡滞，要求至少有：', o: ['2 个导向部件', '3 个导向部件', '4 个导向部件', '6 个导向部件'], a: [2], e: '5.4.2.1 d)：轿厢应被导向，防止其脱离或卡滞，要求至少有 4 个导向部件。导向部件数量直接关系轿厢运行稳定性。', s: '5.4.2.1' },
+    { t: 'single', q: '轿厢底板相对水平面的最大倾斜度不应超过：', o: ['3°', '5°', '8°', '10°'], a: [1], e: '5.4.2.1 e)：轿厢的设计应保证其底板相对水平面的最大倾斜度不超过 5°。这是保证人员站立安全与载荷稳定的关键参数。', s: '5.4.2.1' },
+    { t: 'judge', q: '轿厢围板如无打孔，则轿厢应配备通风装置；围板如有打孔，打孔面积至少应为轿厢围板面积的 4%。', a: [0], e: '正确。5.4.2.1 g)：轿厢应通风，轿厢围板如无打孔，轿厢应配备通风装置；如打孔，打孔面积至少应为轿厢围板面积的 4%。', s: '5.4.2.1' },
+    { t: 'single', q: '轿厢内个人防坠落设备挂点装置的数量和位置应符合逃生和救援方案，且应：', o: ['不少于 1 个', '等于导向部件数量', '不少于最大承载人数', '等于轿厢门数量'], a: [2], e: '5.4.2.1 h)：挂点装置的数量和位置应符合逃生和救援方案，且不少于最大承载人数。每个承载人员都应有一个可用挂点。', s: '5.4.2.1' },
+    { t: 'single', q: '逃生时，轿厢与逃生设施之间的距离应不超过：', o: ['0.8 m', '1.0 m', '1.1 m', '1.5 m'], a: [2], e: '5.4.2.1 j)：要求逃生时轿厢与逃生设施之间的距离应不超过 1.1 m，该距离应笔直、无障碍。这一距离限制是为了确保人员能安全跨越。', s: '5.4.2.1' },
+    { t: 'single', q: '轿厢内扶手（靠近轿厢门站立位置区域）的安装高度宜设置为：', o: ['0.7 m 至 0.9 m', '0.9 m 至 1.1 m', '1.1 m 至 1.3 m', '1.3 m 至 1.5 m'], a: [1], e: '5.4.2.1 k)：应在轿厢内靠近轿厢门站立位置区域配备扶手，扶手的安装高度宜设置在 0.9 m 至 1.1 m 之间。', s: '5.4.2.1' },
+    { t: 'single', q: '轿厢内的每个工作人员应拥有至少多少轿厢底板面积？', o: ['0.15 m²', '0.20 m²', '0.25 m²', '0.30 m²'], a: [2], e: '5.4.2.2：轿厢内的每个工作人员应拥有至少 0.25 m² 的轿厢底板面积。该值与额定载重量系列（240~450 kg）共同决定轿厢尺寸。', s: '5.4.2.2' },
+    { t: 'single', q: '轿厢底板、围板、顶板及轿厢门上的开口，均不允许下列哪种情况？', o: ['直径 10 mm 的球体通过', '直径 15 mm 的球体通过', '直径 20 mm 的球体通过', '直径 25 mm 的球体通过'], a: [1], e: '5.4.2.2~5.4.2.5：底板任何开口最大直径不超过 15 mm；围板打孔不允许直径 15 mm 球体通过；顶板打孔不允许 15 mm 球体通过；门孔不允许 15 mm 球体通过。"15 mm 球体"是统一的防坠物孔径门槛。', s: '5.4.2.2~5.4.2.5' },
+    { t: 'single', q: '在轿厢围板任意位置 100 mm×100 mm 面积内，施加均布多大水平力时应不失效？', o: ['100 N', '150 N', '200 N', '300 N'], a: [2], e: '5.4.2.3：在轿厢围板任意位置 100 mm×100 mm 面积内，施加均布的 200 N 水平力时应不失效。注意与轿厢门 300 N（5.4.2.5 i)）区分。', s: '5.4.2.3；5.4.2.5' },
+    { t: 'judge', q: '轿厢顶板应不允许一个重 0.7 kg、直径 75 mm±2 mm 的钢球自 5 m 的高处掉落时穿透轿厢顶板。', a: [0], e: '正确。5.4.2.4：顶板应不允许一个重 0.7 kg、直径 75 mm±2 mm 的钢球自 5 m 高处掉落时穿透。这是顶板抗冲击能力的直接判据。', s: '5.4.2.4' },
+    { t: 'single', q: '轿厢门开口的净高、净宽要求是：', o: ['净高至少 2.0 m，净宽至少 0.5 m', '净高至少 1.9 m（从轿厢底板处测量），净宽至少 0.4 m', '净高至少 1.8 m，净宽至少 0.6 m', '净高至少 2.2 m，净宽至少 0.4 m'], a: [1], e: '5.4.2.5 a)：轿厢门开口应至少净高 1.9 m（从轿厢底板处测量），净宽至少 0.4 m。门高小于内部站立高度（2 m），这是出入尺寸而非内部尺寸。', s: '5.4.2.5' },
+    { t: 'judge', q: '允许使用电动操作的轿厢门。', a: [1], e: '错误。5.4.2.5 c)：不允许使用电动操作的轿厢门。轿厢门必须手动操作，避免电动门夹人风险。', s: '5.4.2.5' },
+    { t: 'single', q: '当向轿厢门施加载荷 300 N 的力时，其弹性变形量应不超过：', o: ['20 mm', '25 mm', '30 mm', '40 mm'], a: [2], e: '5.4.2.5 i)：当向轿厢门施加载荷 300 N 的力时，弹性变形量应不超过 30 mm，且弹性变形不应导致轿厢门与任何界面发生碰撞。', s: '5.4.2.5' },
+    { t: 'single', q: '如装有无打孔的门，观察窗的面积应不小于：', o: ['15 000 mm²', '20 000 mm²', '25 000 mm²', '30 000 mm²'], a: [2], e: '5.4.2.5 g)：观察窗宜设置在距轿厢底板底面 1.5 m~1.8 m 的位置，面积不小于 25 000 mm²，观察窗应透明且便于打开或者拆卸，用于观察停层区域。', s: '5.4.2.5' },
+    { t: 'single', q: '顶板或底板上的活板门尺寸应：', o: ['不小于 0.3 m × 0.4 m', '不小于 0.4 m × 0.5 m', '不小于 0.5 m × 0.6 m', '不小于 0.6 m × 0.7 m'], a: [1], e: '5.4.2.6 b)：顶板或底板上的活板门尺寸应不小于 0.4 m × 0.5 m。', s: '5.4.2.6' },
+    { t: 'single', q: '关于活板门开启方向，下列说法正确的是：', o: ['顶板活板门应向轿厢内开启，底板活板门不应朝向轿厢内开启', '顶板活板门不应朝向轿厢内开启，底板活板门应向轿厢内开启', '顶板和底板活板门均不应朝向轿厢内开启', '顶板和底板活板门均应朝向轿厢内开启'], a: [1], e: '5.4.2.6 b)：顶板活板门不应朝向轿厢内开启，底板活板门应向轿厢内开启。方向设计服务于逃生路径：顶板逃生向轿厢外打开，底板逃生向轿厢内打开。', s: '5.4.2.6' },
+    { t: 'judge', q: '爬梯式升降机的爬梯逃生门打开时，从爬梯到轿厢门槛的水平距离应不超过 240 mm。', a: [0], e: '正确。5.4.2.6 c)：当爬梯逃生门打开时，从爬梯到轿厢门槛的水平距离应不超过 240 mm。同时爬梯逃生门开启方向不应朝外，爬梯式升降机应采取全通道方式。', s: '5.4.2.6' }
+  ]
+};
+
+
+/* ===== CH06 ===== */
+window.CH06 = {
+  id: 6,
+  title: '动力系统',
+  slides: [
+    { h: '分类与一般要求（5.4.3.1~5.4.3.2）', body: '<p>塔架升降机的动力系统主要有三种类型：<b>爬升式、卷扬式、齿轮齿条式</b>。</p><ul><li>动力系统应<b>直接安装在轿厢上</b>，每台升降机应<b>至少装配一个专用动力系统</b>；</li><li>正常运行和维护期间，轿厢应在<b>电力驱动</b>下上升下降；</li><li><b>速度偏差</b>：空载上升速度或额定载重量下降速度偏差均不应超过额定速度的 <b>15%</b>；</li><li>应配备用于记录动力系统<b>使用量</b>的装置；</li><li>应配备<b>超载检测装置</b>；超载装置一旦触发，升降机应停止运行直至超载被卸除；触发时超载指示器应持续发出视觉或听觉信号。</li></ul>', src: '5.4.3.1；5.4.3.2' },
+    { h: '手动下降（5.4.3.3）', body: '<ul><li>应配备一个手动操作系统，在<b>断电情况</b>下使升降机能够受控下降；系统应能从轿厢外手动释放，且应需要一个<b>不超过 400 N</b> 持续的力；</li><li>手动下降运行应采用<b>"自复位"</b>操作；升降机在额载条件下的运行速度应<b>不低于额定速度的 20%，不高于额定速度的 166%</b>；</li><li>齿轮齿条式升降机手动下降最大速度<b>不高于 0.63 m/s</b>，且低于超速安全装置的触发速度；</li><li>手动下降系统的设计，应使其能够防止人员身体的任何部位被夹住或受到撞击。</li></ul><div class="kv">易混点：166% = 手动下降速度上限；20% = 手动下降速度下限。0.63 m/s 是齿轮齿条式手动下降绝对上限。</div>', src: '5.4.3.3' },
+    { h: '爬升式动力系统（5.4.3.4）', body: '<ul><li>组成：爬升式提升机构、钢丝绳、滑轮和导向轮、相关驱动系统和安全部件；</li><li>滑轮、卷筒及驱动轮<b>最小节圆直径应不小于 20 倍的钢丝绳直径</b>；不承载的滑轮或倾斜角小于 5° 时，最小节圆直径<b>不小于 10 倍</b>钢丝绳直径；</li><li>可靠性试验：承载极限工作载荷时，轻型 <b>20 000 次</b>循环、重型 <b>60 000 次</b>循环；机械传动应为<b>强制型</b>且不可依靠工作中的摩擦力；</li><li>应配备<b>主制动器</b>，在下列情况应自动起作用：①曲柄或手柄手动作用力终止；②主动力源失电；③控制电路动力源失电；</li><li>制动器应在 <b>200 mm</b> 距离内停止承载 <b>1.25 倍额定载重量</b>并按额定速度运行的升降机；</li><li>在上升和下降不小于 <b>1.5 倍极限工作载荷</b>时，牵引系统中的钢丝绳不能发生打滑或蠕动。</li></ul>', src: '5.4.3.4' },
+    { h: '卷扬式动力系统（5.4.3.5）', body: '<ul><li>组成：卷扬式提升机构、钢丝绳、滑轮和导向轮、安全部件；包括<b>电动机、减速机及卷筒</b>，通常固定在顶部；</li><li>偏斜角：<b>阻旋转钢丝绳不宜大于 2°</b>，标准钢丝绳不宜大于 <b>4°</b>；</li><li>卷筒应有<b>法兰盘</b>，法兰盘高于最外层钢丝绳的凸起高度应不小于钢丝绳直径的 <b>1.5 倍</b>；</li><li>钢丝绳卷筒应有机加工或最大粗糙度为 <b>Ra=12.5 µm</b> 的凹槽；</li><li>最低位置时下降运动应自动停止，此时距离接触到卷筒上钢丝绳锚固点至少应有 <b>3 个完整圈</b>钢丝绳盘绕在卷筒上。</li></ul>', src: '5.4.3.5' },
+    { h: '齿轮齿条式动力系统（5.4.3.6）', body: '<ul><li>组成：齿轮齿条式提升机构、齿条、导向轮及安全部件；驱动齿轮和防坠安全装置齿轮应以<b>强制形式</b>固定在各自轴上，不应使用摩擦和夹紧的方法固定；防坠安全装置齿轮位置应<b>低于驱动齿轮</b>并作用在轿厢结构上；</li><li>任何条件下轿厢的负向加速度不得超过 <b>1.0 g</b>；</li><li>齿轮安全系数：<b>弯曲疲劳强度≥2，接触疲劳强度≥1.4</b>；</li><li>齿轮模数：驱动单元背轮<b>直接作用</b>到齿条上应<b>不小于 4</b>；间接作用时应<b>不小于 6</b>；</li><li>冗余驱动：配备两个冗余驱动单元的系统应至少有 2 个相同的驱动单元，每个均有<b>独立制动器</b>并以强制形式分别与齿条齿轮系统连接；</li><li>每个驱动单元应能<b>独立阻止</b>负载 1.25 倍额定载重量的轿厢向下运行；能通过<b>无动力下降</b>功能使轿厢运行至底部停层；并配备机械装置使轿厢和 1.25 倍额定载重量以<b>不超过 1.1 倍额定速度</b>安全下降。</li></ul>', src: '5.4.3.6' },
+    { h: '钢丝绳与悬挂装置（5.4.3.7~5.4.3.8）', body: '<table><tr><th>项目</th><th>要求</th></tr><tr><td>材质</td><td>镀锌钢丝绳，符合 GB/T 20118；端部和鸡心环符合 GB/T 6946；使用期间应耐腐蚀</td></tr><tr><td>配置</td><td>提升机构和防坠落安全装置<b>至少各配一根</b>钢丝绳</td></tr><tr><td>最小标称直径</td><td>钢丝绳 <b>8 mm</b>；导向用钢丝绳 <b>11 mm</b></td></tr><tr><td>安全系数</td><td>单作用钢丝绳安全系数<b>不小于 9</b></td></tr><tr><td>悬挂装置</td><td>设计符合 GB/T 19155—2017 中 6.5 和第9章</td></tr></table><div class="kv">速记：工作绳 8 mm、导向绳 11 mm（导向要更粗，因为跨越长距离张紧）；安全系数≥9。</div>', src: '5.4.3.7；5.4.3.8' }
+  ],
+  questions: [
+    { t: 'single', q: '塔架升降机的动力系统不包括下列哪种类型？', o: ['爬升式', '卷扬式', '齿轮齿条式', '液压式'], a: [3], e: '5.4.3.1：塔架升降机的动力系统主要有三种类型：爬升式、卷扬式、齿轮齿条式。液压式不在其中（对应第1章未涉及液压和气动起升机构）。', s: '5.4.3.1；第1章' },
+    { t: 'single', q: '每台升降机应至少装配的动力系统数量是：', o: ['0 个（可选）', '1 个专用动力系统', '2 个', '3 个'], a: [1], e: '5.4.3.2 a)：动力系统应直接安装在轿厢上，每台升降机应至少装配一个专用动力系统。', s: '5.4.3.2' },
+    { t: 'single', q: '升降机空载上升速度或额定载重量下降速度的偏差，均不应超过额定速度的：', o: ['5%', '10%', '15%', '20%'], a: [2], e: '5.4.3.2 c)：空载上升速度或额定载重量下降速度偏差均不应超过额定速度的 15%。注意与 6.10 提升速度测试误差 ±5%（设计值）区分。', s: '5.4.3.2；6.10' },
+    { t: 'judge', q: '超载装置一旦触发，升降机应停止运行直至超载被卸除，超载指示器应持续发出视觉或听觉信号。', a: [0], e: '正确。5.4.3.2 f) g)：超载装置一旦触发，升降机应停止运行直至超载被卸除；触发时超载指示器应持续发出视觉或听觉信号以警示操作人员。', s: '5.4.3.2' },
+    { t: 'single', q: '手动下降系统从轿厢外手动释放时，应需要的持续力不超过：', o: ['200 N', '300 N', '400 N', '500 N'], a: [2], e: '5.4.3.3 a)：手动操作系统应能从轿厢外手动释放，且应需要一个不超过 400 N 持续的力。', s: '5.4.3.3' },
+    { t: 'single', q: '手动下降运行在额载条件下的速度，应不低于额定速度的多少、不高于额定速度的多少？', o: ['不低于 10%，不高于 150%', '不低于 20%，不高于 166%', '不低于 25%，不高于 175%', '不低于 30%，不高于 200%'], a: [1], e: '5.4.3.3 b)：手动下降运行应采用"自复位"操作，升降机在额载条件下的运行速度应不低于额定速度的 20%，不高于额定速度的 166%。', s: '5.4.3.3' },
+    { t: 'single', q: '齿轮齿条式升降机手动下降的最大速度不高于：', o: ['0.40 m/s', '0.50 m/s', '0.63 m/s', '0.70 m/s'], a: [2], e: '5.4.3.3 b)：对于齿轮齿条式升降机，其手动下降速度最大速度不高于 0.63 m/s，且低于超速安全装置的触发速度。', s: '5.4.3.3' },
+    { t: 'single', q: '爬升式提升机构的滑轮、卷筒及驱动轮最小节圆直径应不小于钢丝绳直径的：', o: ['10 倍', '15 倍', '20 倍', '25 倍'], a: [2], e: '5.4.3.4 b)：滑轮、卷筒及驱动轮最小节圆直径应不小于 20 倍的钢丝绳直径。对于不承载的滑轮或倾斜角小于 5° 时，最小节圆直径应不小于 10 倍钢丝绳直径。', s: '5.4.3.4' },
+    { t: 'single', q: '爬升式提升机构可靠性试验时，轻型应能正常工作多少次循环？', o: ['10 000 次', '20 000 次', '60 000 次', '100 000 次'], a: [1], e: '5.4.3.4 e)：提升机构在进行可靠性试验承载极限工作载荷时，应能正常工作 20 000 次循环（轻型）或 60 000 次循环（重型）。', s: '5.4.3.4' },
+    { t: 'single', q: '爬升式提升机构的主制动器应在多少距离内停止承载 1.25 倍额定载重量并按额定速度运行的升降机？', o: ['100 mm', '200 mm', '300 mm', '500 mm'], a: [1], e: '5.4.3.4 g)：制动器应在 200 mm 距离内停止承载 1.25 倍额定载重量并按额定速度运行的升降机。', s: '5.4.3.4' },
+    { t: 'multi', q: '爬升式提升机构主制动器应在下列哪些情况下自动起作用？（多选）', o: ['施加在曲柄或手柄的手动作用力终止', '主动力源失电', '控制电路的动力源失电', '轿厢到达中间停层'], a: [0, 1, 2], e: '5.4.3.4 f)：主制动器应在下列情况自动起作用：1）施加在曲柄或手柄的手动作用力终止；2）主动力源失电；3）控制电路的动力源失电。到达停层属于正常行程控制，不是制动器自动动作条件。', s: '5.4.3.4' },
+    { t: 'single', q: '爬升式提升装置在上升和下降不小于多少极限工作载荷时，牵引系统中的钢丝绳不能发生打滑或蠕动？', o: ['1.0 倍', '1.25 倍', '1.5 倍', '2.0 倍'], a: [2], e: '5.4.3.4 h)：爬升式提升装置在上升和下降不小于 1.5 倍极限工作载荷时，牵引系统中的钢丝绳不能发生打滑或蠕动。', s: '5.4.3.4' },
+    { t: 'single', q: '卷扬式动力系统中，阻旋转钢丝绳的偏斜角不宜大于：', o: ['1°', '2°', '4°', '5°'], a: [1], e: '5.4.3.5 c)：对于阻旋转钢丝绳，偏斜角不宜大于 2°；对于标准钢丝绳，偏斜角不宜大于 4°。', s: '5.4.3.5' },
+    { t: 'single', q: '卷筒法兰盘高于最外层钢丝绳的凸起高度应不小于钢丝绳直径的：', o: ['1.0 倍', '1.5 倍', '2.0 倍', '2.5 倍'], a: [1], e: '5.4.3.5 d)：卷筒应有法兰盘，法兰盘高于最外层钢丝绳的凸起高度应不小于钢丝绳直径的 1.5 倍，防止钢丝绳脱出卷筒。', s: '5.4.3.5' },
+    { t: 'single', q: '对动力提升机构，升降机在最低位置时下降运动应自动停止，此时卷筒上至少应有几个完整圈钢丝绳盘绕？', o: ['1 个', '2 个', '3 个', '5 个'], a: [2], e: '5.4.3.5 f)：升降机在最低位置时下降运动应自动停止，此时距离接触到卷筒上钢丝绳锚固点至少有 3 个完整圈钢丝绳盘绕在卷筒上。', s: '5.4.3.5' },
+    { t: 'single', q: '齿轮齿条式动力系统中，齿轮的弯曲疲劳强度安全系数和接触疲劳强度安全系数分别应不小于：', o: ['1.4 和 2', '2 和 1.4', '2 和 2', '1.5 和 1.5'], a: [1], e: '5.4.3.6 g)：齿轮每个齿的弯曲疲劳强度的安全系数应不小于 2，接触疲劳强度的安全系数应不小于 1.4。', s: '5.4.3.6' },
+    { t: 'single', q: '驱动单元背轮直接作用到齿条上时，齿轮模数应不小于；间接作用时齿轮模数应不小于：', o: ['4 和 6', '6 和 4', '5 和 8', '4 和 8'], a: [0], e: '5.4.3.6 i)：驱动单元背轮直接作用到齿条上，齿轮模数应不小于 4；齿轮通过与齿条直接接触的部件实现间接作用于齿条时，齿轮模数应不小于 6。', s: '5.4.3.6' },
+    { t: 'single', q: '任何条件下，齿轮齿条式升降机轿厢的负向加速度不得超过：', o: ['0.5 g', '0.8 g', '1.0 g', '1.5 g'], a: [2], e: '5.4.3.6 f)：在任何条件下，轿厢的负向加速度不得超过 1.0 g。这是防止坠落冲击过大的加速度上限。', s: '5.4.3.6' },
+    { t: 'single', q: '钢丝绳的最小标称直径和导向用钢丝绳的最小直径分别是：', o: ['8 mm 和 10 mm', '8 mm 和 11 mm', '9 mm 和 12 mm', '10 mm 和 12 mm'], a: [1], e: '5.4.3.7 d) e)：钢丝绳的最小标称直径应为 8 mm；导向用钢丝绳，最小直径应为 11 mm。', s: '5.4.3.7' },
+    { t: 'single', q: '单作用钢丝绳的安全系数应不小于：', o: ['6', '7', '8', '9'], a: [3], e: '5.4.3.7 g)：单作用钢丝绳安全系数不小于 9。注意与 GB/T 46154（工作绳 10）不同，本标准为 9。', s: '5.4.3.7' },
+    { t: 'single', q: '齿轮齿条式升降机配备两个冗余驱动单元时，每个驱动单元应能独立阻止负载多少倍额定载重量的轿厢向下运行？', o: ['1.0 倍', '1.25 倍', '1.5 倍', '2.0 倍'], a: [1], e: '5.4.3.6 k)：每个驱动单元应能独立阻止负载 1.25 倍额定载重量的轿厢向下运行。', s: '5.4.3.6' }
+  ]
+};
+
+
+/* ===== CH07 ===== */
+window.CH07 = {
+  id: 7,
+  title: '安全保护装置与防坠落安全装置',
+  slides: [
+    { h: '行程限位开关（5.4.4.1）', body: '<p>四个限位开关的动作逻辑是本章最高频考点：</p><table><tr><th>开关</th><th>触发位置</th><th>触发后状态</th></tr><tr><td>上升限位开关</td><td>顶部行程到达处</td><td>只能<b>下降</b>，无法上升</td></tr><tr><td>终极上限位开关</td><td>到达行程极限<b>之前</b>完全停止</td><td>无法上升或下降，直到<b>维护人员采取纠正措施</b></td></tr><tr><td>下降限位开关</td><td>底部行程到达处</td><td>只能<b>上升</b>，无法下降</td></tr><tr><td>终极下降限位开关</td><td>到达行程极限<b>之前</b>完全停止</td><td>无法上升或下降，直到维护人员采取纠正措施（<b>齿轮齿条式升降机应配备</b>）</td></tr></table><div class="kv">口诀：限位开关留一个方向（上触发→只能下；下触发→只能上）；终极限位开关锁死双向，需人工纠正。</div>', src: '5.4.4.1' },
+    { h: '超载、障碍、急停与联锁（5.4.4.2~5.4.4.5）', body: '<ul><li><b>超载检测装置</b>：应在达到提升机构的 <b>1.25 倍额定载重量或之前</b>触发，超载通过指示灯或声音信号指示；</li><li><b>障碍检测装置</b>：当障碍物可能与运行的轿厢有危险接触时，应配备<b>顶部和底部</b>障碍检测装置，在整个升降通道上均应考虑，并<b>优先选择全轮廓障碍检测装置</b>；</li><li><b>急停开关</b>：应配备一个紧急停止开关，以便在<b>既有安全措施失效</b>的情况下停止升降机；</li><li><b>联锁装置（选配）</b>：除非所有停层门均处于关闭状态，否则应无法启动轿厢或保持轿厢运行；轿厢离开停层区域后，停层门应锁紧。</li></ul>', src: '5.4.4.2~5.4.4.5' },
+    { h: '安全锁（5.4.5.1）', body: '<ul><li>应配备一个安全锁防止升降机坠落，如果升降机在<b>下降中超速</b>，该装置应<b>自动作用</b>；</li><li>安全锁应以<b>机械方式</b>检测安全钢丝绳上的超速状况；设计应限制其动载荷系数<b>不大于 3</b>；</li><li>应能够被测试和复位，测试后应在复位后<b>立即进入运行状态</b>，不需要任何调整或更换零件；设计应使其在<b>负载下不能手动释放</b>；</li><li>安全锁锁止后，应持续发出视觉或听觉信号，同时允许提升机将轿厢提升向上运行，<b>不允许向下运行</b>；</li><li>工作钢丝绳松弛或失效断裂，安全锁应自动锁止到安全钢丝绳上；</li><li>离心式安全锁锁绳速度见附录 A；摆臂式安全锁当工作钢丝绳松弛或断裂时，应能自动锁住安全钢丝绳并停止升降机运行。</li></ul>', src: '5.4.5.1' },
+    { h: '防坠安全器（5.4.5.2）', body: '<div class="kv"><b>齿轮齿条式升降机</b>，应配备一个<b>超速安全装置</b>（防坠安全器或带离心限速器双电动机系统），在升降机下降超速时动作，以防止升降机坠落。</div><p>防坠安全器应符合 <b>GB 26557—2011</b> 中 5.6.2 的要求。</p><div class="kv">区分：安全锁（5.4.5.1）用于钢丝绳悬挂类（锁住安全钢丝绳）；防坠安全器（5.4.5.2）用于齿轮齿条式（超速时制停齿条上的轿厢）。</div>', src: '5.4.5.2' }
+  ],
+  questions: [
+    { t: 'single', q: '上升限位开关触发后，升降机在电力驱动下：', o: ['无法上升，也无法下降', '只能上升，无法下降', '只能下降，无法上升', '可正常双向运行'], a: [2], e: '5.4.4.1 a)：上升限位开关使升降机停止在顶部行程到达处，触发此开关后，升降机在电力驱动下只能下降，无法上升。', s: '5.4.4.1' },
+    { t: 'single', q: '终极上限位开关触发后，升降机在电力驱动下：', o: ['只能下降，无法上升', '只能上升，无法下降', '无法上升或下降，直到维护人员采取纠正措施', '可正常双向运行'], a: [2], e: '5.4.4.1 b)：终极上限位开关使升降机在到达行程极限之前完全停止，触发此开关后，升降机在电力驱动下无法上升或下降，直到维护人员采取纠正措施。', s: '5.4.4.1' },
+    { t: 'single', q: '下降限位开关触发后，升降机在电力驱动下：', o: ['只能下降，无法上升', '只能上升，无法下降', '无法上升或下降', '可正常双向运行'], a: [1], e: '5.4.4.1 c)：下降限位开关使升降机停止在底部行程到达处，触发此开关后，升降机在电力驱动下只能上升，无法下降。', s: '5.4.4.1' },
+    { t: 'judge', q: '终极下降限位开关是钢丝绳式升降机应配备的。', a: [1], e: '错误。5.4.4.1 d)：终极下降限位开关是<b>齿轮齿条式</b>升降机应配备的，使升降机在到达行程极限之前完全停止。', s: '5.4.4.1' },
+    { t: 'single', q: '超载检测装置应在达到提升机构多少倍额定载重量或之前触发？', o: ['1.0 倍', '1.1 倍', '1.25 倍', '1.5 倍'], a: [2], e: '5.4.4.2：应配备超载检测装置，应在达到提升机构的 1.25 倍额定载重量或之前触发，超载应通过指示灯或声音信号指示出来。', s: '5.4.4.2' },
+    { t: 'multi', q: '关于障碍检测装置，下列说法正确的有：（多选）', o: ['当障碍物可能与运行的轿厢有危险接触时应配备', '应配备顶部和底部障碍检测装置', '在整个升降通道上均应考虑', '优先选择局部轮廓障碍检测装置'], a: [0, 1, 2], e: '5.4.4.3：当障碍物可能与运行的轿厢有危险接触时，应配备顶部和底部障碍检测装置，在整个升降通道上均应考虑到这一要求，并优先选择<b>全轮廓</b>障碍检测装置（而非局部）。', s: '5.4.4.3' },
+    { t: 'single', q: '急停开关的作用是：', o: ['正常停机', '在既有安全措施失效的情况下停止升降机', '防止超载', '替代限位开关'], a: [1], e: '5.4.4.4：应配备一个紧急停止开关，以便在既有安全措施失效的情况下停止升降机。它独立于各控制电路（5.5.8 另有急停按钮要求）。', s: '5.4.4.4；5.5.8' },
+    { t: 'single', q: '对于配备联锁装置的升降机，在正常操作条件下：', o: ['只要任一停层门开启即可运行', '除非所有停层门均处于关闭状态，否则应无法启动轿厢或保持轿厢运行', '停层门开启时仍可保持运行', '联锁装置只影响轿厢门'], a: [1], e: '5.4.4.5：对于配备联锁装置的升降机，在正常操作条件下，除非所有停层门均处于关闭状态，否则应无法启动轿厢或保持轿厢运行；轿厢离开停层区域后，停层门应锁紧。', s: '5.4.4.5' },
+    { t: 'single', q: '安全锁设计应限制其动载荷系数不大于：', o: ['2', '3', '4', '5'], a: [1], e: '5.4.5.1 c)：安全锁的设计应限制其动载荷系数不大于 3。', s: '5.4.5.1' },
+    { t: 'judge', q: '安全锁应以机械方式检测安全钢丝绳上的超速状况。', a: [0], e: '正确。5.4.5.1 b)：安全锁应以机械方式检测安全钢丝绳上的超速状况。强调"机械方式"意味着不依赖电气信号。', s: '5.4.5.1' },
+    { t: 'single', q: '安全锁测试后，应如何恢复运行？', o: ['需更换零件后复位', '需调整后方可复位', '复位后立即进入运行状态，且不需要任何调整或更换零件', '需专业厂家现场复位'], a: [2], e: '5.4.5.1 d)：安全锁应能够被测试和复位，测试后，安全锁应在复位后立即进入运行状态，并且不需要任何调整或更换零件。', s: '5.4.5.1' },
+    { t: 'single', q: '安全锁锁止后，关于升降机运行状态的说法正确的是：', o: ['允许向下运行', '允许提升机将轿厢提升向上运行，不允许向下运行', '不允许向上也不允许向下运行', '运行状态不受限制'], a: [1], e: '5.4.5.1 f)：安全锁锁止后，应持续发出视觉或听觉信号，同时允许提升机将轿厢提升向上运行，不允许升降机向下运行。向上是救援方向。', s: '5.4.5.1' },
+    { t: 'judge', q: '安全锁的设计应使其在负载下不能手动释放。', a: [0], e: '正确。5.4.5.1 e)：安全锁的设计应使其在负载下不能手动释放，防止误操作导致坠落。', s: '5.4.5.1' },
+    { t: 'single', q: '工作钢丝绳松弛或失效断裂时，安全锁应：', o: ['保持原状态等待检修', '自动锁止到安全钢丝绳上', '发出信号但不动作', '允许轿厢继续运行'], a: [1], e: '5.4.5.1 g)：工作钢丝绳松弛或失效断裂，安全锁应自动锁止到安全钢丝绳上。这是安全钢丝绳"平时不承载、失效时承载"设计的落地。', s: '5.4.5.1；3.15' },
+    { t: 'single', q: '齿轮齿条式升降机应配备的超速安全装置可以是：', o: ['安全锁或限位开关', '防坠安全器或带离心限速器双电动机系统', '超载检测装置或联锁装置', '障碍检测装置或急停开关'], a: [1], e: '5.4.5.2 a)：齿轮齿条式升降机，应配备一个超速安全装置（防坠安全器或带离心限速器双电动机系统），在升降机下降超速时动作，以防止升降机坠落。', s: '5.4.5.2' },
+    { t: 'single', q: '防坠安全器应符合下列哪项标准的要求？', o: ['GB/T 19155—2017 中 6.3', 'GB 26557—2011 中 5.6.2', 'GB 30862—2014 中第6章', 'GB/T 5226.1—2019 中 9.2'], a: [1], e: '5.4.5.2 b)：防坠安全器应符合 GB 26557—2011 中 5.6.2 的要求；6.15 其试验按 GB 26557—2011 中 6.2.3 进行。', s: '5.4.5.2；6.15' }
+  ]
+};
+
+
+/* ===== CH08 ===== */
+window.CH08 = {
+  id: 8,
+  title: '运行导向系统、操控装置与电缆收集装置',
+  slides: [
+    { h: '三种运行导向系统（5.4.6）', body: '<p>5.4.6.1：升降机的运行导向系统的导向方式有三种：<b>爬梯、钢丝绳、齿轮齿条</b>。</p><table><tr><th>导向方式</th><th>结构要点</th></tr><tr><td>钢丝绳式（5.4.6.2）</td><td>以从塔架顶部吊梁垂下的<b>两根钢丝绳</b>作为导向，下端穿过起始层平台用拉紧支架张紧；沿途各层平台下面均设固定装置（垂直方向上安装距离<b>不大于 20 m</b>）；导向钢丝绳与轿厢之间用<b>钢丝绳导向器</b>连接；安装位置应自下而上始终靠近塔架内预设的爬梯</td></tr><tr><td>爬梯式（5.4.6.3）</td><td>以塔架内壁上预先装设的<b>铝合金爬梯</b>作为导轨；爬梯竖梁与轿厢之间用<b>支撑臂</b>连接；爬梯间用<b>内插式连接</b>方式固定；塔架支撑固定爬梯踏棍，距离竖梁内侧面<b>不小于 15 mm</b></td></tr><tr><td>齿轮齿条式（5.4.6.4）</td><td>安装在轿厢背侧的<b>导向支撑臂</b>、齿轮与安装在塔架上的<b>齿条式爬梯</b>；齿条式爬梯一侧为齿条、另一侧为钢管；导向支撑臂<b>两组导轮包夹</b>齿条和钢管，保证不倾覆</td></tr></table>', src: '5.4.6' },
+    { h: '操控装置（5.4.7）', body: '<p>操控装置包括<b>电动操作系统</b>和<b>手动切换执行机构</b>。控制功能应符合 GB/T 5226.1—2019 中 9.2 的要求。</p><ul><li><b>电动操作</b>：通过设在轿厢内部和外部的控制装置实现，可控制升降机以<b>点动或自动</b>方式运行；当轿厢控制装置的转换开关旋转到<b>自动档位</b>时，即可使用外部控制装置操纵；</li><li><b>手动下降机构</b>：用于停电或电动操作系统失灵时，使轿厢依靠<b>自身重力</b>沿工作钢丝绳以安全速度下降到预定位置；操纵手柄设于<b>轿厢顶部</b>人手可以触及的位置，按箭头所示方向扳动即可；</li><li><b>控制模式</b>：轿厢内控制（除急停功能外，相较于所有其他控制应有<b>更高的优先级</b>）；轿厢外控制（轿厢外、地面和/或停层处，所有轿厢外控制装置应为<b>自动控制模式</b>）。</li></ul>', src: '5.4.7' },
+    { h: '电缆收集装置（5.4.8）', body: '<p>5.4.8.1 分类：升降机通过电缆供电，运行时电缆需要收集或释放，实现方式主要为以下三种：<b>收缆桶收集、电缆滑车、主动收缆方式</b>。</p><table><tr><th>方式</th><th>要点</th></tr><tr><td>收缆桶收集</td><td>收缆桶一般常置于升降机底板停靠平台<b>下方</b>；需在底部停靠平台开孔，孔径建议<b>不大于 300 mm</b>，孔边缘需要防护，避免损伤电缆</td></tr><tr><td>电缆滑车</td><td>将电缆悬挂在升降机与塔架<b>中间层平台</b>上；需有导向装置（一般采用<b>钢丝绳</b>做导向）防止旋转；与平台间保持安全距离，必要时增加导向装置</td></tr><tr><td>主动收缆方式</td><td>主要包括卷筒、电动机、减速机等；运行时<b>自动收集或释放</b>电缆；配备<b>拉力检测或扭矩限制器</b>装置，限制对电缆的最大拉力</td></tr></table>', src: '5.4.8' }
+  ],
+  questions: [
+    { t: 'single', q: '钢丝绳式升降机的运行导向系统以几根从塔架顶部吊梁垂下的钢丝绳作为导向？', o: ['1 根', '2 根', '3 根', '4 根'], a: [1], e: '5.4.6.2：钢丝绳式升降机的运行导向系统以从塔架顶部吊梁垂下的两根钢丝绳作为导向，钢丝绳下端穿过升降机起始层平台用拉紧支架张紧。', s: '5.4.6.2' },
+    { t: 'single', q: '钢丝绳式升降机导向钢丝绳沿途固定装置的安装距离在垂直方向上不大于：', o: ['10 m', '15 m', '20 m', '25 m'], a: [2], e: '5.4.6.2：沿途所穿过的各层平台下面均设有固定装置，此固定装置的安装距离在垂直方向上不大于 20 m。', s: '5.4.6.2' },
+    { t: 'judge', q: '爬梯式升降机的爬梯间采用内插式连接方式固定。', a: [0], e: '正确。5.4.6.3：爬梯间用内插式连接方式固定，塔架支撑固定爬梯踏棍，距离竖梁内侧面不小于 15 mm。', s: '5.4.6.3' },
+    { t: 'single', q: '爬梯式升降机中，塔架支撑固定爬梯踏棍，距离竖梁内侧面应：', o: ['不大于 10 mm', '不小于 15 mm', '等于 20 mm', '不大于 25 mm'], a: [1], e: '5.4.6.3：塔架支撑固定爬梯踏棍，距离竖梁内侧面不小于 15 mm。', s: '5.4.6.3' },
+    { t: 'single', q: '齿轮齿条式升降机的导向支撑臂如何保证升降机不倾覆？', o: ['用一组导轮单侧顶住齿条', '两组导轮包夹住齿条式爬梯两侧的齿条和钢管', '用螺栓直接固定在塔架上', '依靠钢丝绳拉紧'], a: [1], e: '5.4.6.4：导向支撑臂两组导轮包夹住齿条式爬梯两侧的齿条和钢管，保证齿轮齿条式升降机不倾覆；齿轮顶住齿条式钢管一侧，保证各齿轮与齿条啮合良好。', s: '5.4.6.4' },
+    { t: 'single', q: '升降机的操控装置包括：', o: ['电动操作系统和手动切换执行机构', '卷扬机构和制动器', '收缆桶和电缆滑车', '限位开关和超载检测装置'], a: [0], e: '5.4.7：操控装置包括电动操作系统和手动切换执行机构。其控制功能应符合 GB/T 5226.1—2019 中 9.2 的要求。', s: '5.4.7' },
+    { t: 'single', q: '关于控制模式，下列说法正确的是：', o: ['轿厢外控制相较于所有其他控制应有更高的优先级', '除急停功能外，轿厢内控制相较于所有其他控制应有更高的优先级', '轿厢内和轿厢外控制优先级相同', '地面控制优先级最高'], a: [1], e: '5.4.7 c)：除急停功能外，轿厢内控制相较于所有其他控制应有更高的优先级；轿厢外的所有控制装置应为自动控制模式。', s: '5.4.7' },
+    { t: 'single', q: '手动下降机构的操纵手柄设于什么位置？', o: ['轿厢底板', '轿厢顶部人手可以触及的位置', '塔架底部', '停层平台'], a: [1], e: '5.4.7 b)：手动下降机构的操纵手柄设于轿厢顶部人手可以触及的位置，使用时只需按箭头所示方向扳动即可。', s: '5.4.7' },
+    { t: 'single', q: '收缆桶收集电缆方式中，底部停靠平台开孔孔径建议不大于：', o: ['200 mm', '250 mm', '300 mm', '400 mm'], a: [2], e: '5.4.8.2：收缆桶收集电缆方式，需要在升降机底部停靠平台开孔，孔径建议不大于 300 mm，孔边缘需要防护，避免损伤电缆。', s: '5.4.8.2' },
+    { t: 'single', q: '电缆滑车的导向装置一般采用什么做导向？', o: ['爬梯', '齿条', '钢丝绳', '导轨'], a: [2], e: '5.4.8.3：电缆滑车需有导向装置，一般采用钢丝绳做导向，防止其旋转。', s: '5.4.8.3' },
+    { t: 'single', q: '主动收缆装置应配备什么装置以限制对电缆的最大拉力？', o: ['超载检测装置', '拉力检测或扭矩限制器装置', '限位开关', '安全锁'], a: [1], e: '5.4.8.4：主动收揽装置应配备拉力检测或扭矩限制器装置，限制对电缆的最大拉力，避免损伤电缆。', s: '5.4.8.4' },
+    { t: 'multi', q: '升降机电缆收集或释放的实现方式包括下列哪些？（多选）', o: ['收缆桶收集', '电缆滑车', '主动收缆方式', '人工卷绕'], a: [0, 1, 2], e: '5.4.8.1：升降机通过电缆供电，运行时电缆需要收集或释放，实现方式主要为收缆桶收集、电缆滑车、主动收缆方式三种。人工卷绕不在其列。', s: '5.4.8.1' }
+  ]
+};
+
+
+/* ===== CH09 ===== */
+window.CH09 = {
+  id: 9,
+  title: '电气控制系统',
+  slides: [
+    { h: '供电与接地（5.5.1~5.5.3）', body: '<ul><li>电气系统与元器件应符合 <b>GB/T 5226.1—2019</b> 的要求；</li><li>电气控制系统供电应采用<b>三相五线制</b>；<b>接零、接地线应始终分开</b>，接地线应采用<b>黄绿相间</b>线；</li><li>电气系统应可靠接地，<b>接地电阻不应大于 4 Ω</b>，在接地处应设有接地标志。</li></ul><div class="kv">易混点：接零与接地必须分开——这是防触电安全的核心；接地线黄绿相间是国际通用标识。</div>', src: '5.5.1~5.5.3' },
+    { h: '防护、绝缘与保护装置（5.5.4~5.5.6）', body: '<table><tr><th>项目</th><th>要求</th></tr><tr><td>防护等级</td><td>电气控制部分应有防水、防尘措施，防护等级为 <b>≥IP54</b>；应具备防震措施</td></tr><tr><td>元器件</td><td>连接牢固，绝缘可靠，电动机绝缘等级<b>不低于 F 级</b></td></tr><tr><td>保护装置</td><td>必须设置<b>过热、短路、漏电保护</b>等装置；漏电保护装置应设在升降机供电电源处</td></tr><tr><td>绝缘电阻</td><td>主电路相间绝缘电阻<b>不小于 0.5 MΩ</b>；电路与裸露导电部件之间绝缘电阻按标称电压<b>至少 1 000 Ω/V</b></td></tr><tr><td>耐压试验</td><td>控制箱按钮外露部分由绝缘材料制成，应能承受 <b>50 Hz 正弦波形、1250 V</b> 电压历时 <b>1 min</b> 的耐压试验</td></tr></table>', src: '5.5.4~5.5.6' },
+    { h: '照明、急停与故障安全（5.5.7~5.5.12）', body: '<ul><li><b>照明</b>：升降机内部宜设置独立照明，且具备应急功能，<b>断电后能持续使用 30 min 以上</b>；</li><li><b>急停按钮</b>：应设置紧急状态下切断主电源控制回路的急停按钮，该电路<b>独立于各控制电路</b>；急停按钮为<b>红色</b>，有明显"急停"标记，<b>不能自动复位</b>；</li><li><b>专用电源</b>：动力电缆的电源连接点应为升降机<b>专用电源</b>，不与其它用电设备混接；</li><li><b>限位开关</b>：应符合 GB/T 14048.5 附录K 的要求；</li><li><b>操作方式</b>：应能自动与手动操作，轿厢内<b>手动持续点动</b>操作，轿厢外可进行自动控制；</li><li><b>单一故障安全</b>：下列任何单一的电气设备故障，应不成为导致升降机产生危险故障的原因：失压和无电压；电压下降 20% 以上；对地或金属构件的绝缘破坏；电气元件短路或断路以及参数或功能的改变；接触器或继电器可动衔铁不吸合或不能完全吸合、不分离；触点不能断开、不能闭合。</li></ul>', src: '5.5.7~5.5.12' }
+  ],
+  questions: [
+    { t: 'single', q: '升降机电气控制系统供电应采用：', o: ['三相四线制', '三相五线制', '单相三线制', '直流供电'], a: [1], e: '5.5.2：电气控制系统供电应采用三相五线制。接零、接地线应始终分开，接地线应采用黄绿相间线。', s: '5.5.2' },
+    { t: 'judge', q: '升降机电气系统的接地电阻不应大于 4 Ω，在接地处应设有接地标志。', a: [0], e: '正确。5.5.3：升降机电气系统应可靠接地，接地电阻不应大于 4 Ω，在接地处应设有接地标志。', s: '5.5.3' },
+    { t: 'single', q: '升降机电气控制部分的防护等级应为：', o: ['≥IP44', '≥IP54', '≥IP65', '≥IP66'], a: [1], e: '5.5.4：电气控制部分应有防水、防尘措施，防护等级为 ≥IP54；并应具备防震措施。', s: '5.5.4' },
+    { t: 'single', q: '升降机电动机的绝缘等级应不低于：', o: ['B 级', 'E 级', 'F 级', 'H 级'], a: [2], e: '5.5.4：其元器件应连接牢固，绝缘可靠，电动机绝缘等级不低于 F 级。', s: '5.5.4' },
+    { t: 'single', q: '主电路相间绝缘电阻应不小于：', o: ['0.1 MΩ', '0.5 MΩ', '1 MΩ', '5 MΩ'], a: [1], e: '5.5.5：主电路相间绝缘电阻应不小于 0.5 MΩ；电路与裸露导电部件之间的绝缘电阻按标称电压应至少为 1 000 Ω/V。', s: '5.5.5' },
+    { t: 'single', q: '电路与裸露导电部件之间的绝缘电阻，按标称电压应至少为：', o: ['500 Ω/V', '800 Ω/V', '1 000 Ω/V', '1 500 Ω/V'], a: [2], e: '5.5.5：电路与裸露导电部件之间的绝缘电阻按标称电压应至少为 1 000 Ω/V。6.16.2 电气控制系统试验也按此值验收。', s: '5.5.5；6.16.2' },
+    { t: 'single', q: '电气控制箱按钮的外露部分应能承受的耐压试验为：', o: ['50 Hz、1000 V、1 min', '50 Hz、1250 V、1 min', '60 Hz、1250 V、2 min', '50 Hz、1500 V、1 min'], a: [1], e: '5.5.6：电气控制箱按钮应动作可靠，标识清晰、准确。其外露部分由绝缘材料制成，应能承受 50 Hz 正弦波形、1250 V 电压为时 1 min 的耐压试验。', s: '5.5.6' },
+    { t: 'single', q: '升降机内部照明的应急功能要求是：', o: ['断电后能持续使用 15 min 以上', '断电后能持续使用 30 min 以上', '断电后能持续使用 60 min 以上', '无应急功能要求'], a: [1], e: '5.5.7：升降机内部宜设置独立照明，且具备应急功能，断电后能持续使用 30 min 以上。', s: '5.5.7' },
+    { t: 'single', q: '关于急停按钮，下列说法正确的是：', o: ['为绿色，能自动复位', '为红色，有明显"急停"标记，不能自动复位', '为红色，能自动复位', '为黄色，不能自动复位'], a: [1], e: '5.5.8：急停按钮为红色，并有明显的"急停"标记，不能自动复位；该电路独立于各控制电路，用于紧急状态下切断主电源控制回路。', s: '5.5.8' },
+    { t: 'judge', q: '升降机的动力电缆电源连接点应与其他用电设备共用电源。', a: [1], e: '错误。5.5.9：升降机的动力电缆的电源连接点应为升降机专用电源，不与其它用电设备混接。', s: '5.5.9' },
+    { t: 'multi', q: '下列哪些是 5.5.12 列举的可能出现的单一电气设备故障？（多选）', o: ['失压和无电压', '电压下降 20% 以上', '对地或金属构件的绝缘破坏', '电网频率升高'], a: [0, 1, 2], e: '5.5.12：可能的故障包括失压和无电压、电压下降 20% 以上、对地或金属构件绝缘破坏、电气元件短路或断路及参数功能改变、接触器或继电器衔铁不吸合/不能完全吸合/不分离、触点不能断开/不能闭合。"电网频率升高"不在列举之列。任何单一故障应不成为导致危险故障的原因。', s: '5.5.12' },
+    { t: 'single', q: '限位开关应符合下列哪项标准附录K的要求？', o: ['GB/T 14048.5', 'GB/T 5226.1—2019', 'GB/T 7251.1', 'GB/T 3797'], a: [0], e: '5.5.10：限位开关应符合 GB/T 14048.5 附录K 的要求。', s: '5.5.10' },
+    { t: 'single', q: '关于升降机的操作方式，下列说法正确的是：', o: ['轿厢内可自动控制，轿厢外手动持续点动', '轿厢内手动持续点动操作，轿厢外可进行自动控制', '轿厢内外均为自动控制', '轿厢内外均为手动点动'], a: [1], e: '5.5.11：升降机应能自动与手动操作，轿厢内手动持续点动操作，轿厢外可进行自动控制。', s: '5.5.11' }
+  ]
+};
+
+
+/* ===== CH10 ===== */
+window.CH10 = {
+  id: 10,
+  title: '标准件、防腐要求与认证',
+  slides: [
+    { h: '标准件要求（5.6）', body: '<div class="kv">标准件等级选用必须满足升降机的设计要求。采用<b>碳钢</b>材质的螺栓、螺钉大小规格<b>≥M8</b>时，其性能等级<b>不低于 8.8 级、螺母 8 级、垫片 200 HV</b>；采用<b>不锈钢</b>材质时，其性能等级<b>不低于 A2-70</b> 要求。</div><p>对应表2：标准件 ≥M8 时采用锌铬涂层（满足 GB/T 18684 4级）；＜M8 时采用不锈钢（满足 GB/T 10125 盐雾试验 1000 h）。</p>', src: '5.6；表2' },
+    { h: '防腐要求（5.7）', body: '<table><tr><th>安装位置</th><th>防腐等级（ISO 12944-5）</th><th>防腐年限</th></tr><tr><td>陆上</td><td>C3（室内）/ C4（露天）</td><td>"长期"（<b>20 年以上</b>）</td></tr><tr><td>海上</td><td>C4（室内）/ C5（露天）</td><td>"长期"（<b>25 年以上</b>）</td></tr></table><div class="kv">所有零部件必须具有耐腐蚀、耐潮湿，并经过严格的<b>盐雾测试</b>；电控箱必须进行<b>密封、防腐、防尘</b>处理。</div><p>关键零部件防腐要点（表2）：</p><ul><li>升降机轿厢：喷塑、氧化、涂漆等工艺，盐雾试验 <b>1 000 h</b>；</li><li>电机壳体：喷涂多层漆，铝合金壳体盐雾 <b>1 000 h</b>；</li><li>钢丝绳：表面镀锌，满足 <b>GB/T 8918 A 级</b>；</li><li>齿条爬梯：渗锌层<b>≥50 μm</b>，渗锌后喷丙烯酸聚氨酯面漆，干膜厚度<b>≥60 μm</b>，盐雾试验 <b>720 h</b>。</li></ul>', src: '5.7；表2' },
+    { h: '认证要求（5.8）', body: '<div class="kv">升降机应经过<b>有资质的第三方认证机构</b>认证，认证机构应具备：<br>a) <b>国家认证认可主管部门批准</b>；<br>b) <b>国内、国际权威认可机构的认可</b>。</div><p>这两个条件同时满足，缺一不可。对应随机文件中的"产品认证资料"（表4 第2项）。</p>', src: '5.8；表4' }
+  ],
+  questions: [
+    { t: 'single', q: '采用碳钢材质的螺栓、螺钉大小规格≥M8 时，其性能等级应不低于：', o: ['6.8 级', '8.8 级', '10.9 级', '12.9 级'], a: [1], e: '5.6：当采用碳钢材质的螺栓、螺钉大小规格≥M8 时，其性能等级不低于 8.8 级、螺母 8 级、垫片 200 HV。', s: '5.6' },
+    { t: 'single', q: '采用不锈钢材质的螺栓、螺钉时，其性能等级应不低于：', o: ['A2-50', 'A2-70', 'A4-70', 'A4-80'], a: [1], e: '5.6：当采用不锈钢材质时，其性能等级不低于 A2-70 要求。', s: '5.6' },
+    { t: 'single', q: '安装在陆上风力发电机组塔架内的升降机，应按照 ISO 12944-5 中哪个环境等级进行防腐处理？', o: ['C2（室内）/C3（露天）', 'C3（室内）/C4（露天）', 'C4（室内）/C5（露天）', 'C5（室内）/C5（露天）'], a: [1], e: '5.7.1：陆上按 ISO 12944-5 中 C3（室内）/C4（露天）环境防腐蚀要求，防腐年限为"长期"（20 年以上）。', s: '5.7.1' },
+    { t: 'single', q: '安装在海上风力发电机组塔架内的升降机，其防腐年限应为：', o: ['10 年以上', '15 年以上', '20 年以上', '25 年以上'], a: [3], e: '5.7.1：海上按 ISO 12944-5 中 C4（室内）/C5（露天）环境防腐蚀要求，防腐年限为"长期"（25 年以上）。', s: '5.7.1' },
+    { t: 'judge', q: '升降机所有零部件必须具有耐腐蚀、耐潮湿，并经过严格的盐雾测试；电控箱必须进行密封、防腐、防尘处理。', a: [0], e: '正确。5.7.2：升降机所有零部件必须具有耐腐蚀、耐潮湿，并经过严格的盐雾测试，同时电控箱必须进行密封、防腐、防尘处理。', s: '5.7.2' },
+    { t: 'single', q: '按表2，升降机轿厢面板采用喷塑、氧化、涂漆等防腐工艺时，应满足的盐雾试验时长是：', o: ['480 h', '720 h', '1 000 h', '1 500 h'], a: [2], e: '表2：升降机轿厢面板防腐满足 GB/T 10125 盐雾试验 1 000 h。', s: '表2' },
+    { t: 'single', q: '按表2，齿条爬梯渗锌处理后，渗锌层厚度应：', o: ['≥30 μm', '≥40 μm', '≥50 μm', '≥60 μm'], a: [2], e: '表2：齿条爬梯表面渗锌处理，渗锌层≥50 μm；渗锌后表面喷丙烯酸聚氨酯面漆，干膜厚度≥60 μm；满足 GB/T 10125 盐雾试验 720 h。', s: '表2' },
+    { t: 'single', q: '按表2，钢丝绳的防腐要求是：', o: ['表面镀锌，满足 GB/T 8918 A 级要求', '喷塑处理，盐雾试验 720 h', '锌铬涂层，满足 GB/T 18684 4 级', '不锈钢材质'], a: [0], e: '表2：钢丝绳表面镀锌，满足 GB/T 8918 A 级要求。', s: '表2' },
+    { t: 'multi', q: '有资质的第三方认证机构应具备下列哪些条件？（多选）', o: ['国家认证认可主管部门批准', '国内、国际权威认可机构的认可', '成立时间超过 10 年', '在升降机生产企业所在地注册'], a: [0, 1], e: '5.8：认证机构应具备国家认证认可主管部门批准、国内国际权威认可机构的认可。成立年限与注册地不在要求之列。', s: '5.8' },
+    { t: 'judge', q: '按表2，标准件≥M8 时采用锌铬涂层，应满足 GB/T 18684 的 4 级要求。', a: [0], e: '正确。表2：标准件 ≥M8 时采用锌铬涂层（原文"锌洛涂层"为排版笔误，标准所指为锌铬涂层），满足 GB/T 18684 4级；＜M8 时采用不锈钢，满足 GB/T 10125 盐雾试验 1 000 h。', s: '表2' }
+  ]
+};
+
+
+/* ===== CH11 ===== */
+window.CH11 = {
+  id: 11,
+  title: '试验',
+  slides: [
+    { h: '试验的基本要求（6.1）', body: '<p><b>试验条件（6.1.1）</b>：</p><ul><li>环境温度应为 <b>-40 ℃～+55 ℃</b>；</li><li>试验场地 10 min 平均风速<b>不宜大于 10 m/s</b>；</li><li>试验时输入电压应正常，电源电压值波动范围为 <b>±5%</b>；</li><li>应按工况备齐试验载重量和所需的全部技术文件。</li></ul><p><b>仪器精度（6.1.2）</b>：重量、力、长度、时间和速度为 <b>±1%</b>；电压、电流为 <b>±1%</b>；温度为 <b>±2%</b>。试验用仪器和量具应具有产品合格证且在检定有效期内，过程中应使用同一仪器和工具。</p>', src: '6.1' },
+    { h: '载荷试验系列（6.3）', body: '<table><tr><th>试验</th><th>载荷</th><th>行程/循环</th><th>关键判定</th></tr><tr><td>空载运行试验</td><td>空载</td><td>≥5 m 行程 30 个循环</td><td>每循环升降各至少 2 次正常制动，无制动瞬时滑移</td></tr><tr><td>额定载荷运行试验</td><td>额定载重量</td><td>≥5 m 行程 30 个循环</td><td>升降平稳、紧固件无松动、减速机油温正常</td></tr><tr><td>静力载荷试验</td><td><b>1.5 倍</b>额定载重量</td><td>离地 1 m，静置 <b>15 min</b></td><td>制动可靠、承载装置无下滑、无开裂变形</td></tr><tr><td>动力载荷运行试验</td><td><b>1.25 倍</b>额定载重量（解除超载功能）</td><td>≥5 m 行程 30 个循环</td><td>升降平稳、无开裂变形</td></tr><tr><td>超载试验</td><td>1.25 倍额定载重量</td><td>—</td><td>报警、不能上下运行；减至额定后报警消除</td></tr><tr><td>极限载荷试验</td><td><b>3.5 倍</b>额定载重量</td><td>静置 <b>1 h</b></td><td>有永久变形但<b>无断裂</b></td></tr></table>', src: '6.3' },
+    { h: '强度、刚度与可靠性（6.4~6.6）', body: '<ul><li><b>底架强度和刚度</b>：强度应达到额定载荷及自重之和的 <b>3 倍</b>载荷，挠度应<b>不大于 1/200</b>；承载 3 倍额定载重量静止 10 min 后卸荷，不得出现焊缝裂纹、螺栓铆钉松动、结构件永久变形；</li><li><b>轿厢强度和刚度</b>：在底架任意 <b>200 mm×200 mm</b> 区域内承载 <b>300 kg</b> 均匀载荷，静置 15 min 后卸载，不得出现开裂、严重变形及结构破坏；</li><li><b>整机可靠性</b>：额定载重量、起升高度不小于 5 m，循环次数<b>不少于 3 000 次</b>；首次故障前工作时间 <b>0.8 t0</b>，平均无故障工作时间 <b>0.5 t0</b> 且循环次数<b>不少于 2 000 次</b>，可靠度<b>不低于 92%</b>；安全锁锁绳试验不少于 <b>30 次</b>；手动下降试验不少于 <b>50 次</b>，每次下滑距离不少于 2 m。</li></ul>', src: '6.4~6.6' },
+    { h: '专项试验（6.7~6.16）', body: '<table><tr><th>试验</th><th>要点</th></tr><tr><td>噪声测定（6.7）</td><td>按 GB/T 20062，距轿厢内地面上方 <b>1600 mm</b>、轿厢门前方 <b>500 mm</b> 测量，测 <b>3 次取最大值</b>，≤85 dB(A)</td></tr><tr><td>手动下降试验（6.9）</td><td>额定载重量下释放制动器，下降速度<b>不应大于 1.5 倍额定速度</b>，每次下滑≥2 m，试验三次取平均值</td></tr><tr><td>提升速度测试（6.10）</td><td>额定载重量、升降高度≥5 m，测 3 次，误差在设计值 <b>±5%</b> 内</td></tr><tr><td>提升机构/悬挂装置试验（6.11/6.12）</td><td>分别按 GB/T 19155—2017 附录 B.3 / 附录 C</td></tr><tr><td>安全保护装置试验（6.14）</td><td>上/下/终极限位触发并报警逻辑同 5.4.4.1；障碍物进入通道时报警且不能运行</td></tr><tr><td>防坠落安全装置试验（6.15）</td><td>安全锁锁绳状态下不能自动复位，承受 <b>1.5 倍额定载重量</b>静置 <b>10 min</b> 不得滑移（按 GB/T 19155—2017 B.1.4）；防坠安全器按 GB 26557—2011 中 6.2.3</td></tr><tr><td>电气系统试验（6.16）</td><td>耐压按 GB/T 7251.1；相间/相地绝缘电阻及带电零件与机体间 ≥1 000 Ω/V（按 GB/T 3797）</td></tr></table>', src: '6.7~6.16' }
+  ],
+  questions: [
+    { t: 'single', q: '试验时，环境温度应为：', o: ['-20 ℃～+40 ℃', '-30 ℃～+50 ℃', '-40 ℃～+55 ℃', '-45 ℃～+60 ℃'], a: [2], e: '6.1.1 a)：试验条件中环境温度应为 -40 ℃～+55 ℃。', s: '6.1.1' },
+    { t: 'single', q: '试验场地 10 min 平均风速不宜大于：', o: ['8 m/s', '10 m/s', '12 m/s', '15 m/s'], a: [1], e: '6.1.1 b)：试验场地 10 min 平均风速不宜大于 10 m/s。', s: '6.1.1' },
+    { t: 'single', q: '试验时电源电压值的波动范围应为：', o: ['±3%', '±5%', '±10%', '±15%'], a: [1], e: '6.1.1 c)：试验时输入电压应正常，电源电压值波动范围为 ±5%。', s: '6.1.1' },
+    { t: 'judge', q: '试验中，重量、力、长度、时间和速度的仪器精准度偏差范围为 ±1%，温度为 ±2%。', a: [0], e: '正确。6.1.2：重量、力、长度、时间和速度为 ±1%；电压、电流为 ±1%；温度为 ±2%。', s: '6.1.2' },
+    { t: 'single', q: '空载运行试验中，升降机应在不小于多少米的行程中完成 30 个升降工作循环？', o: ['3 m', '5 m', '8 m', '10 m'], a: [1], e: '6.3.1：升降机在不小于 5 m 的行程中完成 30 个升降工作循环的空载试验；每一工作循环的升、降过程中应进行不少于 2 次的正常制动。', s: '6.3.1' },
+    { t: 'single', q: '静力载荷试验中，应在升降机底板上均布施加多少倍额定载重量并静置多长时间？', o: ['1.25 倍，静置 10 min', '1.5 倍，静置 15 min', '1.5 倍，静置 30 min', '2.0 倍，静置 15 min'], a: [1], e: '6.3.3：将升降机提升至离地面 1 m 左右可靠悬挂，在底板上均布施加 1.5 倍额定载重量，做好标记，静置 15 min 后，制动可靠、承载装置无下滑、无开裂变形损坏。', s: '6.3.3' },
+    { t: 'single', q: '动力载荷运行试验前，需要先进行什么操作？', o: ['增加配重', '解除超载功能', '锁定安全锁', '断开电源'], a: [1], e: '6.3.4：动力载荷运行试验时，升降机解除超载功能，在底板上均布施加 1.25 倍额定载重量，在不小于 5 m 的行程中完成 30 个升降工作循环。', s: '6.3.4' },
+    { t: 'single', q: '超载试验中，当载荷减到额定载重量后，升降机的状态是：', o: ['报警仍然存在', '报警消除，升降机能正常运行', '需复位后才能运行', '保持锁定状态'], a: [1], e: '6.3.5：当升降机负载 1.25 倍额定载重量时报警，同时不能上下运行；当载荷减到额定载重量后，报警消除，升降机能正常运行。', s: '6.3.5' },
+    { t: 'judge', q: '极限载荷试验中，均布施加 3.5 倍额定载重量静置 1 h 后卸下载荷，检查顶板及底板组件，允许有永久变形但无断裂。', a: [0], e: '正确。6.3.6：在升降机底板均布施加 3.5 倍额定载重量，静置 1 h 后卸下载荷，检查顶板组件及底板组件的焊缝、连接件、结构件，有永久变形但无断裂。', s: '6.3.6' },
+    { t: 'single', q: '底架强度和刚度试验中，底架的挠度应不大于：', o: ['1/100', '1/150', '1/200', '1/300'], a: [2], e: '6.4：底架强度应达到额定载荷及自重之和的 3 倍载荷，其挠度应不大于 1/200；承载 3 倍额定载重量静止 10 min 后卸荷，不得出现焊缝裂纹、螺栓铆钉松动、结构件永久变形。', s: '6.4' },
+    { t: 'single', q: '轿厢强度和刚度试验中，应在底架任意多大区域内承载 300 kg 的均匀载荷？', o: ['100 mm×100 mm', '200 mm×200 mm', '300 mm×300 mm', '400 mm×400 mm'], a: [1], e: '6.5：将升降机提升至离地面 1 m 左右，在底架任意 200 mm×200 mm 的区域内，承载 300 kg 的均匀载荷，静置 15 min 后卸下载荷检查。', s: '6.5' },
+    { t: 'single', q: '整机可靠性试验中，可靠性试验循环次数应不少于：', o: ['1 000 次', '2 000 次', '3 000 次', '5 000 次'], a: [2], e: '6.6：试验样机承受额定载重量、起升高度不小于 5 m 情况下，可靠性试验循环次数不少于 3 000 次；可靠度不低于 92%。', s: '6.6' },
+    { t: 'single', q: '整机可靠性试验中，要求可靠度不低于：', o: ['85%', '90%', '92%', '95%'], a: [2], e: '6.6：首次故障前工作时间为 0.8 t0（t0 为累计工作时间），平均无故障工作时间为 0.5 t0，且工作循环次数不少于 2 000 次，可靠度不低于 92%。', s: '6.6' },
+    { t: 'single', q: '整机可靠性试验中，安全锁锁绳试验次数不少于多少次，手动下降试验不少于多少次？', o: ['20 次和 40 次', '30 次和 50 次', '40 次和 60 次', '50 次和 100 次'], a: [1], e: '6.6：安全锁锁绳试验次数不少于 30 次；升降机手动下降试验不少于 50 次，每次下滑距离不少于 2 m。', s: '6.6' },
+    { t: 'single', q: '噪声测定的测量位置是：', o: ['距轿厢内地面上方 1200 mm 及轿厢门前方 800 mm', '距轿厢内地面上方 1600 mm 及轿厢门前方 500 mm', '距轿厢内地面上方 1800 mm 及轿厢门前方 300 mm', '距轿厢内地面上方 2000 mm 及轿厢门前方 500 mm'], a: [1], e: '6.7：按照 GB/T 20062 规定的方法测试噪声，距轿厢内地面上方 1600 mm 位置以及轿厢门前方 500 mm 位置测量，测量 3 次取最大值，噪声应不大于 85 dB(A)。', s: '6.7' },
+    { t: 'single', q: '手动下降试验中，额定载重量下升降机下降速度不应大于额定速度的：', o: ['1.0 倍', '1.25 倍', '1.5 倍', '1.66 倍'], a: [2], e: '6.9.2：在升降机额定载重量下，手动释放制动器，升降机应能平稳下降，且下降速度不应大于 1.5 倍的额定速度（每次下降距离不小于 2 m），试验三次，平均值即是其速度。', s: '6.9.2' },
+    { t: 'single', q: '提升速度测试中，测试结果的误差应控制在设计值的：', o: ['±3% 范围内', '±5% 范围内', '±8% 范围内', '±10% 范围内'], a: [1], e: '6.10：在额定载重量工况下，升降高度不小于 5 m，测试升降机的起升、下降的速度，测试 3 次，误差在设计值的 ±5% 范围内。', s: '6.10' },
+    { t: 'single', q: '提升机构试验和悬挂装置试验分别按哪项标准的哪些条款进行？', o: ['GB/T 19155—2017 附录 B.3 和附录 C', 'GB 26557—2011 中 6.2.3 和 5.6.2', 'GB 30862—2014 中第6章', 'GB/T 5226.1—2019 中 9.2'], a: [0], e: '6.11：提升机构的试验按照 GB/T 19155—2017 附录 B.3 的规定进行；6.12：悬挂装置的试验按照 GB/T 19155—2017 附录 C 的规定进行。', s: '6.11；6.12' },
+    { t: 'single', q: '防坠落安全装置试验中，安全锁在锁绳状态下承受 1.5 倍额定载重量静置多长时间不得有任何滑移？', o: ['5 min', '10 min', '15 min', '30 min'], a: [1], e: '6.15 a)：安全锁在锁绳状态下应不能自动复位，承受静力试验载荷时（1.5 倍额定载重量），静置 10 min，不得有任何滑移现象。', s: '6.15' }
+  ]
+};
+
+
+/* ===== CH12 ===== */
+window.CH12 = {
+  id: 12,
+  title: '检验方法检验规则',
+  slides: [
+    { h: '检验类别与出厂规定（7.1~7.2）', body: '<div class="kv">升降机产品检验分为三类：<b>出厂检验、型式检验、现场安装验收</b>。</div><p>出厂规定：<b>每台</b>升降机均做出厂检验，产品检验合格后<b>签发合格证</b>，产品才能出厂。</p><p>型式检验：被抽检的同型号升降机<b>不应少于 2 台</b>，所有检测项目应<b>全部合格</b>判定为合格。</p>', src: '7.1；7.2' },
+    { h: '型式检验的触发条件（7.2）', body: '<p>有下列情况之一时应进行型式检验：</p><ul><li><b>新产品的试制定型鉴定</b>时；</li><li><b>安全认证或老产品转厂生产</b>时；</li><li>产品的设计、工艺等方面有<b>重大改变，可能影响产品性能</b>时；</li><li>产品<b>停产 2 年后，恢复生产</b>时；</li><li>正常生产时，<b>每 1 年进行 1 次</b>；</li><li><b>国家质量监督机构提出</b>型式检验要求时。</li></ul>', src: '7.2' },
+    { h: '检验项目表（表3）与符号含义', body: '<div class="kv">表3 符号含义：<br>△ = <b>必检项目</b>；— = <b>不作规定的检验项目</b>；※ = <b>供需双方协商进行的项目</b>。</div><p>必检（三类均 △）的项目：外观检查、联锁功能试验（选配）、安全保护装置试验、电气系统试验——各部件功能试验。</p><p>出厂检验中为"※"（供需协商）的项目集中在载荷/强度类：空载、额载、静力、动力、超载、极限载荷、挂点、底架、轿厢、整机可靠性、提升速度、提升机构、悬挂装置试验。</p><p>噪声测定、逃生试验：型式必检（△），出厂不作规定（—），现场安装验收为协商（※）。</p><p>电气系统试验——绝缘性能、耐压试验：仅<b>型式检验</b>必检（△），出厂与现场验收均不作规定（－）。</p>', src: '7.3；表3' }
+  ],
+  questions: [
+    { t: 'single', q: '升降机产品检验分为：', o: ['出厂检验、型式检验、现场安装验收', '进货检验、过程检验、出厂检验', '型式检验、例行检验、监督检验', '首件检验、批次检验、出厂检验'], a: [0], e: '7.1：升降机产品检验分为出厂检验、型式检验、现场安装验收三类。', s: '7.1' },
+    { t: 'single', q: '关于出厂检验，下列说法正确的是：', o: ['抽检部分升降机', '每台升降机均做出厂检验，检验合格后签发合格证才能出厂', '只需提供型式检验报告', '由用户自行检验'], a: [1], e: '7.2：每台升降机均做出厂检验，产品检验合格后签发合格证，产品才能出厂。"每台"是关键。', s: '7.2' },
+    { t: 'single', q: '进行型式检验时，被抽检的同型号升降机不应少于：', o: ['1 台', '2 台', '3 台', '5 台'], a: [1], e: '7.2：被抽检的同型号升降机不应少于 2 台，所有检测项目应全部合格判定为合格。', s: '7.2' },
+    { t: 'single', q: '下列哪种情况需要进行型式检验？', o: ['产品正常生产每周一次', '产品停产 2 年后恢复生产时', '产品包装变化时', '产品运输方式改变时'], a: [1], e: '7.2：产品停产 2 年后，恢复生产时应进行型式检验。其余触发条件还包括新产品试制定型鉴定、安全认证或老产品转厂生产、重大改变、正常生产每 1 年 1 次、国家质量监督机构提出要求。', s: '7.2' },
+    { t: 'judge', q: '正常生产时，每年应进行 1 次型式检验。', a: [0], e: '正确。7.2：正常生产时，每 1 年进行 1 次型式检验。', s: '7.2' },
+    { t: 'single', q: '表3 中标有"△"的检验项目表示：', o: ['不作规定的检验项目', '供需双方协商进行的项目', '必检项目', '可选项目'], a: [2], e: '7.3 表3 注：标有"△"者为必检项目；标有"—"者为不作规定的检验项目；标有"※"为供需双方协商进行的项目。', s: '7.3；表3' },
+    { t: 'single', q: '表3 中标有"※"的检验项目表示：', o: ['必检项目', '不作规定的检验项目', '供需双方协商进行的项目', '型式检验专属项目'], a: [2], e: '表3 注：标有"※"为供需双方协商进行的项目。例如空载运行试验、额载运行试验等载荷类项目，出厂检验中即为 ※。', s: '7.3；表3' },
+    { t: 'single', q: '下列哪项检验项目在三类检验（型式、出厂、现场安装验收）中均为必检（△）？', o: ['静力载荷试验', '噪声测定', '外观检查', '电气系统试验——绝缘性能、耐压试验'], a: [2], e: '表3：外观检查在型式（△）、出厂（△）、现场安装验收（△）中均为必检。静力载荷试验现场验收为"—"；噪声测定出厂为"—"；绝缘耐压试验出厂与现场验收均为"－"。', s: '表3' },
+    { t: 'single', q: '电气系统试验——绝缘性能、耐压试验，在表3 中的检验要求是：', o: ['三类检验均必检', '仅型式检验必检，出厂与现场安装验收均不作规定', '仅出厂检验必检', '仅现场安装验收必检'], a: [1], e: '表3 第22项：电气系统试验——绝缘性能、耐压试验为型式检验 △，出厂检验 －，现场安装验收 －。该试验只在型式检验中必做。', s: '表3' },
+    { t: 'multi', q: '下列哪些项目在表3 中属于"型式检验必检、出厂检验为※（供需协商）、现场安装验收不作规定"？（多选）', o: ['静力载荷试验', '极限载荷试验', '整机可靠性试验', '逃生试验'], a: [0, 1, 2], e: '表3：静力载荷（4）、极限载荷（7）、整机可靠性（11）均为型式△、出厂※、现场—。逃生试验为型式△、出厂—、现场※，模式不同。', s: '表3' }
+  ]
+};
+
+
+/* ===== CH13 ===== */
+window.CH13 = {
+  id: 13,
+  title: '标识、包装、运输、贮存与随机文件',
+  slides: [
+    { h: '标识要求（8.1）', body: '<p><b>产品铭牌（8.1.1）</b>：每套升降机在明显的部位牢固地设置产品铭牌，其尺寸和技术要求符合 <b>GB/T 13306</b> 的规定，铭牌应包括但不局限于：</p><ul><li>产品名称、规格、型号；</li><li>产品编号及制造日期；</li><li>产品主要技术性能参数；</li><li>制造商名称和 LOGO；</li><li>产品认证标志。</li></ul><p><b>位置标识（8.1.2~8.1.4）</b>：起吊孔位置应有明显标识；逃生通道及安全挂点位置应设置明显标识；应张贴安全、警示及重要操作标识，明示操作规程、注意事项。</p>', src: '8.1' },
+    { h: '包装与运输（8.2~8.3）', body: '<ul><li><b>包装箱</b>应有防潮、减振、防冲击措施；底部应满足<b>叉车搬运</b>要求；钢丝绳包装满足 GB/T 2104；整体包装应满足 <b>GB/T 9174</b>；</li><li>箱体表面应标有箱体外形尺寸、箱号、毛重、净重、起吊、正置、防雨、防潮、易碎等标志；每批次粘贴明确的<b>订单信息</b>；打包带整齐划一、颜色一致，无断带、勒坏包装箱；</li><li><b>运输</b>：采取防震、防火、防晒、防雨、加固等防护措施（<b>海运时应满足防盐雾要求</b>）；按标识规定方向放置，<b>不得斜置、斜放</b>；吊装平稳安全；产品保持完好无损。</li></ul>', src: '8.2；8.3' },
+    { h: '贮存与随机文件（8.4、第9章）', body: '<p><b>贮存</b>：所有包装箱应存放在清洁、干燥、通风、防雨、防雪、防水的环境中，不允许在阳光下长期暴晒；按类别、型号、批次、年号进行堆码管理并有醒目的标记卡；<b>电气设备必须储存于室内</b>；储存时间超过 <b>6 个月</b>时应检查产品零部件的完好情况；包装储运应符合 GB/T 191。</p><div class="kv">随机文件（表4）：产品合格证、产品认证资料、出厂检验报告、电气接线图、使用维护说明书（含常见故障处理、逃生方法指导手册）、升降机清单（含附件清单）、安装验收检验表、年度维护检修表、质保说明、随机备件附件及专用工具清单——每项各 1 份。</div><p>所有检验和试验报告的标识应和产品（出厂）编号一致；一个产品的试验报告与合格证装订一份，作为随机文件；出厂检验文件应随产品同时到达。</p>', src: '8.4；第9章；表4' }
+  ],
+  questions: [
+    { t: 'single', q: '升降机产品铭牌的尺寸和技术要求应符合哪项标准？', o: ['GB/T 13306', 'GB/T 191', 'GB/T 9174', 'GB/T 2104'], a: [0], e: '8.1.1：每套升降机在明显的部位牢固地设置产品铭牌，其尺寸和技术要求符合 GB/T 13306《标牌》的规定。', s: '8.1.1' },
+    { t: 'multi', q: '产品铭牌应包括但不局限于下列哪些内容？（多选）', o: ['产品名称、规格、型号', '产品编号及制造日期', '产品主要技术性能参数', '产品出厂价格'], a: [0, 1, 2], e: '8.1.1：铭牌应包括产品名称规格型号、产品编号及制造日期、产品主要技术性能参数、制造商名称和 LOGO、产品认证标志。价格不属于铭牌内容。', s: '8.1.1' },
+    { t: 'judge', q: '升降机起吊孔位置应有明显标识。', a: [0], e: '正确。8.1.2：升降机起吊孔位置应有明显标识；逃生通道及安全挂点位置也应设置明显标识（8.1.3）。', s: '8.1.2；8.1.3' },
+    { t: 'single', q: '钢丝绳的包装应满足哪项标准的要求？', o: ['GB/T 2104', 'GB/T 20118', 'GB/T 8918', 'GB/T 6946'], a: [0], e: '8.2.2：钢丝绳包装满足 GB/T 2104《钢丝绳包装、标志及质量证明书的一般规定》要求。', s: '8.2.2' },
+    { t: 'single', q: '关于运输要求，下列说法正确的是：', o: ['可以斜置放置以节省空间', '海运时无需特殊防护', '按标识规定的方向放置，不得将包装箱斜置、斜放', '吊装过程可快速起吊'], a: [2], e: '8.3.3：在车站码头中转或终点卸下时，按标识规定的方向放置，不得将包装箱斜置、斜放；吊装过程应确保平稳安全。海运时应满足防盐雾要求（8.3.1）。', s: '8.3.1；8.3.3' },
+    { t: 'judge', q: '所有包装箱应存放在清洁、干燥、通风、防雨、防雪、防水的环境中，不允许在阳光下长期暴晒。', a: [0], e: '正确。8.4.1：所有包装箱应存放在清洁、干燥、通风、防雨、防雪、防水的环境中，不允许在阳光下长期暴晒。', s: '8.4.1' },
+    { t: 'single', q: '关于贮存管理，下列说法错误的是：', o: ['电气设备必须储存于室内', '存储按类别、型号、批次、年号进行堆码管理', '储存时间超过 6 个月时应检查产品零部件的完好情况', '包装箱可长期露天存放'], a: [3], e: '8.4：电气设备必须储存于室内（8.4.4）；按类别、型号、批次、年号堆码管理并有醒目标记卡（8.4.3）；储存超过 6 个月应检查零部件完好情况（8.4.5）。露天长期存放违背 8.4.1 的环境要求。', s: '8.4.1~8.4.5' },
+    { t: 'single', q: '下列哪项不属于表4 规定的随机文件？', o: ['产品合格证', '出厂检验报告', '电气接线图', '产品宣传册'], a: [3], e: '表4：随机文件包括产品合格证、产品认证资料、出厂检验报告、电气接线图、使用维护说明书（含常见故障处理、逃生方法指导手册）、升降机清单、安装验收检验表、年度维护检修表、质保说明、随机备件附件及专用工具清单。宣传册不在其列。', s: '第9章；表4' },
+    { t: 'judge', q: '所有检验和试验报告的标识应和产品（出厂）编号一致，一个产品的试验报告与合格证装订一份，作为随机文件。', a: [0], e: '正确。第9章：所有检验和试验报告的标识应和产品（出厂）编号一致，要求一个产品的试验报告与合格证装订一份，作为随机文件。', s: '第9章' },
+    { t: 'single', q: '包装储运应符合哪项标准的要求？', o: ['GB/T 191', 'GB/T 13306', 'GB/T 20062', 'GB/T 3797'], a: [0], e: '8.4.7：包装储运应符合 GB/T 191《包装储运图示标志》的要求。', s: '8.4.7' }
+  ]
+};
+
+
+/* ===== CH14 ===== */
+window.CH14 = {
+  id: 14,
+  title: '安装与运行维护及综合应用',
+  slides: [
+    { h: '安装与操作（10.1~10.5）', body: '<ul><li>现场安装调试之前，宜将升降机<b>预先放置于塔架内部</b>，放置要求遵循塔架内设备布置要求；</li><li>应经<b>专业人员</b>安装调试，并进行空载运行试验等，各系统验收通过后方可使用；</li><li>操作人员应经过<b>升降机厂家培训合格</b>后方能操作；</li><li>投入运行后，应按使用维护说明书要求<b>定期检查、测试、维护保养</b>并做好记录；</li><li>定期对外观检查：无锈蚀、变形，各标识清晰，各连接牢固。</li></ul>', src: '10.1~10.5' },
+    { h: '定期维护要点（10.6~10.13）', body: '<table><tr><th>项目</th><th>频次/要求</th></tr><tr><td>齿轮箱润滑油</td><td>满足现场环境使用，定期按厂家要求检查、更换；清洁度参照 <b>JB/T 7929 的 J 级</b>要求</td></tr><tr><td>安全锁</td><td>定期（<b>每年至少一次</b>）检查，检测到超速时应能锁定安全绳，复位功能正常，符合 GB/T 19155</td></tr><tr><td>导向装置</td><td>定期（每年至少一次）检查牢固性及易损件磨损，影响安全应<b>立即停止使用并更换</b></td></tr><tr><td>电气系统及安全保护装置</td><td>定期（每年至少一次）检查，按钮正常、限位开关触发流畅、动作与限位功能一致</td></tr><tr><td>悬挂装置</td><td>定期（每年至少一次）检查钢丝绳卸扣、螺栓、开口销完好、无松动腐蚀；焊接点无开裂腐蚀</td></tr><tr><td>钢丝绳更换</td><td>应符合 <b>GB/T 5972</b> 的规定</td></tr><tr><td>重新标定</td><td>投入运行<b>六年或超过 250 h</b> 后，提升机和安全锁应返回厂家重新标定后方可再次使用</td></tr><tr><td>原厂家年检</td><td>每年由原厂家对整个升降机（含提升装置和防坠落装置）检查与测试</td></tr></table>', src: '10.6~10.13' },
+    { h: '附录A 离心式安全锁锁绳速度（规范性）', body: '<p>离心式安全锁的<b>启锁速度</b>按升降机额定速度分档（附录A，规范性）：</p><table><tr><th>额定速度（m/min）</th><th>启锁速度（m/min）</th><th>制动距离（mm）</th></tr><tr><td>9</td><td><b>30</b></td><td>&lt;200</td></tr><tr><td>18</td><td><b>42</b></td><td>&lt;200</td></tr><tr><td>22</td><td><b>42</b></td><td>&lt;200</td></tr></table><div class="kv">速记：额定 9 → 启锁 30；额定 18、22 → 启锁 42；制动距离均 &lt;200 mm。启锁速度约为额定速度的 2~3 倍。</div>', src: '附录A' },
+    { h: '综合易错辨析（跨章节对照）', body: '<p>把高频数值放在一起对照，避免混淆：</p><table><tr><th>项目</th><th>数值</th><th>出处</th></tr><tr><td>动载/静载/极限载荷</td><td>1.25 / 1.5 / 3.5 倍额定载重量</td><td>5.3.2.5/6、6.3.4/3/6</td></tr><tr><td>手动下降速度</td><td>≥20% 且 ≤166% 额定速度；齿轮齿条式 ≤0.63 m/s</td><td>5.4.3.3</td></tr><tr><td>超载触发</td><td>1.25 倍额定载重量或之前</td><td>5.4.4.2</td></tr><tr><td>单作用钢丝绳安全系数</td><td>≥9</td><td>5.4.3.7</td></tr><tr><td>钢丝绳/导向绳最小直径</td><td>8 mm / 11 mm</td><td>5.4.3.7</td></tr><tr><td>设计寿命（陆/海）</td><td>20 年 / 25 年</td><td>5.1</td></tr><tr><td>噪声限值</td><td>85 dB(A)</td><td>5.3.3</td></tr><tr><td>逃生距离</td><td>≤1.1 m</td><td>5.4.2.1</td></tr><tr><td>导向绳固定间距</td><td>≤20 m（垂直方向）</td><td>5.4.6.2</td></tr><tr><td>开孔防坠物</td><td>不允许 15 mm 球体通过</td><td>5.4.2.2~5.4.2.5</td></tr></table>', src: '综合' }
+  ],
+  questions: [
+    { t: 'single', q: '升降机的操作人员应经过什么培训后方能操作？', o: ['企业内部安全培训', '升降机厂家培训合格', '任意第三方培训', '无需培训'], a: [1], e: '10.3：升降机的操作人员应经过升降机厂家培训合格后方能操作升降机。', s: '10.3' },
+    { t: 'judge', q: '升降机应经专业人员安装调试，并进行空载运行试验等，各系统验收通过后方可使用。', a: [0], e: '正确。10.2：升降机应经专业人员安装调试，并进行空载运行试验等，各系统等应验收通过后方可使用。', s: '10.2' },
+    { t: 'single', q: '升降机齿轮箱润滑油的清洁度要求参照哪项标准？', o: ['GB/T 5972 的 J 级', 'JB/T 7929 的 J 级', 'ISO 12944-5 的 C3', 'GB/T 10125 的 A 级'], a: [1], e: '10.6：润滑油的清洁度要求参照标准 JB/T 7929《齿轮传动装置清洁度》的 J 级要求。', s: '10.6' },
+    { t: 'single', q: '定期检查安全锁的频次要求是：', o: ['每月至少一次', '每季度至少一次', '每年至少一次', '每两年一次'], a: [2], e: '10.7：定期（每年至少一次）检查安全锁，检测到超速时应能锁定安全绳，并且复位功能正常，且应符合 GB/T 19155 的有关规定。', s: '10.7' },
+    { t: 'single', q: '检查导向装置时，若有影响到安全或正常运行的情况，应：', o: ['记录后继续使用', '降低速度继续运行', '立即停止使用并进行更换', '待年度检修时处理'], a: [2], e: '10.8：定期（每年至少一次）检查导向装置的牢固性，检查导向易损件的磨损情况，若有影响到安全或正常运行的情况，应立即停止使用并进行更换。', s: '10.8' },
+    { t: 'single', q: '钢丝绳的更换应符合哪项标准的规定？', o: ['GB/T 20118', 'GB/T 8918', 'GB/T 5972', 'GB/T 6946'], a: [2], e: '10.11：钢丝绳的更换应符合 GB/T 5972《起重机 钢丝绳 保养、维护、检验和报废》的有关规定。', s: '10.11' },
+    { t: 'single', q: '升降机投入运行多长时间后，提升机和安全锁应返回厂家重新标定？', o: ['三年或超过 100 h', '四年或超过 200 h', '五年或超过 250 h', '六年或超过 250 h'], a: [3], e: '10.12：升降机投入运行六年或超过 250 h 后，提升机和安全锁应返回厂家重新标定后方可再次使用。",六年"与"250 h"两个条件先到为准。', s: '10.12' },
+    { t: 'single', q: '每年应对整个升降机进行检查与测试的主体是：', o: ['任意第三方检测机构', '升降机原厂家', '用户自行', '风电场运维班组'], a: [1], e: '10.13：每年应由升降机原厂家对整个升降机（含提升装置和防坠落装置）进行一次检查与测试，但是宜依据使用情况和使用条件以及操作情况进行更频繁的检查。', s: '10.13' },
+    { t: 'single', q: '额定速度为 9 m/min 的升降机，其离心式安全锁的启锁速度应为：', o: ['30 m/min', '36 m/min', '42 m/min', '45 m/min'], a: [0], e: '附录A：额定速度 9 m/min 时启锁速度 30 m/min，制动距离 <200 mm。', s: '附录A' },
+    { t: 'single', q: '额定速度为 18 m/min 的升降机，其离心式安全锁的启锁速度应为：', o: ['30 m/min', '36 m/min', '42 m/min', '54 m/min'], a: [2], e: '附录A：额定速度 18 m/min 时启锁速度 42 m/min，制动距离 <200 mm。额定速度 22 m/min 的启锁速度同为 42 m/min。', s: '附录A' },
+    { t: 'judge', q: '离心式安全锁的制动距离应小于 200 mm。', a: [0], e: '正确。附录A：三档额定速度（9/18/22 m/min）对应的制动距离均为 <200 mm。', s: '附录A' },
+    { t: 'single', q: '下列载荷倍数的对应关系正确的是：', o: ['动态试验 1.5 倍、静态试验 1.25 倍', '动态试验 1.25 倍、静态试验 1.5 倍、极限载荷试验 3.5 倍', '动态试验 3.5 倍、静态试验 1.5 倍', '动态试验 1.25 倍、静态试验 2.0 倍'], a: [1], e: '5.3.2.5/6、5.3.2.2：动态试验承受 1.25 倍额定载重量，静态试验承受 1.5 倍，极限载荷试验承受 3.5 倍。口诀：动 1.25、静 1.5、极限 3.5。', s: '5.3.2；6.3' },
+    { t: 'multi', q: '下列哪些维护检查项目的频次要求是"每年至少一次"？（多选）', o: ['检查安全锁', '检查导向装置的牢固性', '检查电气系统及安全保护装置', '检查齿轮箱润滑油'], a: [0, 1, 2], e: '10.7/10.8/10.9：安全锁、导向装置、电气系统及安全保护装置均为每年至少一次。齿轮箱润滑油是"定期按厂家要求检查、更换"（10.6），未规定统一频次。', s: '10.6~10.9' },
+    { t: 'single', q: '钢丝绳式升降机导向钢丝绳固定装置的垂直安装间距、逃生时轿厢与逃生设施的距离分别是：', o: ['不大于 15 m 和不超过 0.8 m', '不大于 20 m 和不超过 1.1 m', '不大于 25 m 和不超过 1.5 m', '不大于 30 m 和不超过 2.0 m'], a: [1], e: '5.4.6.2：导向钢丝绳沿途固定装置安装距离垂直方向不大于 20 m；5.4.2.1 j)：逃生时轿厢与逃生设施之间的距离不超过 1.1 m。', s: '5.4.6.2；5.4.2.1' },
+    { t: 'judge', q: '升降机投入使用前，宜将其预先放置于塔架内部，放置要求遵循塔架内设备布置要求。', a: [0], e: '正确。10.1：升降机在现场安装调试之前，宜将其预先放置于塔架内部，放置要求遵循塔架内设备布置要求。', s: '10.1' }
+  ]
+};
+
+
+/* ===== FILL ===== */
+/* NBT 10991-2022 塔架升降机填空题库（知识巩固）
+ * 结构：{ ch: 章号, t: 'fill', q: 题干(____ 为空), a: [[空1可接受答案...],[空2...]], e: 解析, s: 出处 }
+ */
+window.FILL = {
+  id: 15,
+  title: '填空题（知识巩固）',
+  questions: [
+    /* ============ 第 1 章 范围与规范性引用文件 ============ */
+    { ch: 1, t: 'fill', q: '本文件适用于风力发电机组塔架升降机的设计、制造、____与验收。', a: [['检验']], e: '第1章：本文件适用于风力发电机组塔架升降机的设计、制造、检验与验收。', s: '第1章 范围' },
+    { ch: 1, t: 'fill', q: '塔架升降机安装在风力发电机组____内部，沿预设的导向装置做往复运行。', a: [['塔架']], e: '3.1：塔架升降机安装在风力发电机组塔架内部，沿塔架内预设的导向装置做往复运行。', s: '3.1' },
+    { ch: 1, t: 'fill', q: '注日期的引用文件，仅该日期对应的____适用于本文件；不注日期的引用文件，其____版本（包括所有的修改单）适用于本文件。', a: [['版本'], ['最新']], e: '第2章：注日期的引用文件仅该日期对应版本适用；不注日期的引用文件其最新版本（包括所有修改单）适用。两者方向相反，是易错点。', s: '第2章 规范性引用文件' },
+
+    /* ============ 第 2 章 术语和定义 ============ */
+    { ch: 2, t: 'fill', q: '运行导向系统的导向方式分为____、爬梯、齿轮齿条。', a: [['钢丝绳']], e: '3.2：导向方式分为钢丝绳、爬梯、齿轮齿条，对应钢丝绳式、爬梯式、齿轮齿条式升降机。', s: '3.2' },
+    { ch: 2, t: 'fill', q: '额定载重量（kg）是由制造商规定的在正常工作工况下升降机承受的____载重量。', a: [['最大']], e: '3.6：额定载重量是在正常工作工况下升降机承受的最大载重量。', s: '3.6' },
+    { ch: 2, t: 'fill', q: '额定速度（____）是升降机装载额定载重量，在额定功率下稳定运行的设计速度。', a: [['m/min']], e: '3.7：额定速度单位 m/min。主参数系列为 9、18、22 m/min。', s: '3.7；表1' },
+    { ch: 2, t: 'fill', q: '爬升式提升机构依靠钢丝绳和驱动绳轮之间的____带动轿厢上下运行。', a: [['摩擦力', '摩擦']], e: '3.11：爬升式提升机构依靠钢丝绳和驱动绳轮之间的摩擦力带动轿厢上下运行，原理类似电梯曳引。', s: '3.11' },
+    { ch: 2, t: 'fill', q: '安全钢丝绳正常工作时不承担载荷，在工作钢丝绳失效时，通过____承担载荷。', a: [['防坠落安全装置']], e: '3.15：安全钢丝绳平时不承载，失效时通过防坠落安全装置承担载荷。', s: '3.15' },
+    { ch: 2, t: 'fill', q: '主体结构主要包括轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系统及____。', a: [['电缆收集装置']], e: '3.9：主体结构包括轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系统及电缆收集装置。', s: '3.9' },
+    { ch: 2, t: 'fill', q: '安全锁是当轿厢下滑速度达到锁绳速度或悬挂钢丝绳____时，能自动锁住安全钢丝绳的装置。', a: [['松弛']], e: '3.19：安全锁在轿厢下滑速度达到锁绳速度或悬挂钢丝绳松弛时自动锁住安全钢丝绳。两个触发条件缺一不可。', s: '3.19' },
+
+    /* ============ 第 3 章 型号、分类、主参数 ============ */
+    { ch: 3, t: 'fill', q: '塔架升降机型号的类别代号为____。', a: [['TS']], e: '4.1：TS 中 T=塔架、S=升降机，取汉语拼音首字母。', s: '4.1' },
+    { ch: 3, t: 'fill', q: '导向方式代号中，钢丝绳式为____、爬梯式为____、齿轮齿条式为____。', a: [['GS'], ['PT'], ['CL']], e: '4.1：GS=钢丝绳式、PT=爬梯式、CL=齿轮齿条式。', s: '4.1' },
+    { ch: 3, t: 'fill', q: '型号 TS-240/9-GS 中，240 表示额定载重量为____kg，9 表示额定速度为____m/min。', a: [['240'], ['9']], e: '4.2：TS-240/9-GS 为额定载重量 240 kg、额定速度 9 m/min 的钢丝绳式塔架升降机。', s: '4.2' },
+    { ch: 3, t: 'fill', q: '升降机额定速度的优选系列为9、18、____ m/min。', a: [['22']], e: '表1：额定速度优选系列为 9、18、22 m/min。', s: '表1' },
+    { ch: 3, t: 'fill', q: '升降机额定载重量的优选系列最大档为____kg。', a: [['450']], e: '表1：额定载重量优选系列为 240、250、300、320、350、450 kg。', s: '表1' },
+
+    /* ============ 第 4 章 技术要求总则与一般要求 ============ */
+    { ch: 4, t: 'fill', q: '升降机整机及主体结构设计寿命，陆上应不低于____年，海上应不低于____年。', a: [['20'], ['25']], e: '5.1：陆上不低于 20 年、海上不低于 25 年。', s: '5.1' },
+    { ch: 4, t: 'fill', q: '升降机在动态试验时，应有承受____倍额定载重量的能力。', a: [['1.25', '1,25']], e: '5.3.2.5：动态试验承受 1.25 倍额定载重量。', s: '5.3.2.5' },
+    { ch: 4, t: 'fill', q: '升降机在静态试验时，应有承受____倍额定载重量的能力。', a: [['1.5', '1,5']], e: '5.3.2.6：静态试验承受 1.5 倍额定载重量。', s: '5.3.2.6' },
+    { ch: 4, t: 'fill', q: '极限载荷试验时，升降机应有承受____倍额定载重量的能力。', a: [['3.5', '3,5']], e: '5.3.2.2：极限载荷试验承受 3.5 倍额定载重量。口诀：动 1.25、静 1.5、极限 3.5。', s: '5.3.2.2' },
+    { ch: 4, t: 'fill', q: '升降机在额定载重量稳定运行时，噪声不应大于____dB(A)。', a: [['85']], e: '5.3.3：噪声不应大于 85 dB(A)。', s: '5.3.3' },
+    { ch: 4, t: 'fill', q: '升降机的极限载荷应不小于升降机____与额定载重量之和。', a: [['自重']], e: '5.3.2.2：极限载荷应不小于升降机自重与额定载重量之和。', s: '5.3.2.2' },
+
+    /* ============ 第 5 章 轿厢 ============ */
+    { ch: 5, t: 'fill', q: '轿厢内部自由站立高度最小为____m。', a: [['2', '2.0']], e: '5.4.2.1 b)：内部自由站立高度最小为 2 m。', s: '5.4.2.1' },
+    { ch: 5, t: 'fill', q: '轿厢应被导向，防止其脱离或卡滞，要求至少有____个导向部件。', a: [['4']], e: '5.4.2.1 d)：至少 4 个导向部件。', s: '5.4.2.1' },
+    { ch: 5, t: 'fill', q: '轿厢底板相对水平面的最大倾斜度不超过____°。', a: [['5']], e: '5.4.2.1 e)：底板最大倾斜度不超过 5°。', s: '5.4.2.1' },
+    { ch: 5, t: 'fill', q: '轿厢围板如有打孔，打孔面积至少应为轿厢围板面积的____%。', a: [['4']], e: '5.4.2.1 g)：打孔面积至少为围板面积的 4%。', s: '5.4.2.1' },
+    { ch: 5, t: 'fill', q: '轿厢内的每个工作人员应拥有至少____m²的轿厢底板面积。', a: [['0.25', '0,25']], e: '5.4.2.2：每个工作人员至少 0.25 m² 底板面积。', s: '5.4.2.2' },
+    { ch: 5, t: 'fill', q: '逃生时轿厢与逃生设施之间的距离应不超过____m。', a: [['1.1', '1,1']], e: '5.4.2.1 j)：逃生距离不超过 1.1 m，且应笔直、无障碍。', s: '5.4.2.1' },
+    { ch: 5, t: 'fill', q: '轿厢门开口应至少净高____m（从轿厢底板处测量），净宽至少____m。', a: [['1.9', '1,9'], ['0.4', '0,4']], e: '5.4.2.5 a)：轿厢门净高至少 1.9 m、净宽至少 0.4 m。', s: '5.4.2.5' },
+    { ch: 5, t: 'fill', q: '当向轿厢门施加载荷____N 的力时，其弹性变形量应不超过____mm。', a: [['300'], ['30']], e: '5.4.2.5 i)：300 N 力时弹性变形不超过 30 mm。', s: '5.4.2.5' },
+    { ch: 5, t: 'fill', q: '顶板或底板上的活板门尺寸应不小于 0.4 m × ____m。', a: [['0.5', '0,5']], e: '5.4.2.6 b)：活板门尺寸不小于 0.4 m × 0.5 m。', s: '5.4.2.6' },
+    { ch: 5, t: 'fill', q: '爬梯逃生门打开时，从爬梯到轿厢门槛的水平距离应不超过____mm。', a: [['240']], e: '5.4.2.6 c)：水平距离不超过 240 mm。', s: '5.4.2.6' },
+    { ch: 5, t: 'fill', q: '轿厢底板、围板、顶板及轿厢门上的开口，均不允许直径____mm 的球体通过。', a: [['15']], e: '5.4.2.2~5.4.2.5："15 mm 球体"是统一的防坠物孔径门槛。', s: '5.4.2.2~5.4.2.5' },
+
+    /* ============ 第 6 章 动力系统 ============ */
+    { ch: 6, t: 'fill', q: '升降机空载上升速度或额定载重量下降速度偏差，均不应超过额定速度的____%。', a: [['15']], e: '5.4.3.2 c)：速度偏差不超过额定速度的 15%。', s: '5.4.3.2' },
+    { ch: 6, t: 'fill', q: '手动下降系统从轿厢外手动释放，应需要一个不超过____N 持续的力。', a: [['400']], e: '5.4.3.3 a)：不超过 400 N 持续的力。', s: '5.4.3.3' },
+    { ch: 6, t: 'fill', q: '手动下降运行在额载条件下的速度，应不低于额定速度的____%，不高于额定速度的____%。', a: [['20'], ['166']], e: '5.4.3.3 b)：手动下降速度 20%~166% 额定速度。', s: '5.4.3.3' },
+    { ch: 6, t: 'fill', q: '齿轮齿条式升降机手动下降的最大速度不高于____m/s。', a: [['0.63', '0,63']], e: '5.4.3.3 b)：手动下降最大速度不高于 0.63 m/s，且低于超速安全装置的触发速度。', s: '5.4.3.3' },
+    { ch: 6, t: 'fill', q: '爬升式提升机构的滑轮、卷筒及驱动轮最小节圆直径应不小于____倍钢丝绳直径。', a: [['20']], e: '5.4.3.4 b)：最小节圆直径不小于 20 倍钢丝绳直径；不承载滑轮或倾斜角<5° 时为 10 倍。', s: '5.4.3.4' },
+    { ch: 6, t: 'fill', q: '爬升式提升机构可靠性试验时，轻型应能正常工作____次循环，重型应能正常工作____次循环。', a: [['20000', '2万'], ['60000', '6万']], e: '5.4.3.4 e)：轻型 20 000 次、重型 60 000 次循环。', s: '5.4.3.4' },
+    { ch: 6, t: 'fill', q: '爬升式提升机构主制动器应在____mm 距离内停止承载 1.25 倍额定载重量并按额定速度运行的升降机。', a: [['200']], e: '5.4.3.4 g)：制动器应在 200 mm 距离内制停。', s: '5.4.3.4' },
+    { ch: 6, t: 'fill', q: '钢丝绳的最小标称直径应为____mm；导向用钢丝绳最小直径应为____mm。', a: [['8'], ['11']], e: '5.4.3.7 d) e)：工作绳 8 mm、导向绳 11 mm。', s: '5.4.3.7' },
+    { ch: 6, t: 'fill', q: '单作用钢丝绳安全系数不小于____。', a: [['9']], e: '5.4.3.7 g)：单作用钢丝绳安全系数不小于 9。', s: '5.4.3.7' },
+    { ch: 6, t: 'fill', q: '齿轮齿条式动力系统中，齿轮弯曲疲劳强度安全系数应不小于____，接触疲劳强度安全系数应不小于____。', a: [['2'], ['1.4', '1,4']], e: '5.4.3.6 g)：弯曲≥2、接触≥1.4。', s: '5.4.3.6' },
+    { ch: 6, t: 'fill', q: '驱动单元背轮直接作用到齿条上时，齿轮模数应不小于____；间接作用时应不小于____。', a: [['4'], ['6']], e: '5.4.3.6 i)：直接作用模数≥4、间接作用模数≥6。', s: '5.4.3.6' },
+    { ch: 6, t: 'fill', q: '任何条件下，齿轮齿条式升降机轿厢的负向加速度不得超过____g。', a: [['1.0', '1']], e: '5.4.3.6 f)：负向加速度不得超过 1.0 g。', s: '5.4.3.6' },
+    { ch: 6, t: 'fill', q: '卷筒法兰盘高于最外层钢丝绳的凸起高度应不小于钢丝绳直径的____倍。', a: [['1.5', '1,5']], e: '5.4.3.5 d)：法兰盘凸起高度不小于钢丝绳直径的 1.5 倍。', s: '5.4.3.5' },
+    { ch: 6, t: 'fill', q: '对动力提升机构，升降机在最低位置时卷筒上至少应有____个完整圈钢丝绳盘绕。', a: [['3']], e: '5.4.3.5 f)：至少 3 个完整圈钢丝绳盘绕在卷筒上。', s: '5.4.3.5' },
+
+    /* ============ 第 7 章 安全保护与防坠落 ============ */
+    { ch: 7, t: 'fill', q: '超载检测装置应在达到提升机构的____倍额定载重量或之前触发。', a: [['1.25', '1,25']], e: '5.4.4.2：1.25 倍额定载重量或之前触发。', s: '5.4.4.2' },
+    { ch: 7, t: 'fill', q: '安全锁的设计应限制其动载荷系数不大于____。', a: [['3']], e: '5.4.5.1 c)：动载荷系数不大于 3。', s: '5.4.5.1' },
+    { ch: 7, t: 'fill', q: '终极下降限位开关是____式升降机应配备的。', a: [['齿轮齿条']], e: '5.4.4.1 d)：终极下降限位开关为齿轮齿条式升降机应配备。', s: '5.4.4.1' },
+    { ch: 7, t: 'fill', q: '障碍检测装置应配备____和底部障碍检测装置，并优先选择全轮廓障碍检测装置。', a: [['顶部']], e: '5.4.4.3：应配备顶部和底部障碍检测装置。', s: '5.4.4.3' },
+
+    /* ============ 第 8 章 导向、操控与电缆 ============ */
+    { ch: 8, t: 'fill', q: '钢丝绳式升降机以从塔架顶部吊梁垂下的____根钢丝绳作为导向。', a: [['2', '两']], e: '5.4.6.2：两根钢丝绳作为导向，下端用拉紧支架张紧。', s: '5.4.6.2' },
+    { ch: 8, t: 'fill', q: '钢丝绳式升降机导向钢丝绳沿途固定装置的安装距离在垂直方向上不大于____m。', a: [['20']], e: '5.4.6.2：固定装置垂直间距不大于 20 m。', s: '5.4.6.2' },
+    { ch: 8, t: 'fill', q: '爬梯式升降机中，塔架支撑固定爬梯踏棍，距离竖梁内侧面不小于____mm。', a: [['15']], e: '5.4.6.3：距离竖梁内侧面不小于 15 mm。', s: '5.4.6.3' },
+    { ch: 8, t: 'fill', q: '收缆桶收集电缆方式中，底部停靠平台开孔孔径建议不大于____mm。', a: [['300']], e: '5.4.8.2：孔径建议不大于 300 mm。', s: '5.4.8.2' },
+    { ch: 8, t: 'fill', q: '电缆滑车的导向装置一般采用____做导向，防止其旋转。', a: [['钢丝绳']], e: '5.4.8.3：电缆滑车一般采用钢丝绳做导向。', s: '5.4.8.3' },
+
+    /* ============ 第 9 章 电气控制系统 ============ */
+    { ch: 9, t: 'fill', q: '升降机电气控制系统供电应采用____线制，接零、接地线应始终分开。', a: [['三相五']], e: '5.5.2：三相五线制，接零、接地线始终分开，接地线黄绿相间。', s: '5.5.2' },
+    { ch: 9, t: 'fill', q: '升降机电气系统应可靠接地，接地电阻不应大于____Ω。', a: [['4']], e: '5.5.3：接地电阻不大于 4 Ω。', s: '5.5.3' },
+    { ch: 9, t: 'fill', q: '电气控制部分的防护等级应为≥____。', a: [['IP54']], e: '5.5.4：防护等级≥IP54。', s: '5.5.4' },
+    { ch: 9, t: 'fill', q: '电动机绝缘等级应不低于____级。', a: [['F']], e: '5.5.4：电动机绝缘等级不低于 F 级。', s: '5.5.4' },
+    { ch: 9, t: 'fill', q: '主电路相间绝缘电阻应不小于____MΩ。', a: [['0.5', '0,5']], e: '5.5.5：主电路相间绝缘电阻不小于 0.5 MΩ。', s: '5.5.5' },
+    { ch: 9, t: 'fill', q: '升降机内部照明断电后应能持续使用____min 以上。', a: [['30']], e: '5.5.7：应急照明断电后持续使用 30 min 以上。', s: '5.5.7' },
+    { ch: 9, t: 'fill', q: '电气控制箱按钮外露部分应能承受 50 Hz、____V 电压历时 1 min 的耐压试验。', a: [['1250']], e: '5.5.6：50 Hz、1250 V、1 min 耐压试验。', s: '5.5.6' },
+    { ch: 9, t: 'fill', q: '急停按钮为____色，有明显"急停"标记，不能自动复位。', a: [['红']], e: '5.5.8：急停按钮为红色，不能自动复位，电路独立于各控制电路。', s: '5.5.8' },
+
+    /* ============ 第 11 章 试验 ============ */
+    { ch: 11, t: 'fill', q: '试验时环境温度应为-40 ℃～____℃。', a: [['55']], e: '6.1.1 a)：环境温度 -40 ℃～+55 ℃。', s: '6.1.1' },
+    { ch: 11, t: 'fill', q: '试验场地 10 min 平均风速不宜大于____m/s。', a: [['10']], e: '6.1.1 b)：10 min 平均风速不宜大于 10 m/s。', s: '6.1.1' },
+    { ch: 11, t: 'fill', q: '试验时电源电压值波动范围为±____%。', a: [['5']], e: '6.1.1 c)：电源电压波动 ±5%。', s: '6.1.1' },
+    { ch: 11, t: 'fill', q: '静力载荷试验：均布施加 1.5 倍额定载重量，静置____min。', a: [['15']], e: '6.3.3：静置 15 min 后检查。', s: '6.3.3' },
+    { ch: 11, t: 'fill', q: '极限载荷试验：均布施加 3.5 倍额定载重量，静置____h 后卸下载荷。', a: [['1']], e: '6.3.6：静置 1 h，允许永久变形但无断裂。', s: '6.3.6' },
+    { ch: 11, t: 'fill', q: '整机可靠性试验循环次数应不少于____次，可靠度不低于____%。', a: [['3000', '3千'], ['92']], e: '6.6：循环不少于 3 000 次，可靠度不低于 92%。', s: '6.6' },
+    { ch: 11, t: 'fill', q: '整机可靠性试验中，安全锁锁绳试验次数不少于____次，手动下降试验不少于____次。', a: [['30'], ['50']], e: '6.6：安全锁锁绳 30 次、手动下降 50 次。', s: '6.6' },
+    { ch: 11, t: 'fill', q: '手动下降试验中，额定载重量下下降速度不应大于____倍额定速度。', a: [['1.5', '1,5']], e: '6.9.2：下降速度不大于 1.5 倍额定速度，每次下滑距离不小于 2 m。', s: '6.9.2' },
+    { ch: 11, t: 'fill', q: '提升速度测试：测试 3 次，误差在设计值的±____%范围内。', a: [['5']], e: '6.10：误差在 ±5% 范围内。', s: '6.10' },
+    { ch: 11, t: 'fill', q: '防坠落安全装置试验中，安全锁承受 1.5 倍额定载重量静置____min，不得有任何滑移。', a: [['10']], e: '6.15 a)：静置 10 min 不得滑移。', s: '6.15' },
+    { ch: 11, t: 'fill', q: '轿厢强度和刚度试验：在底架任意____mm×200 mm 区域内承载 300 kg 均匀载荷。', a: [['200']], e: '6.5：200 mm×200 mm 区域承载 300 kg。', s: '6.5' },
+
+    /* ============ 第 12 章 检验规则 ============ */
+    { ch: 12, t: 'fill', q: '升降机产品检验分为出厂检验、型式检验、____三类。', a: [['现场安装验收']], e: '7.1：出厂检验、型式检验、现场安装验收。', s: '7.1' },
+    { ch: 12, t: 'fill', q: '型式检验被抽检的同型号升降机不应少于____台。', a: [['2']], e: '7.2：同型号抽检不少于 2 台，全部项目合格判为合格。', s: '7.2' },
+    { ch: 12, t: 'fill', q: '产品停产____年后恢复生产时，应进行型式检验。', a: [['2']], e: '7.2：停产 2 年后恢复生产时需型式检验。', s: '7.2' },
+    { ch: 12, t: 'fill', q: '表3中标有"△"者为____项目；标有"※"为供需双方协商进行的项目。', a: [['必检']], e: '表3 注：△=必检、—=不作规定、※=供需双方协商。', s: '表3' },
+
+    /* ============ 第 13 章 标识包装贮存 ============ */
+    { ch: 13, t: 'fill', q: '贮存时，____设备必须储存于室内。', a: [['电气']], e: '8.4.4：电气设备必须储存于室内。', s: '8.4.4' },
+    { ch: 13, t: 'fill', q: '储存时间超过____个月时，应检查产品零部件的完好情况。', a: [['6']], e: '8.4.5：储存超过 6 个月应检查零部件完好情况。', s: '8.4.5' },
+
+    /* ============ 第 14 章 安装运行维护与附录A ============ */
+    { ch: 14, t: 'fill', q: '升降机投入运行____年或超过 250 h 后，提升机和安全锁应返回厂家重新标定。', a: [['6']], e: '10.12：六年或超过 250 h 后重新标定。', s: '10.12' },
+    { ch: 14, t: 'fill', q: '安全锁、导向装置、电气系统及安全保护装置的检查频次要求为每年至少____次。', a: [['1', '一']], e: '10.7/10.8/10.9：均要求定期（每年至少一次）检查。', s: '10.7~10.9' },
+    { ch: 14, t: 'fill', q: '额定速度为 9 m/min 的升降机，其离心式安全锁启锁速度为____m/min。', a: [['30']], e: '附录A：额定 9→启锁 30 m/min。', s: '附录A' },
+    { ch: 14, t: 'fill', q: '额定速度为 18 m/min 和 22 m/min 的升降机，离心式安全锁启锁速度均为____m/min，制动距离均<____mm。', a: [['42'], ['200']], e: '附录A：额定 18/22→启锁 42 m/min，制动距离<200 mm。', s: '附录A' },
+    { ch: 14, t: 'fill', q: '每年应由____对整个升降机（含提升装置和防坠落装置）进行一次检查与测试。', a: [['升降机原厂家', '原厂家']], e: '10.13：每年由原厂家检查与测试。', s: '10.13' }
+  ]
+};
+
+
+/* ===== KB ===== */
+/* NBT 10991-2022 塔架升降机课程知识库（自动生成） */
+window.KB = {"items": {"1": {"t": "范围", "c": "本文件规定了风力发电机组塔架升降机（以下简称“升降机”）的术语和定义、技术要求、试验 与检验方法、标识、包装、运输和贮存、随机文件、安装与运行维护等要求。 本文件适用于风力发电机组塔架升降机的设计、制造、检验与验收。"}, "2": {"t": "规范性引用文件", "c": "下列文件中的内容通过文中的规范性引用而构成本文件必不可少的条款。其中，注日期的引用文 件，仅该日期对应的版本适用于本文件；不注日期的引用文件，其最新版本（包括所有的修改单）适 用于本文件。 GB/T 191 包装储运图示标志 GB/T 2104 钢丝绳包装、标志及质量证明书的一般规定 GB/T 3797 电气控制设备 GB/T 5226.1-2019 机械电气安全 机械电气设备 第1部分：通用技术条件 GB/T 5972 起重机 钢丝绳 保养、维护、检验和报废 GB/T 6946 钢丝绳铝合金压制接头 GB/T 7251.1 低压成套开关设备和控制设备 第1部分：总则 GB/T 8918 重要用途钢丝绳 GB/T 9174 一般货物运输包装通用技术条件 GB/T 10125 人造气氛腐蚀试验 盐雾试验 GB/T 13306 标牌 GB/T 14048.5 低压开关设备和控制设备 第5-1部分：控制电路电器和开关元件 机电式控制电路 电器 GB/T 18684 锌铬涂层 技术条件 GB/T 19155-2017 高处作业吊篮 GB/T 20062 流动式起重机 作业噪声限值及测量方法 GB/T 20118 钢丝绳通用技术条件 GB 26557-2011 吊笼有垂直导向的人货两用施工升降机 GB 30862-2014 坠落防护 挂点装置 NB/T 31060-2014 风力发电设备 环境条件 NB/T 31094-2016 风力发电设备海上特殊环境条件与技术要求 JB/T 7929 齿轮传动装置清洁度 ISO 12944-5 色漆和清漆 防护漆体系对钢结构的防腐蚀保护 第5部分：防护漆体系（Paints and varnishes-Corrosion protection of steel structures by protective paint systems-Part 5: Protective paint systems）"}, "3": {"t": "术语和定义", "c": "下列术语和定义适用于本文件。"}, "3.1": {"t": "", "c": "塔架升降机 tower lift 安装在风力发电机组塔架内部，沿塔架内预设的导向装置做往复运行，将作业人员由起始平台送 达工作平台的一种厢式运输设备。"}, "3.2": {"t": "", "c": "运行导向系统 operation guidance system 升降机运行时在塔架内预设的导向系统，防止升降机发生空中转体或剧烈晃动。导向方式分为钢 丝绳、爬梯、齿轮齿条。"}, "3.3": {"t": "", "c": "钢丝绳导向式升降机（以下简称钢丝绳式升降机） wire-rope-guided tower lift 采用以钢丝绳为导向形式的升降机。"}, "3.4": {"t": "", "c": "爬梯导向式升降机（以下简称爬梯式升降机） ladder- guided tower lift 采用以爬梯为导向形式的升降机。"}, "3.5": {"t": "", "c": "齿轮齿条导向式升降机（以下简称齿轮齿条式升降机） rack-and-pinions -guided tower lift 采用齿轮齿条为导向形式的升降机。"}, "3.6": {"t": "", "c": "额定载重量（kg） rated load 由制造商规定的在正常工作工况下升降机承受的最大载重量。"}, "3.7": {"t": "", "c": "额定速度（m/min） rated lift speed 升降机装载额定载重量，在额定功率下稳定运行的设计速度。"}, "3.8": {"t": "", "c": "极限载荷 limit load 由制造商规定的升降机本身可承受的最大载荷。"}, "3.9": {"t": "", "c": "主体结构 main structure 主要包括轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系统及电缆收集装置。"}, "3.10": {"t": "", "c": "轿厢 cabin 用于承载风电机组工作人员的装置，由底板、围板、门和顶板等组成。"}, "3.11": {"t": "", "c": "爬升式提升机构 traction lifting mechanism 依靠钢丝绳和驱动绳轮之间的摩擦力带动轿厢上下运行的机构。"}, "3.12": {"t": "", "c": "卷扬式提升机构 drum lifting mechanism 在卷筒上缠绕单层或多层钢丝绳，依靠卷筒驱动钢丝绳带动轿厢上下运行的机构。"}, "3.13": {"t": "", "c": "齿轮齿条式提升机构 rack and pinion lifting mechanism 依靠驱动齿轮在齿条上运行，进而带动轿厢上下运行的机构。"}, "3.14": {"t": "", "c": "工作钢丝绳 traction wire rope 升降机正常工作时用于承担载荷的钢丝绳。"}, "3.15": {"t": "", "c": "安全钢丝绳 safety wire rope 正常工作时不承担载荷，在工作钢丝绳失效时，通过防坠落安全装置承担载荷的钢丝绳。"}, "3.16": {"t": "", "c": "导向钢丝绳 guide wire rope 在轿厢上、下运行时起导向作用的钢丝绳。"}, "3.17": {"t": "", "c": "安全保护装置 safety system 系指独立可靠的一套安全保护装置，包括障碍物检测装置、联锁装置（选配）、安全锁、防坠落 安全器等。"}, "3.18": {"t": "", "c": "防坠落安全装置 fall arrest safety device 升降机运行失效时，使轿厢停止并保持静止状态的机械装置。"}, "3.19": {"t": "", "c": "安全锁 safety lock 当轿厢下滑速度达到锁绳速度或悬挂钢丝绳松弛时,能自动锁住安全钢丝绳使轿厢停止下滑或倾 斜的装置。"}, "3.20": {"t": "", "c": "超速安全装置 overspeed safety device 用于在超速发生时使轿厢停止并保持静止状态的机械装置。"}, "4": {"t": "型号、分类、主参数", "c": ""}, "4.1": {"t": "型号", "c": "TS-XX/XX-XX 导向方式：钢丝绳式---GS，爬梯式---PT，齿轮齿条式---CL 额定速度 （m/min） 额定载重量 （kg） 类别代号：塔架升降机（T:塔架，S:升降机；汉语拼音首字母）"}, "4.2": {"t": "标识示例", "c": "TS -240/9-GS 为：额定载重量240 kg，额定速度（V)9 m/min的钢丝绳式塔架升降机； TS -320/18-PT 为：额定载重量320 kg，额定速度（V)18 m/min的爬梯式塔架升降机； TS -350/22-CL 为：额定载重量350 kg，额定速度（V)22 m/min的齿轮齿条式塔架升降机。"}, "4.3": {"t": "分类", "c": "升降机按照导向方式分为钢丝绳式、爬梯式、齿轮齿条式三种类别。根据不同工作工况，选择适 用的塔架升降机。"}, "4.4": {"t": "主参数及其系列", "c": "升降机的主参数系列见表1。 表1 升降机主参数优选系列 名称 主要参数 额定载重量 kg 240，250，300，320，350，450 额定速度 m/min 9，18，22"}, "5": {"t": "技术要求", "c": ""}, "5.1": {"t": "总则", "c": "升降机整机及主体结构设计寿命陆上应不低于20年，海上应不低于25年。"}, "5.2": {"t": "运行环境条件", "c": "海上符合NB/T 31094-2016中4.2的要求，陆上符合NB/T 31060-2014中4.1的要求。"}, "5.3": {"t": "一般要求", "c": ""}, "5.3.1": {"t": "外观要求", "c": ""}, "5.3.1.1": {"t": "升降机零件加工表面不得有锈蚀、磕碰、划伤等缺陷，零件外露表面应进行防锈处理。升", "c": "降机可见外表面及轿厢内表面应平整、洁净，采用非不锈钢金属材料时应按规定涂底漆和面漆。漆 层应均匀、平滑、色泽一致，附着力强，不得有皱皮、脱皮、漏漆、流痕、气泡等缺陷。铝合金件 如进行表面喷塑，不得有缩孔、针孔、杂质点、漏底、涂层厚度明显不均、流挂等现象。"}, "5.3.1.2": {"t": "围板、罩壳等应平整，安装牢固可靠。警示标志、铭牌文字、控制标记等应牢固、清晰、", "c": "完整，不得有油污、水渍等。"}, "5.3.2": {"t": "载荷", "c": ""}, "5.3.2.1": {"t": "", "c": "制造商或者供应商应明确说明升降机的额定载重量。"}, "5.3.2.2": {"t": "升降机的极限载荷应不小于升降机自重与额定载重量之和，在极限载荷试验时，应有承受", "c": "3.5 倍额定载重量的能力。"}, "5.3.2.3": {"t": "升降机应具有额定载重量的承载能力，且强度、疲劳性能等已经验证，其设计载荷应符合", "c": "GB/T 19155-2017 中6.3 设计载荷与作用力的规定，并应充分考虑风力发电机组实际运行工况。"}, "5.3.2.4": {"t": "", "c": "升降机装载额定载重量，在额定功率下稳定运行，满足设计速度。"}, "5.3.2.5": {"t": "", "c": "升降机在动态试验时，应有承受1.25 倍额定载重量的能力。"}, "5.3.2.6": {"t": "", "c": "升降机在静态试验时，应有承受1.5 倍额定载重量的能力。"}, "5.3.3": {"t": "噪音", "c": "升降机在额定载重量稳定运行时，应无异常震动和声响，噪声不应大于85 dB(A)。"}, "5.4": {"t": "主体结构技术性能要求", "c": ""}, "5.4.1": {"t": "总则", "c": "升降机主体结构的组成包括：轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系 统及电缆收集装置等。"}, "5.4.2": {"t": "轿厢", "c": ""}, "5.4.2.1": {"t": "一般要求", "c": "轿厢应满足如下一般要求： a) 轿厢应完全封闭； b) 内部自由站立高度最小为2 m； c) 轿厢设计应符合5.3.2规定的载荷要求； d) 轿厢应被导向，防止其脱离或卡滞。要求至少有4个导向部件； e) 轿厢的设计，应保证其底板相对水平面的最大倾斜度不超过5 °； f) 齿轮齿条式升降机中，当正常的导向装置或滚轮失效时，轿厢应配备有效的装置使轿厢仍保 持在导向装置上； g) 轿厢应通风，轿厢围板如无打孔，轿厢应配备通风装置，轿厢围板如有打孔，打孔面积至少 应为轿厢围板面积的4%； h) 应提供用于个人防坠落设备的挂点装置，挂点装置应符合GB 30862-2014的要求，挂点装置 的数量和位置，应符合逃生和救援方案，且不少于最大承载人数； i) 应提供用于自轿厢逃生的设施。应可以手动开启轿厢门、爬梯逃生门或活板门，以进入逃生 设施（例如爬梯）。在设计轿厢门和轿厢底板面积时，应考虑用于逃生所需的适当空间； j) 要求逃生时轿厢与逃生设施之间的距离应不超过1.1 m，该距离应笔直、无障碍； k) 应在轿厢内靠近轿厢门站立位置区域配备扶手。扶手的安装高度宜设置在0.9 m至1.1 m之间 。"}, "5.4.2.2": {"t": "轿厢底板", "c": "轿厢底板的设计应使其能够承受5.3.2 中规定的载荷，且应采用防滑设计（如：网纹铝板）。 应有防止水停滞在轿厢内的措施，例如，自流排水。任何开口的最大直径应不超过15 mm。轿厢 内的每个工作人员应拥有至少0.25 m2 的轿厢底板面积。"}, "5.4.2.3": {"t": "轿厢围板", "c": "轿厢底板与轿厢顶板之间，应有全高围板，轿厢内部用于踩脚的脚蹬或者具有踩脚功能的围板加 强筋也应采用防滑设计（如：花纹板）。轿厢围板的设计，应使其能够承受5.3.2中规定的载荷。在轿 厢围板任意位置100 mm×100 mm面积内，施加均布的200 N水平力时应不失效。此外，弹性变形不应 导致围板与任何界面发生碰撞。如果轿厢围板打孔，所打的孔应不允许直径15 mm的球体通过。"}, "5.4.2.4": {"t": "轿厢顶板", "c": "轿厢应设有顶板。顶板结构的设计，应使其能够承受5.3.2 中规定的载荷。如果顶板打孔，则 所打的孔应不允许直径15 mm 的球体通过。顶板应不允许一个重0.7 kg、直径75 mm ± 2 mm 的钢 球自5 m 的高处掉落时穿透轿厢顶板。"}, "5.4.2.5": {"t": "轿厢门", "c": "轿厢门应满足如下规定： a) 轿厢门开口应至少净高1.9 m（从轿厢底板处测量），净宽至少0.4 m； b) 门应完全覆盖开口； c) 不允许使用电动操作的轿厢门； d) 应有用于防止坠物的措施（如踢脚板）； e) 门上所打的孔应不允许直径15 mm 的球体通过； f) 一个直径不小于8 mm 的PFPE（即安全绳/缓冲器）一端挂在轿厢内部的挂点上，另一端挂 在站立在轿厢外任意位置的人员身上时，如向门的关闭方向施加一个150 N 的载荷时，门应 无法关闭和锁止； g) 如装有无打孔的门，则应配备观察窗，观察窗宜设置在距轿厢底板底面1.5 m~1.8 m 的位置， 面积不小于25 000 mm 2，观察窗应透明且便于打开或者拆卸，用于观察停层区域； h) 升降机正常运行期间，仅当所有轿厢门处于关闭位置时，才可以启动升降机并保持运行，运 行过程中，轿厢门无法打开，在轿厢门未锁止的情形下，应无法启动升降机运行； i) 轿厢门的设计，应使其能够承受5.3.2 中规定的载荷。当向轿厢门施加载荷300 N 的力时， 弹性变形量应不超过30 mm，弹性变形不应导致轿厢门与任何界面发生碰撞；"}, "5.4.2.6": {"t": "活板门或爬梯逃生门", "c": "活板门或爬梯逃生门的要求如下： a) 当轿厢中承载了允许的最多人数时，活板门或爬梯逃生门应能够正常开启； b) 顶板或底板上的活板门尺寸应不小于0.4 m × 0.5 m，顶板活板门不应朝向轿厢内开启，底板 活板门应向轿厢内开启； c) 爬梯逃生门开启方向不应朝外。如果采用爬梯导向式升降机，爬梯逃生门应采取全通道的方 式，可直接上下攀爬到爬梯，且人员随身携带的防坠器能够在逃生爬梯的防坠落系统中安全 使用。当爬梯逃生门打开时，从爬梯到轿厢门槛的水平距离应不超过240 mm。"}, "5.4.3": {"t": "动力系统", "c": ""}, "5.4.3.1": {"t": "分类", "c": "塔架升降机的动力系统主要有三种类型：爬升式、卷扬式、齿轮齿条式。"}, "5.4.3.2": {"t": "一般要求", "c": "动力系统的一般要求如下： a) 动力系统应直接安装在轿厢上，每台升降机应至少装配一个专用动力系统； b) 升降机在正常运行和维护期间，轿厢应在电力驱动下上升下降； c) 升降机在正常运行情况下，空载上升速度或额定载重量下降速度偏差均不应超过额定速度的 15%； d) 升降机应配备用于记录动力系统使用量的装置； e) 动力系统应配备超载检测装置以避免由于超载造成的人员危险和机械损坏，该装置应能检测 升降机上的载荷是否超载； f) 超载装置一旦触发，升降机应停止运行直至超载被卸除； g) 超载装置触发时，超载指示器应持续发出视觉或听觉信号以警示升降机上的操作人员。"}, "5.4.3.3": {"t": "手动下降", "c": "手动下降应满足如下要求： a) 升降机应配备一个手动操作系统，在断电情况下使升降机能够受控下降，该系统应能够从轿 厢外手动释放，且应需要一个不超过400 N持续的力； b) 手动下降运行应采用 “自复位”操作，升降机在额载条件下的运行速度应不低于额定速度 的20%，不高于额定速度的166%(注：对于齿轮齿条式升降机其手动下降速度最大速度不高 于0.63 m/s，低于超速安全装置的触发速度）； c) 手动下降系统的设计，应使其能够防止人员身体的任何部位被夹住或受到撞击。"}, "5.4.3.4": {"t": "爬升式动力系统", "c": "爬升式动力系统应满足如下要求： a) 爬升式动力系统通常由爬升式提升机构、钢丝绳、滑轮和导向轮、相关驱动系统和安全部件 组成； b) 爬升式提升机构的滑轮、卷筒及驱动轮最小节圆直径应不小于20 倍的钢丝绳直径； c) 对于不承载的滑轮或当倾斜角小于5°时，最小节圆直径应不小于10 倍的钢丝绳直径； d) 提升机构的设计，应使钢丝绳在受导向状态下通过爬升式提升机构、防坠落安全装置和滑轮， 以防止钢丝绳离开其预定路线； e) 提升机构在进行可靠性试验承载极限工作载荷时，提升机构应能正常工作20 000 次循环（轻 型）或60 000 次循环（重型）。电动机、制动器、传动箱、卷筒和/或牵引系统之间的机械传 动应为强制型且不可依靠工作中的摩擦力； f) 提升机构应配备主制动器。在下列情况应自动起作用： 1）施加在曲柄或手柄的手动作用力终止； 2）主动力源失电； 3）控制电路的动力源失电。 g) 制动器应在200 mm 距离内停止承载1.25 倍额定载重量并按额定速度运行的升降机； h) 爬升式提升装置在上升和下降不小于1.5 倍极限工作载荷时，牵引系统中的钢丝绳不能发生 打滑或蠕动。"}, "5.4.3.5": {"t": "卷扬式动力系统", "c": "卷扬式动力系统应满足如下要求： a) 卷扬式动力系统通常由卷扬式提升机构、钢丝绳、滑轮和导向轮、安全部件组成； b) 卷扬式提升机构应包括电动机、减速机及卷筒，通常固定在顶部，卷筒及附属设备的设计应 确保钢丝绳在松弛情况下不会从卷筒上脱出； c) 卷扬式动力系统，对于阻旋转钢丝绳，偏斜角不宜大于2°，对于标准钢丝绳，偏斜角不宜 大于4°； d) 卷筒应有法兰盘，法兰盘高于最外层钢丝绳的凸起高度应不小于钢丝绳直径的1.5 倍； e) 钢丝绳卷筒应有机加工或最大粗糙度为Ra=12.5 µm 的凹槽； f) 对动力提升机构，升降机在最低位置时下降运动应自动停止，此时距离接触到卷筒上钢丝绳 锚固点至少有3 个完整圈钢丝绳盘绕在卷筒上。"}, "5.4.3.6": {"t": "齿轮齿条式动力系统", "c": "齿轮齿条式动力系统应满足如下要求: a) 齿轮齿条动力系统通常由齿轮齿条式提升机构、齿条、导向轮及安全部件组成； b) 齿轮齿条式提升机构包括电动机、减速机及驱动齿轮，驱动齿轮和防坠安全装置齿轮应以强 制形式固定在各自的轴上，不应使用摩擦和夹紧的方法固定； c) 防坠安全装置齿轮的位置应低于驱动齿轮并作用在轿厢结构上； d) 齿条应可靠固定，齿条的连接处应完全对齐，避免错误啮合或对齿轮造成损坏； e) 应有相应措施，防止对安全运行构成威胁的异物进入到驱动齿轮/安全装置齿轮与齿条之间 的位置； f) 在任何条件下，轿厢的负向加速度不得超过1.0 g； g) 齿轮每个齿的弯曲疲劳强度的安全系数应不小于2，接触疲劳强度的安全系数应不小于1.4； h) 齿条制作材料的抗磨损性能应与齿轮相匹配； i) 驱动单元背轮直接作用到齿条上，齿轮模数应不小于4，齿轮通过与齿条直接接触的部件实 现间接作用于齿条时，齿轮模数应不小于6； j) 配备两个冗余驱动单元的齿轮齿条系统应至少有2 个相同的驱动单元，每个驱动单元均有独 立的制动器，每个制动器完全独立，并且都以强制形式分别与齿条齿轮系统连接； k) 每个驱动单元应能独立阻止负载1.25 倍额定载重量的轿厢向下运行； l) 每个驱动单元应能通过无动力下降功能使轿厢运行至底部停层； m) 每个驱动单元应配备一个机械装置，该装置能够使轿厢和1.25 倍额定载重量以不超过1.1 倍 额定速度安全下降。"}, "5.4.3.7": {"t": "钢丝绳", "c": "钢丝绳应满足如下要求： a) 钢丝绳采用镀锌钢丝绳，并应符合GB/T 20118 要求； b) 钢丝绳端部和鸡心环应符合GB/T 6946 要求； c) 提升机构和防坠落安全装置至少各配一根钢丝绳； d) 钢丝绳的最小标称直径应为8 mm； e) 导向用钢丝绳，最小直径应为11 mm； f) 钢丝绳在规定的使用环境下使用时，其在使用期间应耐腐蚀。 g) 单作用钢丝绳安全系数不小于9。"}, "5.4.3.8": {"t": "悬挂装置", "c": "悬挂装置的设计符合GB/T 19155-2017中6.5和第9章的要求。"}, "5.4.4": {"t": "安全保护装置", "c": ""}, "5.4.4.1": {"t": "行程限位开关", "c": "行程限位开关应满足如下要求： a) 上升限位开关：升降机应配备上升限位开关，使其停止在顶部行程到达处，触发此开关后， 升降机在电力驱动下只能下降，无法上升； b) 终极上限位开关：应配备终极上限位开关，使升降机在到达行程极限之前完全停止，触发此 开关后，升降机在电力驱动下无法上升或下降，直到维护人员采取纠正措施； c) 下降限位开关：应配备下降限位开关，使升降机停止在底部行程到达处，触发此开关后，升 降机在电力驱动下只能上升，无法下降； d) 终极下降限位开关：齿轮齿条式升降机应配备终极下降限位开关，使升降机在到达行程极限 之前完全停止，触发此开关后，升降机在电力驱动下无法上升或下降，直到维护人员采取纠 正措施。"}, "5.4.4.2": {"t": "超载检测装置", "c": "应配备超载检测装置，用于检测轿厢的超载。应在达到提升机构的1.25 倍额定载重量或之前触 发，超载应通过指示灯或声音信号指示出来。"}, "5.4.4.3": {"t": "障碍检测装置", "c": "当障碍物可能与运行的轿厢有危险接触时，应配备顶部和底部障碍检测装置，在整个升降通道上 均应考虑到这一要求，并优先选择全轮廓障碍检测装置。"}, "5.4.4.4": {"t": "急停开关", "c": "应配备一个紧急停止开关，以便在既有安全措施失效的情况下停止升降机。"}, "5.4.4.5": {"t": "联锁装置（选配）", "c": "对于配备联锁装置的升降机，在正常操作条件下，除非所有停层门均处于关闭状态，否则应无法 启动轿厢或保持轿厢运行。轿厢离开停层区域后，停层门应锁紧。"}, "5.4.5": {"t": "防坠落安全装置", "c": ""}, "5.4.5.1": {"t": "安全锁", "c": "安全锁应满足如下要求： a) 应配备一个安全锁，以防止升降机坠落，如果升降机在下降中超速，该装置应自动作用； b) 安全锁应以机械方式检测安全钢丝绳上的超速状况； c) 安全锁的设计应限制其动载荷系数不大于3； d) 应能够被测试和复位，测试后，安全锁应在复位后立即进入运行状态，并且不需要任何调整 或更换零件； e) 安全锁的设计应使其在负载下不能手动释放； f) 安全锁锁止后，应持续发出视觉或听觉信号，同时允许提升机将轿厢提升，向上运行，不允 许升降机向下运行； g) 工作钢丝绳松弛或失效断裂，安全锁应自动锁止到安全钢丝绳上。 h) 离心式安全锁锁绳速度见附录A；对摆臂式安全锁当工作钢丝绳松弛或断裂时，摆臂式安全 锁应能自动锁住安全钢丝绳并停止升降机运行。"}, "5.4.5.2": {"t": "防坠安全器", "c": "防坠安全器应满足如下要求： a) 齿轮齿条式升降机，应配备一个超速安全装置（防坠安全器或带离心限速器双电动机系统）， 在升降机下降超速时动作，以防止升降机坠落； b) 防坠安全器应符合GB 26557-2011 中5.6.2 的要求。"}, "5.4.6": {"t": "运行导向系统", "c": ""}, "5.4.6.1": {"t": "", "c": "升降机的运行导向系统的导向方式有三种：爬梯、钢丝绳、齿轮齿条。"}, "5.4.6.2": {"t": "钢丝绳式升降机的运行导向系统以从塔架顶部吊梁垂下的两根钢丝绳作为导向，钢丝绳下", "c": "端穿过升降机起始层平台用拉紧支架张紧，沿途所穿过的各层平台下面均设有固定装置（此固定装 置的安装距离在垂直方向上不大于20 m），导向钢丝绳与升降机轿厢之间用钢丝绳导向器连接。导 向钢丝绳的安装位置（即轿厢运行轨迹）应自下而上始终靠近塔架内预设的爬梯。"}, "5.3.6.3": {"t": "爬梯式升降机的运行导向系统以塔架内壁上预先装设的铝合金爬梯作为导轨，爬梯竖梁与", "c": "升降机轿厢之间用支撑臂连接，爬梯间用内插式连接方式固定，塔架支撑固定爬梯踏棍，距离竖梁 内侧面不小于15 mm。"}, "5.4.6.4": {"t": "齿轮齿条式升降机的运行导向系统包括安装在轿厢背侧的导向支撑臂、齿轮与安装在塔架", "c": "上的齿条式爬梯，齿条式爬梯一侧为用于运行使用的齿条，另一侧为方便导向使用的钢管（齿条)， 导向支撑臂两组导轮包夹住齿条式爬梯两侧的齿条和钢管，保证齿轮齿条式升降机不倾覆；齿轮顶 住齿条式钢管（齿条)一侧，保证各齿轮与齿条啮合良好。"}, "5.4.7": {"t": "操控装置", "c": "操控装置包括电动操作系统和手动切换执行机构。升降机的控制功能应符合GB/T 5226.1-2019中 9.2的要求，还应符合如下要求： a) 电动操作通过设在轿厢内部和外部的控制装置实现，可控制升降机以点动或自动方式运行。 当轿厢控制装置的控制转换开关旋转到自动档位时，即可使用外部的控制装置进行操纵。 b) 手动下降机构用于在停电或电动操作系统失灵的状态下，使轿厢依靠自身重力沿工作钢丝绳 以安全速度下降到预定位置，从而保证人员的安全。其操纵手柄设于轿厢顶部人手可以触及 的位置，使用时只需按箭头所示方向扳动即可。 c) 控制模式： 1) 轿厢内控制：升降机应能在轿厢内部进行控制,除急停功能外，轿厢内控制相较于所有 其他控制应有更高的优先级； 2) 轿厢外控制：升降机应具备在轿厢外、地面和/或停层处进行控制功能,轿厢外的所有控 制装置应为自动控制模式。"}, "5.4.8": {"t": "电缆收集装置", "c": ""}, "5.4.8.1": {"t": "分类", "c": "升降机通过电缆供电，升降机运行时，电缆需要收集或释放，实现方式主要为以下三种：收缆桶 收集、电缆滑车、主动收缆方式。"}, "5.4.8.2": {"t": "收缆桶收集", "c": "升降机配备收缆桶，一般常置于升降机底板停靠平台下方。 收缆桶收集电缆方式，需要在升降机底部停靠平台开孔，孔径建议不大于300 mm，孔边缘需要 防护，避免损伤电缆。"}, "5.4.8.3": {"t": "电缆滑车", "c": "电缆滑车应满足如下要求： a) 升降机配备电缆滑车，将电缆悬挂在升降机与塔架中间层平台上； b) 电缆滑车需有导向装置，一般采用钢丝绳做导向，防止其旋转； c) 电缆滑车在升降机与平台间要保持一定的安全距离，避免运行时卡滞，必要时在平台与护栏 位置应增加导向装置。"}, "5.4.8.4": {"t": "主动收揽方式", "c": "主动收缆方式应满足如下要求： a) 升降机可配备主动收揽装置，主要包括卷筒、电动机、减速机等； b) 升降机运行时，主动收揽装置应自动收集或释放电缆； c) 主动收揽装置应配备拉力检测或扭矩限制器装置，限制对电缆的最大拉力，避免损伤电缆。"}, "5.5": {"t": "电气控制系统", "c": ""}, "5.5.1": {"t": "", "c": "电气系统与元器件应符合GB/T 5226.1-2019 的要求。"}, "5.5.2": {"t": "电气控制系统供电应采用三相五线制。接零、接地线应始终分开，接地线应采用黄绿相间", "c": "线。"}, "5.5.3": {"t": "", "c": "升降机电气系统应可靠接地，接地电阻不应大于4 Ω，在接地处应设有接地标志。"}, "5.5.4": {"t": "电气控制部分应有防水、防尘措施，防护等级为≥IP54；应具备防震措施；其元器件应连接", "c": "牢固，绝缘可靠，电动机绝缘等级不低于F 级。"}, "5.5.5": {"t": "", "c": "电气系统必须设置过热、短路、漏电保护等装置，漏电保护装置应设在升降机供电电源处。 漏电保护器、接触器各电气件功能正常；接线应无虚接、错接等缺陷。主电路相间绝缘电阻应不小 于0.5 MΩ,电路与裸露导电部件之间的绝缘电阻按标称电压应至少为1 000 Ω/V。"}, "5.5.6": {"t": "电气控制箱按钮应动作可靠，标识清晰、准确。其外露部分由绝缘材料制成，应能承受50", "c": "Hz 正弦波形、1250 V 电压为时1 min 的耐压试验。"}, "5.5.7": {"t": "", "c": "升降机内部宜设置独立照明，且具备应急功能,断电后能持续使用30 min 以上。"}, "5.5.8": {"t": "升降机应设置紧急状态下切断主电源控制回路的急停按钮，该电路独立于各控制电路。急停", "c": "按钮为红色，并有明显的“急停”标记，不能自动复位。"}, "5.5.9": {"t": "", "c": "升降机的动力电缆的电源连接点应为升降机专用电源，不与其它用电设备混接。"}, "5.5.10": {"t": "", "c": "限位开关应符合GB/T 14048.5 附录K 的要求。"}, "5.5.11": {"t": "", "c": "升降机应能自动与手动操作，轿厢内手动持续点动操作，轿厢外可进行自动控制。"}, "5.5.12": {"t": "下列任何单一的升降机电气设备的故障，应不成为导致升降机产生危险故障的原因，可能", "c": "出现的故障： a) 失压和无电压； b) 电压下降20% 以上； c) 对地或金属构件的绝缘破坏； d) 电气元件（如电阻器、电容器、晶体管、灯等）短路或断路以及参数或功能的改变； e) 接触器或继电器的可动衔铁不吸合或不能完全吸合； f) 接触器或继电器可动衔铁不分离； g) 触点不能断开； h) 触点不能闭合。"}, "5.6": {"t": "标准件", "c": "标准件等级选用必须满足升降机的设计要求，当采用碳钢材质的螺栓、螺钉大小规格≥M8 时， 其性能等级不低于8.8 级、螺母8 级、垫片200 HV，当采用不锈钢材质时其性能等级不低于A2-70 要 求。"}, "5.7": {"t": "防腐要求", "c": ""}, "5.7.1": {"t": "安装在陆上风力发电机组塔架内升降机应按照ISO 12944-5 中C3（室内）/C4（露天）环境", "c": "下的防腐蚀要求进行防腐处理，防腐年限为“长期”（20 年以上）。安装在海上风力发电机组塔架 内的升降机应按照ISO 12944-5 中C4（室内）/C5（露天）环境下的防腐蚀要求进行防腐处理，防腐 年限为“长期”（25 年以上）。"}, "5.7.2": {"t": "升降机所有零部件必须具有耐腐蚀、耐潮湿，并经过严格的盐雾测试，同时，电控箱必须进", "c": "行密封、防腐、防尘处理。关键零部件的防腐要求如表2 所示。 表2 关键零部件防腐要求 关键件 宜采用的防腐方式 防腐要求 升降机轿厢 面板可采用喷塑、氧化、涂漆等防腐工艺 满足GB/T 10125盐雾试验1 000 h 标准件 ≥M8时，锌洛涂层 满足GB/T 18684 4级 ＜M8时，不锈钢 满足GB/T 10125盐雾试验1 000 h 电机壳体 喷涂多层漆 铝合金壳体满足GB/T 10125盐雾试验1 000 h 钢丝绳 表面镀锌 满足GB/T 8918 A级要求 齿条爬梯 浸锌+油漆封闭 齿条爬梯表面渗锌处理，渗锌层≥50 μm。渗锌后 表面喷丙烯酸聚氨酯面漆；干膜厚度≥60 μm。满 足GB/T 10125盐雾试验720 h"}, "5.8": {"t": "认证", "c": "升降机应经过有资质的第三方认证机构认证，认证机构应具备： a) 国家认证认可主管部门批准； b) 国内、国际权威认可机构的认可。"}, "6": {"t": "试验", "c": ""}, "6.1": {"t": "试验的基本要求", "c": ""}, "6.1.1": {"t": "试验条件：", "c": "a) 环境温度应为-40 °C～+55 °C； b) 试验场地10 min 平均风速不宜大于10 m/s； c) 试验时输入电压应正常，电源电压值波动范围为±5%； d) 应按工况备齐试验载重量和所需的全部技术文件。"}, "6.1.2": {"t": "试验仪器的精准度，除有特殊规定外应符合下列偏差范围：", "c": "a) 重量、力、长度、时间和速度为±1%； b) 电压、电流为±1%； c) 温度为±2%； d) 试验用的仪器和量具，应具有产品合格证，且在计量部门检定合格的有效期内，试验过程中， 应使用同一仪器和工具。"}, "6.2": {"t": "外观质量检查", "c": "零件加工表面不得有锈蚀、磕碰、划伤等缺陷，外露表面应进行防锈处理；围板、罩壳等应平整， 安装牢固可靠；漆层应均匀、平滑、色泽一致，附着力强，无皱皮、脱皮、漏漆、流痕等缺陷；焊缝 不得有漏焊、裂纹、凹坑、气孔、夹渣等缺陷。"}, "6.3": {"t": "载荷试验", "c": ""}, "6.3.1": {"t": "空载运行试验：升降机在不小于5 m 的行程中完成30 个升降工作循环的空载试验，每一工", "c": "作循环的升、降过程中应进行不少于2 次的正常制动，观察有无制动瞬时滑移现象，运行中应升降 平稳，起、制动正常，上下限位开关及其他联锁装置动作灵敏、可靠。"}, "6.3.2": {"t": "额定载荷运行试验：在升降机的底板上施加额定载重量，升降机在不小于5 m 的行程中完成", "c": "30 个升降工作循环的额定载重量试验，每一次工作循环的升、降过程中应进行不少于2 次的正常制 动，运行过程中应升降平稳，起、制动正常，上下限位开关及其他联锁装置动作灵敏、可靠，连接 件、结构件、受力构件无开裂、变形、损坏等缺陷，紧固件无松动，减速机油温正常。"}, "6.3.3": {"t": "静力载荷试验：将升降机提升至离地面1 m 左右，升降机可靠悬挂在测试装置上，在升降机", "c": "底板上均布施加1.5 倍额定载重量，做好标记，静置15 min 后，升降机制动可靠，承载装置无下滑 现象，焊缝、连接件、结构件、受力构件应无开裂、变形、损坏等缺陷，紧固件无松动现象。"}, "6.3.4": {"t": "动力载荷运行试验：升降机解除超载功能，在升降机的底板上均布施加1.25 倍额定载重", "c": "量，升降机在不小于5 m 的行程中完成30 个升降工作循环的动载试验，每一次工作循环的升、降过 程中应进行不少于2 次的正常制动，运行过程中应升降平稳，起、制动正常，上下限位开关及其他 联锁装置动作灵敏、可靠，连接件、结构件、受力构件无开裂、变形、损坏等缺陷，紧固件无松 动，减速机油温正常。"}, "6.3.5": {"t": "超载试验：当升降机负载1.25 倍额定载重量时，升降机报警，同时升降机不能上下运行，", "c": "当载荷减到额定载重量后，报警消除，升降机能正常运行。"}, "6.3.6": {"t": "极限载荷试验：将升降机可靠悬挂在测试装置上，在升降机底板均布施加3.5 倍额定载重", "c": "量,静置1 h 后，卸下载荷，检查顶板组件及底板组件的焊缝、连接件、结构件，有永久变形但无断 裂。"}, "6.3.7": {"t": "", "c": "挂点强度试验：按照GB 30862-2014 标准中第6 章的要求进行挂点强度试验。"}, "6.4": {"t": "底架强度和刚度试验", "c": "底架应与轿厢可靠连接，其强度应达到额定载荷及自重之和的3倍载荷，其挠度应不大于1/200， 在承载3倍额定载重量，静止10 min，卸去载荷，不得出现焊缝裂纹、螺栓铆钉松动、结构件永久变形 等缺陷。"}, "6.5": {"t": "轿厢强度和刚度试验", "c": "将升降机可靠悬挂在测试装置上，升降机提升至离地面1 m 左右，在升降机底架任意200 mm× 200 mm 的区域内，承载300 kg 的均匀载荷，静置15 min 后卸下载荷，检查升降机的顶板组件及底板 组件的焊缝、连接件、结构件应无开裂、严重变形及结构破坏等缺陷出现；该设备连接的螺栓、铆钉 等应无松动、变形、裂纹等缺陷出现。"}, "6.6": {"t": "整机可靠性试验", "c": "试验样机承受额定载重量，起升高度不小于5 m情况下，可靠性试验循环次数不少于3 000次；首 次故障前工作时间为0.8 t0（t0为累计工作时间），平均无故障工作时间为0.5 t0，且工作循环次数不少 于2 000次，可靠度不低于92％。安全锁锁绳试验，次数不少于30次；升降机手动下降试验不少于50次， 每次下滑距离不少于2 m。升降机运行平稳；限位开关工作正常；紧固件无松动；各主要零部件性能 良好；箱体润滑油无渗漏。"}, "6.7": {"t": "噪声测定", "c": "按照GB/T 20062规定的方法进行测试噪声，距轿厢内地面上方1600 mm位置以及轿厢门前方500 mm位置测量，测量3次，取最大值，噪声应不大于85 dB(A)。"}, "6.8": {"t": "逃生试验", "c": "按照升降机的逃生说明书，进行逃生试验。"}, "6.9": {"t": "手动下降试验", "c": ""}, "6.9.1": {"t": "将升降机上升到距地面1 m 左右，测试人员站在轿厢内用手推动释放制动器，升降机应能", "c": "平稳滑降。"}, "6.9.2": {"t": "在升降机额定载重量下，手动释放制动器，升降机应能平稳下降，且下降速度不应大于1.5", "c": "倍的额定速度（每次下降距离不小于2 m）,试验三次，平均值即是其速度。"}, "6.10": {"t": "提升速度测试", "c": "在额定载重量工况下，升降高度不小于5 m，测试升降机的起升、下降的速度，测试3次，误差在 设计值的±5%范围内。"}, "6.11": {"t": "提升机构试验", "c": "提升机构的试验按照GB/T 19155-2017 附录B.3的规定进行。"}, "6.12": {"t": "悬挂装置试验", "c": "悬挂装置的试验按照GB/T 19155-2017 附录C的规定进行。"}, "6.13": {"t": "联锁功能试验(选配）", "c": "当轿厢门开启状态下，升降机应立即启动互锁。平台互锁系统与升降机实现互锁联动，正常情况 下，只有升降机到达该平台，锁闭系统才能开启，人员才能进入平台，升降机不到达该平台锁闭系统 始终保持锁闭状态。互锁系统需感应灵活。"}, "6.14": {"t": "安全保护装置试验", "c": ""}, "6.14.1": {"t": "上限位试验：升降机运行到达顶部行程处，上限位开关触发，并报警，此时升降机无法上", "c": "升运行，但可以下降运行；"}, "6.14.2": {"t": "终极限位试验：终极限位触发，并报警，此时升降机无法上升、下降运行，解除故障后，", "c": "升降机可以上下运行。"}, "6.14.3": {"t": "下限位试验：升降机运行到达底部行程处，下限位开关触发，并报警，此时升降机无法下", "c": "降运行，但可以上升运行；"}, "6.14.4": {"t": "", "c": "超载系统试验：参照6.3.5；"}, "6.14.5": {"t": "障碍检测装置试验：轿厢上、下运行时，如有异物进入运行通道，蜂鸣器报警或警示灯亮", "c": "起，此时塔架升降机不能上升、下降运行。"}, "6.15": {"t": "防坠落安全装置试验", "c": "a) 安全锁在锁绳状态下应不能自动复位，承受静力试验载荷时（1.5 倍额定载重量），静置"}, "10": {"t": "安装与运行维护", "c": ""}, "6.16": {"t": "电气控制系统试验", "c": ""}, "6.16.1": {"t": "电源的电压、频率、各部件电气元器件的规格型号、电缆、电线的规格型号是否与要求一", "c": "致。"}, "6.16.2": {"t": "耐压试验按GB/T 7251.1 的规定进行；需测试相间和相地绝缘电阻，带电零件与机体间绝缘", "c": "电阻按标称电压应至少1 000 Ω/V，按GB/T 3797 的规定进行试验。"}, "7": {"t": "检验方法检验规则", "c": ""}, "7.1": {"t": "检验类别", "c": "升降机产品检验分为出厂检验、型式检验、现场安装验收。"}, "7.2": {"t": "检验规定", "c": "每台升降机均做出厂检验，产品检验合格后签发合格证，产品才能出厂。有下列情况之一时应进 行型式检验，被抽检的同型号升降机不应少于2台，所有检测项目应全部合格判定为合格。 ——新产品的试制定型鉴定时； ——安全认证或老产品转厂生产时； ——产品的设计、工艺等方面有重大改变，可能影响产品性能时； ——产品停产2年后，恢复生产时；` ——正常生产时，每1年进行1次； ——国家质量监督机构提出型式检验要求时。"}, "8": {"t": "标识、包装、运输、贮存", "c": ""}, "8.1": {"t": "标识", "c": ""}, "8.1.1": {"t": "每套升降机在明显的部位牢固地设置产品铭牌，其尺寸和技术要求符合GB/T 13306 的规", "c": "定，铭牌应包括但不局限于以下内容： a) 产品名称、规格、型号； b) 产品编号及制造日期； c) 产品主要技术性能参数； d) 制造商名称和LOGO； e) 产品认证标志。"}, "8.1.2": {"t": "", "c": "升降机起吊孔位置应有明显标识。"}, "8.1.3": {"t": "", "c": "逃生通道及安全挂点位置应设置明显标识。"}, "8.1.4": {"t": "", "c": "升降机应张贴安全、警示及重要操作标识，明示操作规程、注意事项。"}, "8.2": {"t": "包装", "c": ""}, "8.2.1": {"t": "", "c": "升降机包装箱应有防潮、减振、防冲击的措施，保证产品在运输、装卸过程中完好。"}, "8.2.2": {"t": "", "c": "钢丝绳包装满足GB/T 2104 要求。"}, "8.2.3": {"t": "", "c": "包装箱底部应满足叉车搬运要求。"}, "8.2.4": {"t": "", "c": "包装箱的外形尺寸和重量应符合运输部门的有关规定。"}, "8.2.5": {"t": "", "c": "打包带位置整齐划一、颜色一致，松紧合适、无断带、勒坏包装箱等现象。"}, "8.2.6": {"t": "包装箱体表面应标有箱体外形尺寸、箱号、毛重、净重、起吊、正置、防雨、防潮、易碎", "c": "等标志。"}, "8.2.7": {"t": "", "c": "包装箱外应对每批次的升降机粘贴明确的订单信息。"}, "8.2.8": {"t": "", "c": "包装应满足GB/T 9174 要求。"}, "8.3": {"t": "运输", "c": ""}, "8.3.1": {"t": "运输过程中采取适当的防护措施，如防震、防火、防晒、防雨、加固等（海运时应满足防", "c": "盐雾要求）。"}, "8.3.2": {"t": "", "c": "运输过程中，要严格保护所运货物，确保运输过程中不受任何损伤和污染。"}, "8.3.3": {"t": "在车站码头中转或终点卸下时，按标识规定的方向放置，不得将包装箱斜置、斜放；吊装", "c": "过程应确保平稳安全，以免对设备造成磕碰或损伤。"}, "8.3.4": {"t": "", "c": "产品在运输、装卸过程中应保持完好无损，无锈蚀、无划伤、变形等缺陷。"}, "8.4": {"t": "贮存", "c": ""}, "8.4.1": {"t": "所有包装箱应存放在清洁、干燥、通风、防雨、防雪、防水的环境中，不允许在阳光下长", "c": "期暴晒。"}, "8.4.2": {"t": "", "c": "所有包装箱存储时应放置牢靠并摆放整齐，并保证所有附件的外包装完好无损。"}, "8.4.3": {"t": "", "c": "存储按类别、型号、批次、年号进行堆码管理，并有醒目的标记卡。"}, "8.4.4": {"t": "", "c": "电气设备必须储存于室内。"}, "8.4.5": {"t": "", "c": "当储存时间超过6 个月时，应检查产品零部件的完好情况。"}, "8.4.6": {"t": "", "c": "升降机存储时间，必须建立详细档案，除随机文件外，存储期的变动应详细记载。"}, "8.4.7": {"t": "", "c": "包装储运应符合GB/T 191 的要求。"}, "8.4.8": {"t": "", "c": "包装储运应满足具体运输部门、海关及项目所在地的相关要求。"}, "9": {"t": "随机文件", "c": "随机文件见表4。所有检验和试验报告的标识应和产品（出厂）编号一致，要求一个产品的试验 报告与合格证装订一份，作为随机文件。出厂检验文件应随产品同时到达，同批产品的检验文件应集 中装袋，交接收人验收。 表4 随机文件 序号 文件名称 份数 产品合格证 产品认证资料 出厂检验报告 电气接线图 使用维护说明书（含常见故障处理、逃生方法指导手册） 升降机清单（含附件清单） 安装验收检验表 年度维护检修表 质保说明 随机备件、附件及专用工具清单"}, "10.1": {"t": "", "c": "升降机在现场安装调试之前，宜将其预先放置于塔架内部，放置要求遵循塔架内设备布置要求。"}, "10.2": {"t": "", "c": "升降机应经专业人员安装调试，并进行空载运行试验等。各系统等应验收通过后方可使用。"}, "10.3": {"t": "", "c": "升降机的操作人员应经过升降机厂家培训合格后方能操作升降机。"}, "10.4": {"t": "", "c": "升降机投入运行后，应按使用维护说明书要求定期进行检查、测试、维护保养，并做好记录。"}, "10.5": {"t": "", "c": "应定期对升降机的外观进行检查，外观应无锈蚀、变形，各标识应清晰，各连接应牢固。"}, "10.6": {"t": "升降机齿轮箱使用的润滑油应满足能在现场环境下使用，并应定期按照厂家要求进行检查、更", "c": "换，润滑油的清洁度要求参照标准JB/T 7929 的J 级要求。"}, "10.7": {"t": "定期（每年至少一次）检查安全锁，检测到超速时应能锁定安全绳，并且复位功能正常，且应", "c": "符合GB/T 19155 的有关规定。"}, "10.8": {"t": "定期（每年至少一次）检查导向装置的牢固性，检查导向易损件的磨损情况，若有影响到安全", "c": "或正常运行的情况，应立即停止使用并进行更换。"}, "10.9": {"t": "定期（每年至少一次）检查电气系统及安全保护装置，各操作按钮正常工作，各限位开关触发", "c": "流畅，动作与限位功能一致。"}, "10.10": {"t": "定期（每年至少一次）检查悬挂装置中各钢丝绳卸扣、螺栓、开口销完好、无松动、腐蚀及其", "c": "他异常情况，悬挂装置的焊接点应无开裂、腐蚀及其他异常情况。"}, "10.11": {"t": "", "c": "钢丝绳的更换应符合GB/T 5972 的有关规定。"}, "10.12": {"t": "", "c": "升降机投入运行六年或超过250 h 后，提升机和安全锁应返回厂家重新标定后方可再次使用。"}, "10.13": {"t": "每年应由升降机原厂家对整个升降机（含提升装置和防坠落装置）进行一次检查与测试，但", "c": "是宜依据使用情况和使用条件以及操作情况进行更频繁的检查。"}, "5.4.6.3": {"t": "爬梯式升降机的运行导向系统以塔架内壁上预先装设的铝合金爬梯作为导轨，爬梯竖梁与（PDF 原文编号误作 5.3.6.3）", "c": "升降机轿厢之间用支撑臂连接，爬梯间用内插式连接方式固定，塔架支撑固定爬梯踏棍，距离竖梁 内侧面不小于15 mm。"}, "7.3": {"t": "检验项目", "c": "检验项目见表3：标有“△”者为必检项目；标有“—”者为不作规定的检验项目；标有“※”为供需双方协商进行的项目。"}}, "special": {"封面": {"t": "封面", "c": "NB/T 10991—2022《风力发电机组 塔架升降机》，能源行业标准（报批稿），国家能源局发布。"}, "前言": {"t": "前言", "c": "本文件按照GB/T 1.1-2020《标准化工作导则 第 1 部分：标准化文件的结构和起草规则》的规定起 草。 请注意本文件的某些内容可能涉及专利。本文件的发布机构不承担识别专利的责任。 本文件由国家能源局提出。 本文件由能源行业风电标准化技术委员会风电机械设备分技术委员会（NEA/TC 1/SC 5）归口。 本文件起草单位：哈电风能有限公司、内蒙古术耀科技有限责任公司、新疆金风科技股份有限公司、 上海电气风电集团股份有限公司、中国船舶重工集团海装风电股份有限公司、浙江运达风电股份有限公 司、东方电气风电股份有限公司、中际联合（北京）科技股份有限公司、翱文狄风电设备制造（上海） 有限公司、中国质量认证中心、无锡市小天鹅建筑机械有限公司、宁波海铑机电设备有限公司、库珀新 能源股份有限公司、中车株洲电力机车研究所有限公司风电事业部、三一重能股份有限公司、海上风力 发电技术与检测国家重点实验室、廊坊凯博建设机械科技有限公司、三河市布莱斯科通用机械设备制造 有限公司。 本文件主要起草人：阳雪兵、赵晶晶、崔矞飞、宋晓萍、李勇芝、仵文松、宋恭杰、曾志、张冲、 张庆伟、陈旭春、钱进、闫东淼、陈小军、李学群、杜景鸣、成党团、张乐彬、杨文星、宋力兵、刘浩、 易权、何婷、陈景新、李富、肖洪涛、马风涛、张伟伟。 本文件为首次发布。"}, "第1章 范围": {"t": "第1章 范围", "c": "范围 本文件规定了风力发电机组塔架升降机（以下简称“升降机”）的术语和定义、技术要求、试验 与检验方法、标识、包装、运输和贮存、随机文件、安装与运行维护等要求。 本文件适用于风力发电机组塔架升降机的设计、制造、检验与验收。"}, "第2章 规范性引用文件": {"t": "第2章 规范性引用文件", "c": "规范性引用文件 下列文件中的内容通过文中的规范性引用而构成本文件必不可少的条款。其中，注日期的引用文 件，仅该日期对应的版本适用于本文件；不注日期的引用文件，其最新版本（包括所有的修改单）适 用于本文件。 GB/T 191 包装储运图示标志 GB/T 2104 钢丝绳包装、标志及质量证明书的一般规定 GB/T 3797 电气控制设备 GB/T 5226.1-2019 机械电气安全 机械电气设备 第1部分：通用技术"}, "第3章 术语和定义": {"t": "第3章 术语和定义", "c": "术语和定义 下列术语和定义适用于本文件。"}, "第4章 型号、分类、主参数": {"t": "第4章 型号、分类、主参数", "c": "型号、分类、主参数"}, "第5章 技术要求": {"t": "第5章 技术要求", "c": "技术要求"}, "第6章 试验": {"t": "第6章 试验", "c": "试验"}, "第7章 检验方法检验规则": {"t": "第7章 检验方法检验规则", "c": "检验方法检验规则"}, "第8章 标识、包装、运输、贮存": {"t": "第8章 标识、包装、运输、贮存", "c": "标识、包装、运输、贮存"}, "第9章 随机文件": {"t": "第9章 随机文件", "c": "随机文件 随机文件见表4。所有检验和试验报告的标识应和产品（出厂）编号一致，要求一个产品的试验 报告与合格证装订一份，作为随机文件。出厂检验文件应随产品同时到达，同批产品的检验文件应集 中装袋，交接收人验收。 表4 随机文件 序号 文件名称 份数 产品合格证 产品认证资料 出厂检验报告 电气接线图 使用维护说明书（含常见故障处理、逃生方法指导手册） 升降机清单（含附件清单） 安装验收检验表 年度维护检修表 "}, "第10章 安装与运行维护": {"t": "第10章 安装与运行维护", "c": "安装与运行维护"}, "附录A 离心式安全锁锁绳速度": {"t": "附录A 离心式安全锁锁绳速度", "c": "规范性附录。升降机额定速度(m/min) 9→启锁速度30；18→42；22→42；制动距离均<200 mm。"}, "表1": {"t": "表1", "c": "表1  升降机主参数优选系列 名称 主要参数 额定载重量  kg 240，250，300，320，350，450 额定速度  m/min 9，18，22 5 技术要求 5.1 总则 升降机整机及主体结构设计寿命陆上应不低于20年，海上应不低于25年。 5.2 运行环境条件 海上符合NB/T 31094-2016中4.2的要求，陆上符合NB/T 31060-2014中4.1的要求。 5.3 一般要求 5.3.1 外观要求 5.3.1.1  升降机零件加工表面不得有锈蚀、磕碰、划伤等缺陷，零件外露表面应进行防锈处理。升 降机可见外表面及轿厢内表面应平整、洁净，采用非不锈钢金属材料时应按规定涂底漆和面漆。漆 层应均匀、平滑、色泽一致，附着力强，不得有皱皮、脱皮、漏漆、流痕、气泡等缺陷。铝合金件 如进行表面喷塑，不得有缩孔、针孔、杂质点、漏底、涂层厚度明显不均、流挂等现象。 5.3.1.2  围板、罩壳等应平整，安装牢固可靠。警示标志、铭牌文字、控制标记等应牢固、清晰、 完整，不得有油污、水渍等。 5.3.2 载荷 5.3.2.1  制造商或者供应商应明确说明升降机的额定载重量。 5.3.2.2  升降机的极限载荷应不小于升降机自重与额定载重量之和，在极限载荷试验时，应有承受 3.5 倍额定载重量的能力。 5.3.2.3  升降机应具有额定载重量的承载能力，且强度、疲劳性能等已经验证，其设计载荷应符合 GB/T 19155-2017 中6.3 设计载荷与作用力的规定，并应充分考虑风力发电机组实际运行工况。 5.3.2.4  升降机装载额定载重量，在额定功率下稳定运行，满足设计速度。 5.3.2.5  升降机在动态试验时，应有承受1.25 倍额定载重量的能力。 5.3.2.6  升降机在静态试验时，应有承受1.5 倍额定载重量的能力。 5.3.3 噪音 升降机在额定载重量稳定运行时，应无异常震动和声响，噪声不应大于85 dB(A)。 5.4 主体结构技术性能要求 5.4.1 总则 升降机主体结构的组成包括：轿厢、动力系统、安全保护装置、防坠落安全装置、运行导向系 统及电缆收集装置等。 5.4.2 轿厢 5.4.2.1  一般要求 轿厢应满足如下一般要求： a) 轿厢应完全封闭； b) 内部自由站立高度最小为2 m； c) 轿厢设计应符合5.3.2规定的载荷要求； d) 轿厢应被导向，防止其脱离或卡滞。要求至少有4个导向部件； e) 轿厢的设计，应保证其底板相对水平面的最大倾斜度不超过5 °； f) 齿轮齿条式升降机中，当正常的导向装置或滚轮失效时，轿厢应配备有效的装置使轿厢仍保 持在导向装置上； g) 轿厢应通风，轿厢围板如无打孔，轿厢应配备通风装置，轿厢围板如有打孔，打孔面积至少 应为轿厢围板面积的4%； h) 应提供用于个人防坠落设备的挂点装置，挂点装置应符合GB 30862-2014的要求，挂点装置 的数量和位置，应符合逃生和救援方案，且不少于最大承载人数； i) 应提供用于自轿厢逃生的设施。应可以手动开启轿厢门、爬梯逃生门或活板门，以进入逃生 设施（例如爬梯）。在设计轿厢门和轿厢底板面积时，应考虑用于逃生所需的适当空间； j) 要求逃生时轿厢与逃生设施之间的距离应不超过1.1 m，该距离应笔直、无障碍； k) 应在轿厢内靠近轿厢门站立位置区域配备扶手。扶手的安装高度宜设置在0.9 m至1.1 m之间 。 5.4.2.2  轿厢底板 轿厢底板的设计应使其能够承受5.3.2 中规定的载荷，且应采用防滑设计（如：网纹铝板）。 应有防止水停滞在轿厢内的措施，例如，自流排水。任何开口的最大直径应不超过15 mm。轿厢 内的每个工作人员应拥有至少0.25 m2 的轿厢底板面积。 5.4.2.3  轿厢围板 轿厢底板与轿厢顶板之间，应有全高围板，轿厢内部用于踩脚的脚蹬或者具有踩脚功能的围板加 强筋也应采用防滑设计（如：花纹板）。轿厢围板的设计，应使其能够承受5.3.2中规定的载荷。在轿 厢围板任意位置100 mm×100 mm面积内，施加均布的200 N水平力时应不失效。此外，弹性变形不应 导致围板与任何界面发生碰撞。如果轿厢围板打孔，所打的孔应不允许直径15 mm的球体通过。 5.4.2.4  轿厢顶板 轿厢应设有顶板。顶板结构的设计，应使其能够承受5.3.2 中规定的载荷。如果顶板打孔，则 所打的孔应不允许直径15 mm 的球体通过。顶板应不允许一个重0.7 kg、直径75 mm ± 2 mm 的钢 球自5 m 的高处掉落时穿透轿厢顶板。 5.4.2.5  轿厢门 轿厢门应满足如下规定： a) 轿厢门开口应至少净高1.9 m（从轿厢底板处测量），净宽至少0.4 m； b) 门应完全覆盖开口； c) 不允许使用电动操作的轿厢门； d) 应有用于防止坠物的措施（如踢脚板）； e) 门上所打的孔应不允许直径15 mm 的球体通过； f) 一个直径不小于8 mm 的PFPE（即安全绳/缓冲器）一端挂在轿厢内部的挂点上，另一端挂 在站立在轿厢外任意位置的人员身上时，如向门的关闭方向施加一个150 N 的载荷时，门应 无法关闭和锁止； g) 如装有无打孔的门，则应配备观察窗，观察窗宜设置在距轿厢底板底面1.5 m~1.8 m 的位置， 面积不小于25 000 mm 2，观察窗应透明且便于打开或者拆卸，用于观察停层区域； h) 升降机正常运行期间，仅当所有轿厢门处于关闭位置时，才可以启动升降机并保持运行，运 行过程中，轿厢门无法打开，在轿厢门未锁止的情形下，应无法启动升降机运行； i) 轿厢门的设计，应使其能够承受5.3.2 中规定的载荷。当向轿厢门施加载荷300 N 的力时， 弹性变形量应不超过30 mm，弹性变形不应导致轿厢门与任何界面发生碰撞； 5.4.2.6  活板门或爬梯逃生门 活板门或爬梯逃生门的要求如下： a) 当轿厢中承载了允许的最多人数时，活板门或爬梯逃生门应能够正常开启； b) 顶板或底板上的活板门尺寸应不小于0.4 m × 0.5 m，顶板活板门不应朝向轿厢内开启，底板 活板门应向轿厢内开启； c) 爬梯逃生门开启方向不应朝外。如果采用爬梯导向式升降机，爬梯逃生门应采取全通道的方 式，可直接上下攀爬到爬梯，且人员随身携带的防坠器能够在逃生爬梯的防坠落系统中安全 使用。当爬梯逃生门打开时，从爬梯到轿厢门槛的水平距离应不超过240 mm。 5.4.3 动力系统 5.4.3.1 分类 塔架升降机的动力系统主要有三种类型：爬升式、卷扬式、齿轮齿条式。 5.4.3.2 一般要求 动力系统的一般要求如下： a) 动力系统应直接安装在轿厢上，每台升降机应至少装配一个专用动力系统； b) 升降机在正常运行和维护期间，轿厢应在电力驱动下上升下降； c) 升降机在正常运行情况下，空载上升速度或额定载重量下降速度偏差均不应超过额定速度的 15%； d) 升降机应配备用于记录动力系统使用量的装置； e) 动力系统应配备超载检测装置以避免由于超载造成的人员危险和机械损坏，该装置应能检测 升降机上的载荷是否超载； f) 超载装置一旦触发，升降机应停止运行直至超载被卸除； g) 超载装置触发时，超载指示器应持续发出视觉或听觉信号以警示升降机上的操作人员。 5.4.3.3 手动下降 手动下降应满足如下要求： a) 升降机应配备一个手动操作系统，在断电情况下使升降机能够受控下降，该系统应能够从轿 厢外手动释放，且应需要一个不超过400 N持续的力； b) 手动下降运行应采用 “自复位”操作，升降机在额载条件下的运行速度应不低于额定速度 的20%，不高于额定速度的166%(注：对于齿轮齿条式升降机其手动下降速度最大速度不高 于0.63 m/s，低于超速安全装置的触发速度）； c) 手动下降系统的设计，应使其能够防止人员身体的任何部位被夹住或受到撞击。 5.4.3.4  爬升式动力系统 爬升式动力系统应满足如下要求： a) 爬升式动力系统通常由爬升式提升机构、钢丝绳、滑轮和导向轮、相关驱动系统和安全部件 组成； b) 爬升式提升机构的滑轮、卷筒及驱动轮最小节圆直径应不小于20 倍的钢丝绳直径； c) 对于不承载的滑轮或当倾斜角小于5°时，最小节圆直径应不小于10 倍的钢丝绳直径； d) 提升机构的设计，应使钢丝绳在受导向状态下通过爬升式提升机构、防坠落安全装置和滑轮， 以防止钢丝绳离开其预定路线； e) 提升机构在进行可靠性试验承载极限工作载荷时，提升机构应能正常工作20 000 次循环（轻 型）或60 000 次循环（重型）。电动机、制动器、传动箱、卷筒和/或牵引系统之间的机械传 动应为强制型且不可依靠工作中的摩擦力； f) 提升机构应配备主制动器。在下列情况应自动起作用： 1）施加在曲柄或手柄的手动作用力终止； 2）主动力源失电； 3）控制电路的动力源失电。 g) 制动器应在200 mm 距离内停止承载1.25 倍额定载重量并按额定速度运行的升降机； h) 爬升式提升装置在上升和下降不小于1.5 倍极限工作载荷时，牵引系统中的钢丝绳不能发生 打滑或蠕动。 5.4.3.5 卷扬式动力系统 卷扬式动力系统应满足如下要求： a) 卷扬式动力系统通常由卷扬式提升机构、钢丝绳、滑轮和导向轮、安全部件组成； b) 卷扬式提升机构应包括电动机、减速机及卷筒，通常固定在顶部，卷筒及附属设备的设计应 确保钢丝绳在松弛情况下不会从卷筒上脱出； c) 卷扬式动力系统，对于阻旋转钢丝绳，偏斜角不宜大于2°，对于标准钢丝绳，偏斜角不宜 大于4°； d) 卷筒应有法兰盘，法兰盘高于最外层钢丝绳的凸起高度应不小于钢丝绳直径的1.5 倍； e) 钢丝绳卷筒应有机加工或最大粗糙度为Ra=12.5 µm 的凹槽； f) 对动力提升机构，升降机在最低位置时下降运动应自动停止，此时距离接触到卷筒上钢丝绳 锚固点至少有3 个完整圈钢丝绳盘绕在卷筒上。 5.4.3.6  齿轮齿条式动力系统 齿轮齿条式动力系统应满足如下要求: a) 齿轮齿条动力系统通常由齿轮齿条式提升机构、齿条、导向轮及安全部件组成； b) 齿轮齿条式提升机构包括电动机、减速机及驱动齿轮，驱动齿轮和防坠安全装置齿轮应以强 制形式固定在各自的轴上，不应使用摩擦和夹紧的方法固定； c) 防坠安全装置齿轮的位置应低于驱动齿轮并作用在轿厢结构上； d) 齿条应可靠固定，齿条的连接处应完全对齐，避免错误啮合或对齿轮造成损坏； e) 应有相应措施，防止对安全运行构成威胁的异物进入到驱动齿轮/安全装置齿轮与齿条之间 的位置； f) 在任何条件下，轿厢的负向加速度不得超过1.0 g； g) 齿轮每个齿的弯曲疲劳强度的安全系数应不小于2，接触疲劳强度的安全系数应不小于1.4； h) 齿条制作材料的抗磨损性能应与齿轮相匹配； i) 驱动单元背轮直接作用到齿条上，齿轮模数应不小于4，齿轮通过与齿条直接接触的部件实 现间接作用于齿条时，齿轮模数应不小于6； j) 配备两个冗余驱动单元的齿轮齿条系统应至少有2 个相同的驱动单元，每个驱动单元均有独 立的制动器，每个制动器完全独立，并且都以强制形式分别与齿条齿轮系统连接； k) 每个驱动单元应能独立阻止负载1.25 倍额定载重量的轿厢向下运行； l) 每个驱动单元应能通过无动力下降功能使轿厢运行至底部停层； m) 每个驱动单元应配备一个机械装置，该装置能够使轿厢和1.25 倍额定载重量以不超过1.1 倍 额定速度安全下降。 5.4.3.7  钢丝绳 钢丝绳应满足如下要求： a) 钢丝绳采用镀锌钢丝绳，并应符合GB/T 20118 要求； b) 钢丝绳端部和鸡心环应符合GB/T 6946 要求； c) 提升机构和防坠落安全装置至少各配一根钢丝绳； d) 钢丝绳的最小标称直径应为8 mm； e) 导向用钢丝绳，最小直径应为11 mm； f) 钢丝绳在规定的使用环境下使用时，其在使用期间应耐腐蚀。 g) 单作用钢丝绳安全系数不小于9。 5.4.3.8  悬挂装置 悬挂装置的设计符合GB/T 19155-2017中6.5和第9章的要求。 5.4.4 安全保护装置 5.4.4.1  行程限位开关 行程限位开关应满足如下要求： a) 上升限位开关：升降机应配备上升限位开关，使其停止在顶部行程到达处，触发此开关后， 升降机在电力驱动下只能下降，无法上升； b) 终极上限位开关：应配备终极上限位开关，使升降机在到达行程极限之前完全停止，触发此 开关后，升降机在电力驱动下无法上升或下降，直到维护人员采取纠正措施； c) 下降限位开关：应配备下降限位开关，使升降机停止在底部行程到达处，触发此开关后，升 降机在电力驱动下只能上升，无法下降； d) 终极下降限位开关：齿轮齿条式升降机应配备终极下降限位开关，使升降机在到达行程极限 之前完全停止，触发此开关后，升降机在电力驱动下无法上升或下降，直到维护人员采取纠 正措施。 5.4.4.2  超载检测装置 应配备超载检测装置，用于检测轿厢的超载。应在达到提升机构的1.25 倍额定载重量或之前触 发，超载应通过指示灯或声音信号指示出来。 5.4.4.3  障碍检测装置 当障碍物可能与运行的轿厢有危险接触时，应配备顶部和底部障碍检测装置，在整个升降通道上 均应考虑到这一要求，并优先选择全轮廓障碍检测装置。 5.4.4.4  急停开关 应配备一个紧急停止开关，以便在既有安全措施失效的情况下停止升降机。 5.4.4.5  联锁装置（选配） 对于配备联锁装置的升降机，在正常操作条件下，除非所有停层门均处于关闭状态，否则应无法 启动轿厢或保持轿厢运行。轿厢离开停层区域后，停层门应锁紧。 5.4.5 防坠落安全装置 5.4.5.1  安全锁 安全锁应满足如下要求： a) 应配备一个安全锁，以防止升降机坠落，如果升降机在下降中超速，该装置应自动作用； b) 安全锁应以机械方式检测安全钢丝绳上的超速状况； c) 安全锁的设计应限制其动载荷系数不大于3； d) 应能够被测试和复位，测试后，安全锁应在复位后立即进入运行状态，并且不需要任何调整 或更换零件； e) 安全锁的设计应使其在负载下不能手动释放； f) 安全锁锁止后，应持续发出视觉或听觉信号，同时允许提升机将轿厢提升，向上运行，不允 许升降机向下运行； g) 工作钢丝绳松弛或失效断裂，安全锁应自动锁止到安全钢丝绳上。 h) 离心式安全锁锁绳速度见附录A；对摆臂式安全锁当工作钢丝绳松弛或断裂时，摆臂式安全 锁应能自动锁住安全钢丝绳并停止升降机运行。 5.4.5.2  防坠安全器 防坠安全器应满足如下要求： a) 齿轮齿条式升降机，应配备一个超速安全装置（防坠安全器或带离心限速器双电动机系统）， 在升降机下降超速时动作，以防止升降机坠落； b) 防坠安全器应符合GB 26557-2011 中5.6.2 的要求。 5.4.6 运行导向系统 5.4.6.1  升降机的运行导向系统的导向方式有三种：爬梯、钢丝绳、齿轮齿条。 5.4.6.2  钢丝绳式升降机的运行导向系统以从塔架顶部吊梁垂下的两根钢丝绳作为导向，钢丝绳下 端穿过升降机起始层平台用拉紧支架张紧，沿途所穿过的各层平台下面均设有固定装置（此固定装 置的安装距离在垂直方向上不大于20 m），导向钢丝绳与升降机轿厢之间用钢丝绳导向器连接。导 向钢丝绳的安装位置（即轿厢运行轨迹）应自下而上始终靠近塔架内预设的爬梯。 5.3.6.3  爬梯式升降机的运行导向系统以塔架内壁上预先装设的铝合金爬梯作为导轨，爬梯竖梁与 升降机轿厢之间用支撑臂连接，爬梯间用内插式连接方式固定，塔架支撑固定爬梯踏棍，距离竖梁 内侧面不小于15 mm。 5.4.6.4  齿轮齿条式升降机的运行导向系统包括安装在轿厢背侧的导向支撑臂、齿轮与安装在塔架 上的齿条式爬梯，齿条式爬梯一侧为用于运行使用的齿条，另一侧为方便导向使用的钢管（齿条)， 导向支撑臂两组导轮包夹住齿条式爬梯两侧的齿条和钢管，保证齿轮齿条式升降机不倾覆；齿轮顶 住齿条式钢管（齿条)一侧，保证各齿轮与齿条啮合良好。 5.4.7 操控装置 操控装置包括电动操作系统和手动切换执行机构。升降机的控制功能应符合GB/T 5226.1-2019中 9.2的要求，还应符合如下要求： a) 电动操作通过设在轿厢内部和外部的控制装置实现，可控制升降机以点动或自动方式运行。 当轿厢控制装置的控制转换开关旋转到自动档位时，即可使用外部的控制装置进行操纵。 b) 手动下降机构用于在停电或电动操作系统失灵的状态下，使轿厢依靠自身重力沿工作钢丝绳 以安全速度下降到预定位置，从而保证人员的安全。其操纵手柄设于轿厢顶部人手可以触及 的位置，使用时只需按箭头所示方向扳动即可。 c) 控制模式： 1) 轿厢内控制：升降机应能在轿厢内部进行控制,除急停功能外，轿厢内控制相较于所有 其他控制应有更高的优先级； 2) 轿厢外控制：升降机应具备在轿厢外、地面和/或停层处进行控制功能,轿厢外的所有控 制装置应为自动控制模式。 5.4.8 电缆收集装置 5.4.8.1 分类 升降机通过电缆供电，升降机运行时，电缆需要收集或释放，实现方式主要为以下三种：收缆桶 收集、电缆滑车、主动收缆方式。 5.4.8.2 收缆桶收集 升降机配备收缆桶，一般常置于升降机底板停靠平台下方。 收缆桶收集电缆方式，需要在升降机底部停靠平台开孔，孔径建议不大于300 mm，孔边缘需要 防护，避免损伤电缆。 5.4.8.3  电缆滑车 电缆滑车应满足如下要求： a) 升降机配备电缆滑车，将电缆悬挂在升降机与塔架中间层平台上； b) 电缆滑车需有导向装置，一般采用钢丝绳做导向，防止其旋转； c) 电缆滑车在升降机与平台间要保持一定的安全距离，避免运行时卡滞，必要时在平台与护栏 位置应增加导向装置。 5.4.8.4  主动收揽方式 主动收缆方式应满足如下要求： a) 升降机可配备主动收揽装置，主要包括卷筒、电动机、减速机等； b) 升降机运行时，主动收揽装置应自动收集或释放电缆； c) 主动收揽装置应配备拉力检测或扭矩限制器装置，限制对电缆的最大拉力，避免损伤电缆。 5.5 电气控制系统 5.5.1 电气系统与元器件应符合GB/T 5226.1-2019 的要求。 5.5.2 电气控制系统供电应采用三相五线制。接零、接地线应始终分开，接地线应采用黄绿相间 线。 5.5.3 升降机电气系统应可靠接地，接地电阻不应大于4 Ω，在接地处应设有接地标志。 5.5.4 电气控制部分应有防水、防尘措施，防护等级为≥IP54；应具备防震措施；其元器件应连接 牢固，绝缘可靠，电动机绝缘等级不低于F 级。 5.5.5 电气系统必须设置过热、短路、漏电保护等装置，漏电保护装置应设在升降机供电电源处。 漏电保护器、接触器各电气件功能正常；接线应无虚接、错接等缺陷。主电路相间绝缘电阻应不小 于0.5 MΩ,电路与裸露导电部件之间的绝缘电阻按标称电压应至少为1 000 Ω/V。 5.5.6 电气控制箱按钮应动作可靠，标识清晰、准确。其外露部分由绝缘材料制成，应能承受50 Hz 正弦波形、1250 V 电压为时1 min 的耐压试验。 5.5.7 升降机内部宜设置独立照明，且具备应急功能,断电后能持续使用30 min 以上。 5.5.8 升降机应设置紧急状态下切断主电源控制回路的急停按钮，该电路独立于各控制电路。急停 按钮为红色，并有明显的“急停”标记，不能自动复位。 5.5.9  升降机的动力电缆的电源连接点应为升降机专用电源，不与其它用电设备混接。 5.5.10 限位开关应符合GB/T 14048.5 附录K 的要求。 5.5.11 升降机应能自动与手动操作，轿厢内手动持续点动操作，轿厢外可进行自动控制。 5.5.12 下列任何单一的升降机电气设备的故障，应不成为导致升降机产生危险故障的原因，可能 出现的故障： a) 失压和无电压； b) 电压下降20% 以上； c) 对地或金属构件的绝缘破坏； d) 电气元件（如电阻器、电容器、晶体管、灯等）短路或断路以及参数或功能的改变； e) 接触器或继电器的可动衔铁不吸合或不能完全吸合； f) 接触器或继电器可动衔铁不分离； g) 触点不能断开； h) 触点不能闭合。 5.6 标准件 标准件等级选用必须满足升降机的设计要求，当采用碳钢材质的螺栓、螺钉大小规格≥M8 时， 其性能等级不低于8.8 级、螺母8 级、垫片200 HV，当采用不锈钢材质时其性能等级不低于A2-70 要 求。 5.7 防腐要求 5.7.1 安装在陆上风力发电机组塔架内升降机应按照ISO 12944-5 中C3（室内）/C4（露天）环境 下的防腐蚀要求进行防腐处理，防腐年限为“长期”（20 年以上）。安装在海上风力发电机组塔架 内的升降机应按照ISO 12944-5 中C4（室内）/C5（露天）环境下的防腐蚀要求进行防腐处理，防腐 年限为“长期”（25 年以上）。 5.7.2 升降机所有零部件必须具有耐腐蚀、耐潮湿，并经过严格的盐雾测试，同时，电控箱必须进 行密封、防腐、防尘处理。关键零部件的防腐要求如表2 所示。"}, "表2": {"t": "表2", "c": "表2   关键零部件防腐要求 关键件 宜采用的防腐方式 防腐要求 升降机轿厢 面板可采用喷塑、氧化、涂漆等防腐工艺 满足GB/T 10125盐雾试验1 000 h 标准件 ≥M8时，锌洛涂层 满足GB/T 18684 4级 ＜M8时，不锈钢 满足GB/T 10125盐雾试验1 000 h 电机壳体 喷涂多层漆 铝合金壳体满足GB/T 10125盐雾试验1 000 h 钢丝绳 表面镀锌 满足GB/T 8918 A级要求 齿条爬梯 浸锌+油漆封闭 齿条爬梯表面渗锌处理，渗锌层≥50 μm。渗锌后 表面喷丙烯酸聚氨酯面漆；干膜厚度≥60 μm。满 足GB/T 10125盐雾试验720 h 5.8 认证 升降机应经过有资质的第三方认证机构认证，认证机构应具备： a) 国家认证认可主管部门批准； b) 国内、国际权威认可机构的认可。 6 试验 6.1 试验的基本要求 6.1.1 试验条件： a) 环境温度应为-40 °C～+55 °C； b) 试验场地10 min 平均风速不宜大于10 m/s； c) 试验时输入电压应正常，电源电压值波动范围为±5%； d) 应按工况备齐试验载重量和所需的全部技术文件。 6.1.2 试验仪器的精准度，除有特殊规定外应符合下列偏差范围： a) 重量、力、长度、时间和速度为±1%； b) 电压、电流为±1%； c) 温度为±2%； d) 试验用的仪器和量具，应具有产品合格证，且在计量部门检定合格的有效期内，试验过程中， 应使用同一仪器和工具。 6.2 外观质量检查 零件加工表面不得有锈蚀、磕碰、划伤等缺陷，外露表面应进行防锈处理；围板、罩壳等应平整， 安装牢固可靠；漆层应均匀、平滑、色泽一致，附着力强，无皱皮、脱皮、漏漆、流痕等缺陷；焊缝 不得有漏焊、裂纹、凹坑、气孔、夹渣等缺陷。 6.3 载荷试验 6.3.1 空载运行试验：升降机在不小于5 m 的行程中完成30 个升降工作循环的空载试验，每一工 作循环的升、降过程中应进行不少于2 次的正常制动，观察有无制动瞬时滑移现象，运行中应升降 平稳，起、制动正常，上下限位开关及其他联锁装置动作灵敏、可靠。 6.3.2 额定载荷运行试验：在升降机的底板上施加额定载重量，升降机在不小于5 m 的行程中完成 30 个升降工作循环的额定载重量试验，每一次工作循环的升、降过程中应进行不少于2 次的正常制 动，运行过程中应升降平稳，起、制动正常，上下限位开关及其他联锁装置动作灵敏、可靠，连接 件、结构件、受力构件无开裂、变形、损坏等缺陷，紧固件无松动，减速机油温正常。 6.3.3 静力载荷试验：将升降机提升至离地面1 m 左右，升降机可靠悬挂在测试装置上，在升降机 底板上均布施加1.5 倍额定载重量，做好标记，静置15 min 后，升降机制动可靠，承载装置无下滑 现象，焊缝、连接件、结构件、受力构件应无开裂、变形、损坏等缺陷，紧固件无松动现象。 6.3.4 动力载荷运行试验：升降机解除超载功能，在升降机的底板上均布施加1.25 倍额定载重 量，升降机在不小于5 m 的行程中完成30 个升降工作循环的动载试验，每一次工作循环的升、降过 程中应进行不少于2 次的正常制动，运行过程中应升降平稳，起、制动正常，上下限位开关及其他 联锁装置动作灵敏、可靠，连接件、结构件、受力构件无开裂、变形、损坏等缺陷，紧固件无松 动，减速机油温正常。 6.3.5 超载试验：当升降机负载1.25 倍额定载重量时，升降机报警，同时升降机不能上下运行， 当载荷减到额定载重量后，报警消除，升降机能正常运行。 6.3.6 极限载荷试验：将升降机可靠悬挂在测试装置上，在升降机底板均布施加3.5 倍额定载重 量,静置1 h 后，卸下载荷，检查顶板组件及底板组件的焊缝、连接件、结构件，有永久变形但无断 裂。 6.3.7  挂点强度试验：按照GB 30862-2014 标准中第6 章的要求进行挂点强度试验。 6.4 底架强度和刚度试验 底架应与轿厢可靠连接，其强度应达到额定载荷及自重之和的3倍载荷，其挠度应不大于1/200， 在承载3倍额定载重量，静止10 min，卸去载荷，不得出现焊缝裂纹、螺栓铆钉松动、结构件永久变形 等缺陷。 6.5 轿厢强度和刚度试验 将升降机可靠悬挂在测试装置上，升降机提升至离地面1 m 左右，在升降机底架任意200 mm× 200 mm 的区域内，承载300 kg 的均匀载荷，静置15 min 后卸下载荷，检查升降机的顶板组件及底板 组件的焊缝、连接件、结构件应无开裂、严重变形及结构破坏等缺陷出现；该设备连接的螺栓、铆钉 等应无松动、变形、裂纹等缺陷出现。 6.6 整机可靠性试验 试验样机承受额定载重量，起升高度不小于5 m情况下，可靠性试验循环次数不少于3 000次；首 次故障前工作时间为0.8 t0（t0为累计工作时间），平均无故障工作时间为0.5 t0，且工作循环次数不少 于2 000次，可靠度不低于92％。安全锁锁绳试验，次数不少于30次；升降机手动下降试验不少于50次， 每次下滑距离不少于2 m。升降机运行平稳；限位开关工作正常；紧固件无松动；各主要零部件性能 良好；箱体润滑油无渗漏。 6.7 噪声测定 按照GB/T 20062规定的方法进行测试噪声，距轿厢内地面上方1600 mm位置以及轿厢门前方500 mm位置测量，测量3次，取最大值，噪声应不大于85 dB(A)。 6.8 逃生试验 按照升降机的逃生说明书，进行逃生试验。 6.9 手动下降试验 6.9.1  将升降机上升到距地面1 m 左右，测试人员站在轿厢内用手推动释放制动器，升降机应能 平稳滑降。 6.9.2  在升降机额定载重量下，手动释放制动器，升降机应能平稳下降，且下降速度不应大于1.5 倍的额定速度（每次下降距离不小于2 m）,试验三次，平均值即是其速度。 6.10 提升速度测试 在额定载重量工况下，升降高度不小于5 m，测试升降机的起升、下降的速度，测试3次，误差在 设计值的±5%范围内。 6.11 提升机构试验 提升机构的试验按照GB/T 19155-2017 附录B.3的规定进行。 6.12 悬挂装置试验 悬挂装置的试验按照GB/T 19155-2017 附录C的规定进行。 6.13 联锁功能试验(选配） 当轿厢门开启状态下，升降机应立即启动互锁。平台互锁系统与升降机实现互锁联动，正常情况 下，只有升降机到达该平台，锁闭系统才能开启，人员才能进入平台，升降机不到达该平台锁闭系统 始终保持锁闭状态。互锁系统需感应灵活。 6.14 安全保护装置试验 6.14.1 上限位试验：升降机运行到达顶部行程处，上限位开关触发，并报警，此时升降机无法上 升运行，但可以下降运行； 6.14.2 终极限位试验：终极限位触发，并报警，此时升降机无法上升、下降运行，解除故障后， 升降机可以上下运行。 6.14.3 下限位试验：升降机运行到达底部行程处，下限位开关触发，并报警，此时升降机无法下 降运行，但可以上升运行； 6.14.4 超载系统试验：参照6.3.5； 6.14.5 障碍检测装置试验：轿厢上、下运行时，如有异物进入运行通道，蜂鸣器报警或警示灯亮 起，此时塔架升降机不能上升、下降运行。 6.15 防坠落安全装置试验 a) 安全锁在锁绳状态下应不能自动复位，承受静力试验载荷时（1.5 倍额定载重量），静置"}, "表3": {"t": "表3", "c": "表3   检验项目 序号 检验项目 型式 检验 出厂 检验 现场安 装验收 要求 检验方法 外观检查 △ △ △ 5.3.1 6.2 空载运行试验 △ ※ △ 5.3.2, 5.4.2 6.3.1 额载运行试验 △ ※ △ 5.3.2,  5.4.2 6.3.2 静力载荷试验 △ ※ — 5.3.2,  5.4.2 6.3.3 动力载荷运行试验 △ ※ — 5.3.2,  5.4.2 6.3.4 超载试验 △ ※ — 5.3.2,  5.4.2 6.3.5 极限载荷试验 △ ※ — 5.3.2,  5.4.2 6.3.6 挂点强度试验 △ ※ — 5.4.2.1 6.3.7 底架强度和刚度试验 △ ※ — 5.3.2,  5.4.2 6.4 轿厢强度和刚度试验 △ ※ — 5.3.2,  5.4.2 6.5 整机可靠性试验 △ ※ — 5.3.2, 5.4.2 6.6 噪声测定 △ — ※ 5.3.3 6.7 逃生试验 △ — ※ 5.4.2.1，5.4.2.6 6.8 手动下降试验 △ — △ 5.4.3.3 6.9 提升速度测试 △ ※ △ 5.3.2.4,  5.4.3.2 6.10 提升机构试验 △ ※ — 5.4.3.4，5.4.3.5, 5.4.3.6 6. 11 悬挂装置试验 △ ※ △ 5.4.3.8 6. 12 联锁功能试验(选配） △ △ △ 5.4.4.5 6.13 安全保护装置试验 △ △ △ 5.4.4 6.14 防坠落安全装置试验 △ △ — 5.4.5 6.15 电气系统试验---各部件功 能试验 △ △ △ 5.5 6.16 电气系统试验---绝缘性 能、耐压试验 △ － － 5.5 6.16 标有“△”者为必检项目；标有“—”者为不作规定的检验项目；标有“※”为供需双方协商进行的项目。"}, "表4": {"t": "表4", "c": "表4  随机文件 序号 文件名称 份数 产品合格证 产品认证资料 出厂检验报告 电气接线图 使用维护说明书（含常见故障处理、逃生方法指导手册） 升降机清单（含附件清单） 安装验收检验表 年度维护检修表 质保说明 随机备件、附件及专用工具清单"}}, "standards": {"GB/T191": {"t": "", "c": "包装储运图示标志"}, "GB/T2104": {"t": "", "c": "钢丝绳包装、标志及质量证明书的一般规定"}, "GB/T3797": {"t": "", "c": "电气控制设备"}, "GB/T5226.1—2019": {"t": "", "c": "机械电气安全 机械电气设备 第1部分：通用技术条件"}, "GB/T5972": {"t": "", "c": "起重机 钢丝绳 保养、维护、检验和报废"}, "GB/T6946": {"t": "", "c": "钢丝绳铝合金压制接头"}, "GB/T7251.1": {"t": "", "c": "低压成套开关设备和控制设备 第1部分：总则"}, "GB/T8918": {"t": "", "c": "重要用途钢丝绳"}, "GB/T9174": {"t": "", "c": "一般货物运输包装通用技术条件"}, "GB/T10125": {"t": "", "c": "人造气氛腐蚀试验 盐雾试验"}, "GB/T13306": {"t": "", "c": "标牌"}, "GB/T14048.5": {"t": "", "c": "低压开关设备和控制设备 第5-1部分：控制电路电器和开关元件 机电式控制电路"}, "GB/T18684": {"t": "", "c": "锌铬涂层 技术条件"}, "GB/T19155—2017": {"t": "", "c": "高处作业吊篮"}, "GB/T20062": {"t": "", "c": "流动式起重机 作业噪声限值及测量方法"}, "GB/T20118": {"t": "", "c": "钢丝绳通用技术条件"}, "GB26557—2011": {"t": "", "c": "吊笼有垂直导向的人货两用施工升降机"}, "GB30862—2014": {"t": "", "c": "坠落防护 挂点装置"}, "NB/T31060—2014": {"t": "", "c": "风力发电设备 环境条件"}, "NB/T31094—2016": {"t": "", "c": "风力发电设备海上特殊环境条件与技术要求"}, "JB/T7929": {"t": "", "c": "齿轮传动装置清洁度"}, "ISO12944-5": {"t": "", "c": "色漆和清漆 防护漆体系对钢结构的防腐蚀保护 第5部分：防护漆体系（Paints and"}}};
+
+/* ===== APP ===== */
+/* GB/T 46154—2025 互动学习课程 · 逻辑层 */
+(function () {
+  'use strict';
+
+  var CHAPTERS = [];
+  for (var i = 1; i <= 14; i++) {
+    var k = 'CH' + (i < 10 ? '0' + i : i);
+    if (window[k]) CHAPTERS.push(window[k]);
+  }
+
+  var ALL = [];
+  CHAPTERS.forEach(function (c) {
+    c.questions.forEach(function (q) {
+      ALL.push({ ch: c, q: q });
+    });
+  });
+  ALL.forEach(function (it, i) { it.gid = i; it.q._gid = i; });
+
+  /* ---------- 存储 ---------- */
+  var KEY = 'nbt10991_v1';
+  var ST = { ans: {}, mark: {} };
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (raw) ST = JSON.parse(raw);
+  } catch (e) {}
+  if (!ST.ans) ST.ans = {};
+  if (!ST.mark) ST.mark = {};
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch (e) {}
+  }
+
+  /* ---------- 元素 ---------- */
+  function $(id) { return document.getElementById(id); }
+  var LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+  var view = 'lecture';
+  var curChap = 0;
+  var slideIdx = 0;
+  var playTimer = null;
+  var playing = false;
+  var speakOn = false;
+
+  // 答题状态
+  var pool = [];
+  var qi = 0;
+  var answered = false;      // 当前题是否已提交
+  var chosen = [];
+
+  /* ---------- 引用规范链接化（课程内知识库跳转） ---------- */
+  var STD_RE = /((?:GB(?:\/T|\/Z)?|NB(?:\/T)?|JB(?:\/T)?|TSG|AQ|GA|YD(?:\/T)?|DL(?:\/T)?|JGJ|QB(?:\/T)?|HG(?:\/T)?|WS(?:\/T)?|SN(?:\/T)?)\s?-?\s?\d{3,5}(?:\.\d+)*)(?:—\d{4})?(?![0-9])/g;
+  function escHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  /* 纯文本 → 带 data-kb 链接的 HTML（用于解析文本，点击打开课程内知识库） */
+  function linkStandards(txt) {
+    return escHtml(txt).replace(STD_RE, function (m) {
+      return '<a class="std-link" data-kb="' + m + '">' + m + '</a>';
+    });
+  }
+  /* 已渲染的 HTML 节点 → 遍历文本节点加链接 */
+  function linkStdNodes(root) {
+    if (!root || !root.querySelectorAll) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        var p = node.parentNode;
+        if (p && p.closest && p.closest('a,button,script,style')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var list = [];
+    while (w.nextNode()) list.push(w.currentNode);
+    list.forEach(function (n) {
+      var txt = n.nodeValue;
+      if (!STD_RE.test(txt)) return;
+      STD_RE.lastIndex = 0;
+      var frag = document.createDocumentFragment(), last = 0, m;
+      while ((m = STD_RE.exec(txt))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
+        var a = document.createElement('a');
+        a.className = 'std-link';
+        a.dataset.kb = m[0];
+        a.textContent = m[0];
+        frag.appendChild(a);
+        last = m.index + m[0].length;
+      }
+      if (last < txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+      n.parentNode.replaceChild(frag, n);
+    });
+    STD_RE.lastIndex = 0;
+  }
+
+  /* ---------- 知识库（课程内知识点） ---------- */
+  function kbMap(p) {
+    if (!window.KB) return null;
+    if (KB.standards && KB.standards[p]) return p; // 规范号直接命中
+    var pNoSpace = p.replace(/\s+/g, '');
+    if (KB.standards && KB.standards[pNoSpace]) return pNoSpace; // 去空格后命中（GB/T 19155—2017 → GB/T19155—2017）
+    if (p.includes('封面')) return '封面';
+    if (p.includes('前言')) return '前言';
+    if (p.includes('第1章') || p === '1 范围') return '第1章 范围';
+    if (p.includes('第2章') || p === '2 规范性引用文件') return '第2章 规范性引用文件';
+    if (p.includes('第3章') || p === '3 术语和定义') return '第3章 术语和定义';
+    if (p.includes('第4章') || p === '4 型号、分类、主参数') return '第4章 型号、分类、主参数';
+    if (p.includes('第5章') || p === '5 技术要求') return '第5章 技术要求';
+    if (p.includes('第6章') || p === '6 试验') return '第6章 试验';
+    if (p.includes('第7章') || p === '7 检验方法检验规则') return '第7章 检验方法检验规则';
+    if (p.includes('第8章') || p === '8 标识、包装、运输、贮存') return '第8章 标识、包装、运输、贮存';
+    if (p.includes('第9章') || p === '9 随机文件') return '第9章 随机文件';
+    if (p.includes('第10章') || p === '10 安装与运行维护') return '第10章 安装与运行维护';
+    if (p.includes('附录A')) return '附录A 离心式安全锁锁绳速度';
+    var tm = p.match(/^(表\d+)/);
+    if (tm) return tm[1];
+    var cm = p.match(/^(\d+(?:\.\d+)+)/);
+    if (cm) return cm[1];
+    return null;
+  }
+  function openKb(src, label) {
+    if (!window.KB) { alert('知识库未加载'); return; }
+    var parts = src.split(/[；;，,、+~～]/).map(function (s) { return s.trim(); }).filter(Boolean);
+    var html = '';
+    parts.forEach(function (p) {
+      var key = kbMap(p);
+      var entry = key && (KB.items[key] || KB.special[key] || KB.standards[key]);
+      if (entry) {
+        var head = '<div class="kb-key">' + escHtml(key) + (entry.t ? ' ' + escHtml(entry.t) : '') + '</div>';
+        var text = '<div class="kb-text">' + escHtml(entry.c) + '</div>';
+        html += '<div class="kb-item">' + head + text + '</div>';
+      } else {
+        html += '<div class="kb-item"><div class="kb-key">' + escHtml(p) + '</div><div class="kb-text">（该出处暂无知识库条目）</div></div>';
+      }
+    });
+    $('kbTitle').textContent = label + '：' + src;
+    $('kbBody').innerHTML = html;
+    $('kbModal').classList.remove('hidden');
+  }
+  function closeKb() { $('kbModal').classList.add('hidden'); }
+
+  /* ============ 章节导航 ============ */
+  function buildNav() {
+    var nav = $('chapNav');
+    nav.innerHTML = '';
+    // 移动端下拉框与当前章节保持同步
+    if (typeof mSel !== 'undefined' && mSel) mSel.value = String(CHAPTERS[curChap].id);
+    CHAPTERS.forEach(function (c, i) {
+      var d = document.createElement('div');
+      d.className = 'chap-item' + (i === curChap ? ' active' : '');
+      d.innerHTML = '<span>' + c.title + '</span><span class="cnum">' + c.questions.length + ' 题</span>';
+      d.onclick = function () {
+        curChap = i; slideIdx = 0;
+        stopPlay();
+        buildNav();
+        if (view === 'lecture') renderSlide();
+        else { $('fChapter').value = String(c.id); applyFilter(false); }
+      };
+      nav.appendChild(d);
+    });
+  }
+
+  /* ============ 讲解 ============ */
+  function renderSlide() {
+    var c = CHAPTERS[curChap];
+    var sl = c.slides[slideIdx];
+    $('lecChap').textContent = '第 ' + c.id + ' 章';
+    $('lecTitle').textContent = c.title;
+    var html = '<h3>' + sl.h + '</h3>' + sl.body;
+    if (sl.src) html += '<div class="src">出处：' + sl.src + '</div>';
+    $('lecSlide').innerHTML = html;
+    linkStdNodes($('lecSlide'));
+    $('lecIdx').textContent = (slideIdx + 1) + ' / ' + c.slides.length;
+    $('lecBar').style.width = ((slideIdx + 1) / c.slides.length * 100) + '%';
+    var dots = $('lecDots'); dots.innerHTML = '';
+    c.slides.forEach(function (_, i) {
+      var dd = document.createElement('div');
+      dd.className = 'dot' + (i === slideIdx ? ' on' : '');
+      dd.onclick = function () { slideIdx = i; renderSlide(); };
+      dots.appendChild(dd);
+    });
+    $('lecPrev').disabled = slideIdx === 0;
+    $('lecNext').disabled = slideIdx === c.slides.length - 1;
+    // 窄屏下宽表格会被容器裁切，加提示告知可横向滑动
+    enhanceTables();
+  }
+
+  /* 给超出可视宽度的表格加「可滑动」提示与两侧渐隐 */
+  function enhanceTables() {
+    var slide = $('lecSlide');
+    var tables = slide.querySelectorAll('table');
+    Array.prototype.forEach.call(tables, function (t) {
+      var wrap = t.parentNode;
+      if (wrap && wrap.classList && wrap.classList.contains('tbl-wrap')) return;
+      var box = document.createElement('div');
+      box.className = 'tbl-wrap';
+      t.parentNode.insertBefore(box, t);
+      box.appendChild(t);
+      var tip = document.createElement('div');
+      tip.className = 'tbl-tip hidden';
+      tip.textContent = '← 左右滑动查看完整表格 →';
+      box.parentNode.insertBefore(tip, box);
+      var check = function () {
+        var w = box.querySelector('table');
+        if (!w) return;
+        var over = w.scrollWidth - w.clientWidth > 2;
+        tip.classList.toggle('hidden', !over || w.scrollLeft > 4);
+        box.classList.toggle('scrollable', over);
+        // 滑到最右端时去掉右侧渐隐
+        box.classList.toggle('at-end', w.scrollLeft + w.clientWidth >= w.scrollWidth - 4);
+        box.classList.toggle('at-start', w.scrollLeft <= 4);
+      };
+      t.addEventListener('scroll', check, { passive: true });
+      check();
+    });
+  }
+
+  /* 语音讲解（浏览器 TTS，需用户点击启用） */
+  function slideText() {
+    return ($('lecSlide').textContent || '').replace(/\s+/g, ' ').trim();
+  }
+  function speakCurrent(onEnd) {
+    if (!window.speechSynthesis) { if (onEnd) onEnd(); return; }
+    try { window.speechSynthesis.cancel(); } catch (e) {}
+    var u = new window.SpeechSynthesisUtterance(slideText());
+    u.lang = 'zh-CN';
+    u.rate = 1.05;
+    if (onEnd) u.onend = onEnd;
+    try { window.speechSynthesis.speak(u); } catch (e) { if (onEnd) onEnd(); }
+  }
+  function cancelSpeak() {
+    if (window.speechSynthesis) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+  }
+
+  function stopPlay() {
+    playing = false;
+    if (playTimer) { clearTimeout(playTimer); playTimer = null; }
+    cancelSpeak();
+    $('lecPlay').textContent = '自动播放';
+    $('lecPlay').classList.remove('primary');
+  }
+  function advance() {
+    var c = CHAPTERS[curChap];
+    if (slideIdx >= c.slides.length - 1) { stopPlay(); return; }
+    slideIdx++;
+    renderSlide();
+    runStep();
+  }
+  function runStep() {
+    var c = CHAPTERS[curChap];
+    if (speakOn) {
+      speakCurrent(function () {
+        if (!playing) return;
+        playTimer = setTimeout(function () {
+          playTimer = null;
+          if (!playing) return;
+          if (slideIdx >= c.slides.length - 1) { stopPlay(); return; }
+          advance();
+        }, 900);
+      });
+    } else {
+      playTimer = setTimeout(function () { playTimer = null; advance(); }, 9000);
+    }
+  }
+  function startPlay() {
+    playing = true;
+    $('lecPlay').textContent = '暂停';
+    $('lecPlay').classList.add('primary');
+    runStep();
+  }
+
+  $('lecPrev').onclick = function () {
+    if (slideIdx > 0) {
+      stopPlay(); slideIdx--; renderSlide();
+      if (speakOn) speakCurrent(null);
+    }
+  };
+  $('lecNext').onclick = function () {
+    var c = CHAPTERS[curChap];
+    if (slideIdx < c.slides.length - 1) {
+      stopPlay(); slideIdx++; renderSlide();
+      if (speakOn) speakCurrent(null);
+    }
+  };
+  $('lecPlay').onclick = function () { playing ? stopPlay() : startPlay(); };
+  $('lecSpeak').onclick = function () {
+    speakOn = !speakOn;
+    $('lecSpeak').textContent = speakOn ? '语音讲解 ✓' : '语音讲解';
+    $('lecSpeak').classList.toggle('primary', speakOn);
+    if (speakOn) speakCurrent(null); else cancelSpeak();
+  };
+  $('lecToQuiz').onclick = function () {
+    switchView('quiz');
+    $('fChapter').value = String(CHAPTERS[curChap].id);
+    $('fScope').value = 'all';
+    applyFilter(false);
+  };
+
+  /* ============ 筛选 ============ */
+  function matchScope(it) {
+    var s = $('fScope').value;
+    var rec = ST.ans[it.gid];
+    if (s === 'undo') return !rec;
+    if (s === 'wrong') return rec && !rec.ok;
+    if (s === 'right') return rec && rec.ok;
+    return true;
+  }
+  function applyFilter(keepChapter) {
+    var ch = $('fChapter').value;
+    var ty = $('fType').value;
+    pool = ALL.filter(function (it) {
+      if (ch !== 'all' && it.ch.id !== parseInt(ch, 10)) return false;
+      if (keepChapter && it.ch.id !== CHAPTERS[curChap].id) return false;
+      if (ty !== 'all' && it.q.t !== ty) return false;
+      if (!matchScope(it)) return false;
+      return true;
+    });
+    if ($('fShuffle').checked) pool.sort(function () { return Math.random() - 0.5; });
+    qi = 0;
+    if (!pool.length) { renderEmpty(); return; }
+    renderQ();
+  }
+  function renderEmpty() {
+    $('qChapter').textContent = '无匹配题目';
+    $('qType').textContent = '—';
+    $('qIdx').textContent = '0 / 0';
+    $('qSourceTag').textContent = '—';
+    $('qText').textContent = '当前筛选条件下没有题目，请调整章节、题型或范围。';
+    $('qOptions').innerHTML = '';
+    $('qFeedback').classList.add('hidden');
+    $('quizRange').textContent = '0 题';
+    $('jumpGrid').innerHTML = '';
+    $('qNext').textContent = '下一题 →';
+  }
+
+  /* ============ 渲染题目 ============ */
+  function optsOf(q) {
+    if (q.t === 'judge') return ['正确', '错误'];
+    return q.o;
+  }
+  function renderQ() {
+    var it = pool[qi];
+    var q = it.q;
+    answered = false; chosen = [];
+    var rec = ST.ans[it.gid];
+
+    $('qChapter').textContent = '第' + it.ch.id + '章 ' + it.ch.title;
+    $('qType').textContent = q.t === 'single' ? '单选题' : q.t === 'multi' ? '多选题' : '判断题';
+    $('qIdx').textContent = (qi + 1) + ' / ' + pool.length;
+    $('qSourceTag').textContent = '出处见解析';
+    $('qText').textContent = q.q;
+    $('quizRange').textContent = '共 ' + pool.length + ' 题';
+
+    var wrap = $('qOptions');
+    wrap.innerHTML = '';
+    wrap.className = 'options' + (q.t === 'multi' ? ' opt-multi' : '');
+    optsOf(q).forEach(function (txt, i) {
+      var d = document.createElement('div');
+      d.className = 'opt';
+      d.innerHTML = '<div class="letter">' + LETTERS[i] + '</div><div>' + txt + '</div>';
+      d.onclick = function () { pick(i, d); };
+      wrap.appendChild(d);
+    });
+
+    $('qFeedback').classList.add('hidden');
+    $('qMark').style.display = 'none';
+
+    if (rec) {
+      // 已答过：直接展示历史结果
+      answered = true;
+      chosen = rec.pick.slice();
+      lockAndShow(rec.ok);
+    } else {
+      $('qNext').textContent = (q.t === 'multi') ? '提交答案' : '下一题 →';
+    }
+    renderJump();
+    updateTopStats();
+  }
+
+  function pick(i, el) {
+    if (answered) return;
+    var it = pool[qi], q = it.q;
+    var nodes = $('qOptions').children;
+    if (q.t === 'multi') {
+      var k = chosen.indexOf(i);
+      if (k >= 0) { chosen.splice(k, 1); el.classList.remove('sel'); }
+      else { chosen.push(i); el.classList.add('sel'); }
+      $('qNext').textContent = chosen.length ? '提交答案（已选 ' + chosen.length + ' 项）' : '提交答案';
+      return;
+    }
+    chosen = [i];
+    for (var n = 0; n < nodes.length; n++) nodes[n].classList.remove('sel');
+    el.classList.add('sel');
+    submit();
+  }
+
+  function submit() {
+    var it = pool[qi], q = it.q;
+    if (!chosen.length) return;
+    var ok = chosen.length === q.a.length && q.a.every(function (x) { return chosen.indexOf(x) >= 0; });
+    ST.ans[it.gid] = { ok: ok, pick: chosen.slice() };
+    save();
+    answered = true;
+    lockAndShow(ok);
+    renderJump();
+    updateTopStats();
+  }
+
+  function lockAndShow(ok) {
+    var it = pool[qi], q = it.q;
+    var nodes = $('qOptions').children;
+    for (var n = 0; n < nodes.length; n++) {
+      nodes[n].classList.add('locked');
+      nodes[n].classList.remove('sel');
+      if (q.a.indexOf(n) >= 0) nodes[n].classList.add('right');
+      else if (chosen.indexOf(n) >= 0) nodes[n].classList.add('wrong');
+    }
+    var fb = $('qFeedback');
+    fb.classList.remove('hidden');
+    var head = $('fbHead');
+    head.className = 'fb-head ' + (ok ? 'ok' : 'bad');
+    head.textContent = ok ? '✓ 回答正确' : '✗ 回答错误';
+    $('fbAnswer').textContent = q.a.map(function (x) { return LETTERS[x] + '. ' + optsOf(q)[x]; }).join('　|　');
+    $('fbExplain').innerHTML = linkStandards(q.e);
+    $('fbSource').innerHTML = '<button type="button" class="src-link" data-src="' + escHtml(q.s) + '">出处：' + escHtml(q.s) + ' <span class="src-arrow">▸</span></button>';
+    $('qMark').style.display = 'inline-block';
+    $('qMark').textContent = ST.mark[it.gid] ? '已标记 ★' : '标记错题';
+    $('qNext').textContent = '下一题 →';
+  }
+
+  function renderJump() {
+    var g = $('jumpGrid'); g.innerHTML = '';
+    pool.forEach(function (it, i) {
+      var rec = ST.ans[it.gid];
+      var b = document.createElement('button');
+      b.className = 'jump-btn' + (i === qi ? ' cur' : '') + (rec ? (rec.ok ? ' right' : ' wrong') : '');
+      b.textContent = i + 1;
+      b.onclick = function () { qi = i; renderQ(); window.scrollTo(0, 0); };
+      g.appendChild(b);
+    });
+  }
+
+  /* ============ 顶栏统计 ============ */
+  function updateTopStats() {
+    var done = 0, right = 0;
+    for (var k in ST.ans) { if (ST.ans.hasOwnProperty(k)) { done++; if (ST.ans[k].ok) right++; } }
+    $('sDone').textContent = done;
+    $('sRight').textContent = right;
+    $('sWrong').textContent = done - right;
+    $('sRate').textContent = done ? Math.round(right / done * 100) + '%' : '—';
+    $('totalCount').textContent = ALL.length;
+  }
+
+  /* ============ 按钮 ============ */
+  $('qPrev').onclick = function () { if (qi > 0) { qi--; renderQ(); window.scrollTo(0, 0); } };
+  $('qNext').onclick = function () {
+    var it = pool[qi];
+    if (it && !answered && it.q.t === 'multi') { submit(); return; }
+    if (qi < pool.length - 1) { qi++; renderQ(); window.scrollTo(0, 0); }
+  };
+  $('qMark').onclick = function () {
+    var it = pool[qi];
+    if (ST.mark[it.gid]) delete ST.mark[it.gid]; else ST.mark[it.gid] = 1;
+    save();
+    $('qMark').textContent = ST.mark[it.gid] ? '已标记 ★' : '标记错题';
+  };
+  $('fChapter').onchange = function () { applyFilter(false); };
+  $('fType').onchange = function () { applyFilter(false); };
+  $('fScope').onchange = function () { applyFilter(false); };
+  $('fShuffle').onchange = function () { applyFilter(false); };
+  $('btnReset').onclick = function () {
+    if (confirm('确定清空全部答题记录与标记吗？此操作不可撤销。')) {
+      ST = { ans: {}, mark: {} }; save();
+      applyFilter(false); updateTopStats(); renderStats();
+    }
+  };
+
+  /* ============ 统计视图 ============ */
+  function renderStats() {
+    var done = 0, right = 0;
+    for (var k in ST.ans) { if (ST.ans.hasOwnProperty(k)) { done++; if (ST.ans[k].ok) right++; } }
+    var marks = Object.keys(ST.mark).length;
+    $('statCards').innerHTML =
+      '<div class="scard"><b>' + ALL.length + '</b><span>题库总题量</span></div>' +
+      '<div class="scard"><b>' + done + '</b><span>已作答题数</span></div>' +
+      '<div class="scard"><b>' + right + '</b><span>答对题数</span></div>' +
+      '<div class="scard"><b>' + (done ? Math.round(right / done * 100) + '%' : '—') + '</b><span>总正确率</span></div>' +
+      '<div class="scard"><b>' + marks + '</b><span>手动标记</span></div>' +
+      '<div class="scard"><b>' + Math.round(done / ALL.length * 100) + '%</b><span>完成进度</span></div>';
+
+    var cs = $('chapStats'); cs.innerHTML = '';
+    CHAPTERS.forEach(function (c) {
+      var tot = c.questions.length, d = 0, r = 0;
+      c.questions.forEach(function (q) {
+        var rec = ST.ans[q._gid];
+        if (rec) { d++; if (rec.ok) r++; }
+      });
+      var pct = d ? Math.round(r / d * 100) : 0;
+      var row = document.createElement('div');
+      row.className = 'cs-row';
+      row.innerHTML = '<div class="cs-name">第' + c.id + '章 ' + c.title + '</div>' +
+        '<div class="cs-bar"><i style="width:' + pct + '%"></i></div>' +
+        '<div class="cs-val">' + (d ? r + '/' + d + ' · ' + pct + '%' : '未开始') + '</div>';
+      cs.appendChild(row);
+    });
+
+    var wl = $('wrongList'); wl.innerHTML = '';
+    var bad = ALL.filter(function (it) { var r = ST.ans[it.gid]; return r && !r.ok; });
+    if (!bad.length) {
+      wl.innerHTML = '<div class="empty">还没有错题。做错的题目会自动出现在这里。</div>';
+      return;
+    }
+    bad.forEach(function (it) {
+      var d = document.createElement('div');
+      d.className = 'wrong-item';
+      d.innerHTML = '<b>第' + it.ch.id + '章 · ' + it.q.q.slice(0, 60) + (it.q.q.length > 60 ? '…' : '') + '</b>' +
+        '<div style="margin-top:4px;color:#7b8493">正确：' + it.q.a.map(function (x) { return LETTERS[x]; }).join('') + '　出处：' + it.q.s + '</div>';
+      d.onclick = function () {
+        switchView('quiz');
+        $('fChapter').value = 'all'; $('fType').value = 'all'; $('fScope').value = 'all';
+        applyFilter(false);
+        var pos = pool.indexOf(it);
+        if (pos >= 0) { qi = pos; renderQ(); }
+      };
+      wl.appendChild(d);
+    });
+  }
+
+  /* ============ 视图切换 ============ */
+  function switchView(v) {
+    view = v;
+    ['lecture', 'quiz', 'fill', 'stats'].forEach(function (n) {
+      $('view-' + n).classList.toggle('hidden', n !== v);
+    });
+    document.querySelectorAll('.mode-btn, .mnav-btn[data-view]').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.view === v);
+    });
+    if (v !== 'lecture') stopPlay();
+    if (v === 'lecture') renderSlide();
+    if (v === 'stats') renderStats();
+    if (v === 'fill' && !fpool.length) fApplyFilter();
+    if (v === 'quiz' && !pool.length) {
+      $('fChapter').value = String(CHAPTERS[curChap].id);
+      applyFilter(false);
+    } else if (v === 'quiz' && $('fChapter').value !== 'all'
+               && $('fChapter').value !== String(CHAPTERS[curChap].id)) {
+      // 当前浏览的章节与筛选章节不一致时，跟随当前章节
+      $('fChapter').value = String(CHAPTERS[curChap].id);
+      applyFilter(false);
+    }
+  }
+  document.querySelectorAll('.mode-btn, .mnav-btn[data-view]').forEach(function (b) {
+    if (b.dataset.view) b.onclick = function () { switchView(b.dataset.view); };
+  });
+
+  /* ============ 移动端章节选择 ============ */
+  var mSel = $('mChapter');
+  CHAPTERS.forEach(function (c) {
+    var o = document.createElement('option');
+    o.value = c.id; o.textContent = '第' + c.id + '章 ' + c.title;
+    mSel.appendChild(o);
+  });
+  mSel.onchange = function () {
+    var id = parseInt(mSel.value, 10);
+    CHAPTERS.forEach(function (c, i) { if (c.id === id) curChap = i; });
+    slideIdx = 0;
+    buildNav();
+    if (view === 'lecture') renderSlide();
+    else switchView('lecture');
+  };
+  function syncMobileChapter() {
+    if (mSel.value !== String(CHAPTERS[curChap].id)) {
+      mSel.value = String(CHAPTERS[curChap].id);
+    }
+  }
+
+  /* ============ 进度导入 / 导出（跨设备） ============ */
+  var BACKUP_KEY = 'nbt10991_v1';
+  function countProgress() {
+    var done = 0, right = 0;
+    for (var k in ST.ans) {
+      if (ST.ans.hasOwnProperty(k)) { done++; if (ST.ans[k].ok) right++; }
+    }
+    return { done: done, right: right };
+  }
+  function openSync() {
+    $('syncModal').classList.remove('hidden');
+    $('syncStatus').textContent = '';
+    $('syncStatus').className = 'modal-status';
+    var p = countProgress();
+    $('syncSum').textContent = '当前设备进度：已答 ' + p.done + ' 题，答对 ' + p.right + ' 题。';
+  }
+  function closeSync() { $('syncModal').classList.add('hidden'); }
+
+  /* 知识库弹窗事件（出处/规范号点击 → 课程内知识点） */
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('.src-link, .std-link') : null;
+    if (!el) return;
+    e.preventDefault();
+    var src = el.dataset.kb || el.dataset.src || el.textContent.trim();
+    openKb(src, el.classList.contains('std-link') ? '引用规范' : '出处');
+  });
+  $('kbClose').onclick = closeKb;
+  $('kbMask').onclick = closeKb;
+
+  $('btnSync2').onclick = openSync;
+  $('mSync').onclick = openSync;
+  $('syncClose').onclick = closeSync;
+  $('syncMask').onclick = closeSync;
+
+  $('btnExport').onclick = function () {
+    try {
+      var data = { app: 'NBT 10991—2022 塔架升降机学习课程', ver: 1, at: Date.now(), progress: ST };
+      var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      var d = new Date();
+      var stamp = d.getFullYear() + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2);
+      a.href = url;
+      a.download = '塔架升降机-学习进度-' + stamp + '.json';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+      var p = countProgress();
+      $('syncStatus').className = 'modal-status ok';
+      $('syncStatus').textContent = '已导出 ' + p.done + ' 条答题记录，文件已下载。把它发到新设备即可导入。';
+    } catch (err) {
+      $('syncStatus').className = 'modal-status err';
+      $('syncStatus').textContent = '导出失败：' + err.message;
+    }
+  };
+
+  $('btnImport').onclick = function () { $('fileInput').click(); };
+  $('fileInput').onchange = function (e) {
+    var f = e.target.files && e.target.files[0];
+    if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function () {
+      try {
+        var obj = JSON.parse(rd.result);
+        var p = obj && obj.progress ? obj.progress : obj;
+        if (!p || typeof p !== 'object' || !p.ans) throw new Error('文件格式不正确');
+        var merge = Object.keys(ST.ans).length > 0 &&
+                    !confirm('本机已有答题记录。\n\n点「确定」= 合并两边的进度（推荐）\n点「取消」= 用导入的记录覆盖本机');
+        if (merge) {
+          for (var k in p.ans) { if (p.ans.hasOwnProperty(k)) ST.ans[k] = p.ans[k]; }
+          if (p.mark) { for (var m in p.mark) { if (p.mark.hasOwnProperty(m)) ST.mark[m] = p.mark[m]; } }
+        } else {
+          ST.ans = p.ans || {};
+          ST.mark = p.mark || {};
+        }
+        save();
+        updateTopStats();
+        if (view === 'stats') renderStats();
+        if (view === 'quiz') renderQuestion();
+        var c = countProgress();
+        $('syncStatus').className = 'modal-status ok';
+        $('syncStatus').textContent = '导入成功！当前已答 ' + c.done + ' 题，答对 ' + c.right + ' 题。';
+        $('syncSum').textContent = '进度已写入本机浏览器，可继续学习。';
+      } catch (err2) {
+        $('syncStatus').className = 'modal-status err';
+        $('syncStatus').textContent = '导入失败：' + err2.message;
+      }
+      e.target.value = '';
+    };
+    rd.readAsText(f);
+  };
+
+  /* ============ PWA：离线可用 + 添加到桌面 ============ */
+  var deferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', function (ev) {
+    ev.preventDefault();
+    deferredPrompt = ev;
+    var ua = navigator.userAgent;
+    var isIOS = /iPad|iPhone|iPod/.test(ua);
+    if (isIOS && !/Safari/.test(ua)) return;
+    $('installGuide').textContent = isIOS
+      ? 'Safari 底部「分享」→「添加到主屏幕」'
+      : '添加后断网也能继续学习';
+    $('installDo').textContent = isIOS ? '知道了' : '添加';
+    if (sessionStorage.getItem('nbt10991_install_no') !== '1') {
+      $('installTip').classList.remove('hidden');
+    }
+  });
+  $('installNo').onclick = function () {
+    $('installTip').classList.add('hidden');
+    try { sessionStorage.setItem('nbt10991_install_no', '1'); } catch (e) {}
+  };
+  $('installDo').onclick = function () {
+    $('installTip').classList.add('hidden');
+    try { sessionStorage.setItem('nbt10991_install_no', '1'); } catch (e) {}
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function () { deferredPrompt = null; });
+    }
+  };
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    });
+  }
+
+  /* ============ 填空题（巩固模式） ============ */
+  var FILL = window.FILL || null;
+  var FPOOL = [];
+  if (FILL && FILL.questions) {
+    FILL.questions.forEach(function (q, i) { FPOOL.push({ ch: FILL, q: q, gid: 'F' + i }); });
+  }
+  var FKEY = 'nbt10991_fill_v1';
+  var STF = { ans: {}, mark: {} };
+  try { var rf = localStorage.getItem(FKEY); if (rf) STF = JSON.parse(rf); } catch (e) {}
+  if (!STF.ans) STF.ans = {};
+  if (!STF.mark) STF.mark = {};
+  function fsave() { try { localStorage.setItem(FKEY, JSON.stringify(STF)); } catch (e) {} }
+
+  var fpool = [];
+  var fq = 0;
+  var fanswered = false;
+
+  function normIn(s) {
+    return ('' + s)
+      // 去掉不可见字符（零宽空格/BOM/软连字符等，复制粘贴或输入法常带入，trim 去不掉）
+      .replace(/[\u200B-\u200D\uFEFF\u2060\u180E\u00AD\u00A0]/g, '')
+      .replace(/[\uFF01-\uFF5E]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); })
+      .replace(/\u3000/g, ' ')
+      .trim()
+      .replace(/\s+/g, ' ')
+      .toUpperCase();
+  }
+  function fMatch(acc, val) {
+    return acc.some(function (a) { return normIn(a) === normIn(val); });
+  }
+  function fStats() {
+    var done = 0, right = 0;
+    for (var k in STF.ans) { if (STF.ans.hasOwnProperty(k)) { done++; if (STF.ans[k].ok) right++; } }
+    return { done: done, right: right, rate: done ? Math.round(right / done * 100) : null };
+  }
+  function fRenderStats() {
+    var st = fStats();
+    $('ffStats').textContent = '填空题库共 ' + FPOOL.length + ' 题 · 已答 ' + st.done +
+      ' · 答对 ' + st.right + (st.rate !== null ? ' · 正确率 ' + st.rate + '%' : '');
+  }
+  function fApplyFilter() {
+    var ch = $('ffChapter').value;
+    var sc = $('ffScope').value;
+    fpool = FPOOL.filter(function (it) {
+      if (ch !== 'all' && it.q.ch !== parseInt(ch, 10)) return false;
+      var rec = STF.ans[it.gid];
+      if (sc === 'undo') return !rec;
+      if (sc === 'wrong') return rec && !rec.ok;
+      if (sc === 'right') return rec && rec.ok;
+      return true;
+    });
+    if ($('ffShuffle').checked) fpool.sort(function () { return Math.random() - 0.5; });
+    fq = 0;
+    if (!fpool.length) { fRenderEmpty(); return; }
+    fRenderQ();
+  }
+  function fRenderEmpty() {
+    $('fqChapter').textContent = '无匹配题目';
+    $('fqType').textContent = '—';
+    $('fqIdx').textContent = '0 / 0';
+    $('fqSourceTag').textContent = '—';
+    $('fqText').textContent = '当前筛选条件下没有填空题，请调整章节或范围。';
+    $('fqOptions').innerHTML = '';
+    $('fqFeedback').classList.add('hidden');
+    $('ffRange').textContent = '0 题';
+    $('fjumpGrid').innerHTML = '';
+    $('fqNext').textContent = '下一题 →';
+    fRenderStats();
+  }
+  function fRenderQ() {
+    var it = fpool[fq];
+    var q = it.q;
+    fanswered = false;
+    var rec = STF.ans[it.gid];
+
+    $('fqChapter').textContent = '第' + q.ch + '章';
+    $('fqType').textContent = '填空题';
+    $('fqIdx').textContent = (fq + 1) + ' / ' + fpool.length;
+    $('fqSourceTag').textContent = '出处见解析';
+    $('fqText').textContent = q.q;
+    $('ffRange').textContent = '共 ' + fpool.length + ' 题';
+
+    var wrap = $('fqOptions');
+    wrap.innerHTML = '';
+    wrap.className = 'options fill-opts';
+    q.a.forEach(function (_, i) {
+      var d = document.createElement('div');
+      d.className = 'fill-row';
+      d.innerHTML = '<span class="fill-no">第 ' + (i + 1) + ' 空</span>' +
+        '<input class="fill-input" type="text" autocomplete="off" placeholder="在此输入答案">';
+      wrap.appendChild(d);
+    });
+
+    $('fqFeedback').classList.add('hidden');
+    $('fqMark').style.display = 'none';
+
+    if (rec) {
+      fanswered = true;
+      fShowResult(rec.ok, rec.pick);
+    } else {
+      $('fqNext').textContent = '提交答案';
+    }
+    fRenderJump();
+    fRenderStats();
+  }
+  function fSubmit() {
+    var it = fpool[fq];
+    var q = it.q;
+    var inputs = document.querySelectorAll('#fqOptions .fill-input');
+    var vals = [];
+    for (var i = 0; i < inputs.length; i++) vals.push(inputs[i].value.trim());
+    var empty = vals.filter(function (v) { return v === ''; }).length;
+    if (empty) {
+      alert('还有 ' + empty + ' 个空未填写，请填完再提交。');
+      return;
+    }
+    var ok = q.a.length === vals.length && q.a.every(function (acc, i) { return fMatch(acc, vals[i]); });
+    STF.ans[it.gid] = { ok: ok, pick: vals };
+    fsave();
+    fanswered = true;
+    fShowResult(ok, vals);
+    fRenderJump();
+    fRenderStats();
+  }
+  function fShowResult(ok, pick) {
+    var it = fpool[fq];
+    var q = it.q;
+    var fb = $('fqFeedback');
+    fb.classList.remove('hidden');
+    var head = $('ffbHead');
+    head.className = 'fb-head ' + (ok ? 'ok' : 'bad');
+    head.textContent = ok ? '✓ 回答正确' : '✗ 回答错误';
+    $('ffbAnswer').textContent = q.a.map(function (acc, i) {
+      return '第' + (i + 1) + '空：' + acc.join(' 或 ');
+    }).join('　|　');
+    $('ffbExplain').innerHTML = linkStandards(q.e);
+    $('ffbSource').innerHTML = '<button type="button" class="src-link" data-src="' + escHtml(q.s) + '">出处：' + escHtml(q.s) + ' <span class="src-arrow">▸</span></button>';
+    var inputs = document.querySelectorAll('#fqOptions .fill-input');
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].disabled = true;
+      var okk = fMatch(q.a[i], pick[i]);
+      inputs[i].classList.add(okk ? 'right' : 'wrong');
+      if (!okk) { inputs[i].value = q.a[i][0]; inputs[i].classList.add('show-ans'); }
+    }
+    $('fqMark').style.display = 'inline-block';
+    $('fqMark').textContent = STF.mark[it.gid] ? '已标记 ★' : '标记错题';
+    $('fqNext').textContent = '下一题 →';
+  }
+  function fRenderJump() {
+    var g = $('fjumpGrid'); g.innerHTML = '';
+    fpool.forEach(function (it, i) {
+      var rec = STF.ans[it.gid];
+      var b = document.createElement('button');
+      b.className = 'jump-btn' + (i === fq ? ' cur' : '') + (rec ? (rec.ok ? ' right' : ' wrong') : '');
+      b.textContent = i + 1;
+      b.onclick = function () { fq = i; fRenderQ(); window.scrollTo(0, 0); };
+      g.appendChild(b);
+    });
+  }
+  if ($('ffChapter')) {
+    var fsel = $('ffChapter');
+    CHAPTERS.forEach(function (c) {
+      var o = document.createElement('option');
+      o.value = c.id; o.textContent = '第' + c.id + '章';
+      fsel.appendChild(o);
+    });
+    $('fqPrev').onclick = function () { if (fq > 0) { fq--; fRenderQ(); window.scrollTo(0, 0); } };
+    $('fqNext').onclick = function () {
+      if (!fanswered) { fSubmit(); return; }
+      if (fq < fpool.length - 1) { fq++; fRenderQ(); window.scrollTo(0, 0); }
+    };
+    $('fqMark').onclick = function () {
+      var it = fpool[fq];
+      if (STF.mark[it.gid]) delete STF.mark[it.gid]; else STF.mark[it.gid] = 1;
+      fsave();
+      $('fqMark').textContent = STF.mark[it.gid] ? '已标记 ★' : '标记错题';
+    };
+    $('ffChapter').onchange = fApplyFilter;
+    $('ffScope').onchange = fApplyFilter;
+    $('ffShuffle').onchange = fApplyFilter;
+    fApplyFilter();
+  }
+
+  /* ============ 初始化 ============ */
+  var sel = $('fChapter');
+  CHAPTERS.forEach(function (c) {
+    var o = document.createElement('option');
+    o.value = c.id; o.textContent = '第' + c.id + '章 ' + c.title;
+    sel.appendChild(o);
+  });
+  buildNav();
+  renderSlide();
+  applyFilter(true);
+  updateTopStats();
+  $('totalCount').textContent = ALL.length;
+
+  document.addEventListener('keydown', function (e) {
+    if (view === 'quiz') {
+      if (e.key >= '1' && e.key <= '6') {
+        var i = parseInt(e.key, 10) - 1;
+        var nodes = $('qOptions').children;
+        if (nodes[i] && !answered) nodes[i].click();
+      }
+      if (e.key === 'Enter') $('qNext').click();
+    }
+    if (view === 'fill' && e.key === 'Enter') $('fqNext').click();
+  });
+})();
+
+
+</script>
+</body>
+</html>
