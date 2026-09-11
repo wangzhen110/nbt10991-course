@@ -114,6 +114,35 @@
     if (cm) return cm[1];
     return null;
   }
+  /* ---------- 知识库弹窗内容排版 ---------- */
+  // 输入为已转义文本，只负责结构化换行
+  function fmtKbText(t) {
+    var s = String(t);
+    // 清理 PDF 跨行提取产生的「中文 中文」多余空格（如"库珀新 能源股份有限公司"）
+    s = s.replace(/[\u4e00-\u9fff] [\u4e00-\u9fff]/g, function (m) { return m.replace(' ', ''); });
+    // 半角编号列表项 a) b) c) …、1) 2) … 换行
+    s = s.replace(/(^|[；;:：\s])((?:[a-h]|\d{1,2})\))/g, function (m, pre, item) {
+      return pre + '\n' + item;
+    });
+    // 全角编号项 1）2）3）… 换行
+    s = s.replace(/(^|[；;。\s])(\d{1,2}）)/g, function (m, pre, item) {
+      return pre + '\n' + item;
+    });
+    // 起草单位名单：单位后缀后跟分隔符（顿号/句号/空格/结尾）时才逐行断开，
+    // 避免把「上海电气风电集团股份有限公司」从「集团」处截断
+    s = s.replace(/((?:股份有限公司|有限责任公司|有限公司|股份公司|研究院|实验室|中心|委员会|集团|大学|学院))(?=[、。；;，\s]|$)/g, function (m, suf) {
+      return suf + '\n';
+    });
+    // 起草人名单：每 3 个姓名换一行
+    s = s.replace(/(主要起草人：)([\s\S]+?)(。|$)/, function (m, pre, names, end) {
+      var arr = names.split('、');
+      var rows = [];
+      for (var i = 0; i < arr.length; i += 3) rows.push(arr.slice(i, i + 3).join('、'));
+      return pre + rows.join('\n') + end;
+    });
+    return s;
+  }
+
   function openKb(src, label) {
     if (!window.KB) { alert('知识库未加载'); return; }
     var parts = src.split(/[；;，,、+~～]/).map(function (s) { return s.trim(); }).filter(Boolean);
@@ -122,11 +151,28 @@
       var key = kbMap(p);
       var entry = key && (KB.items[key] || KB.special[key] || KB.standards[key]);
       if (entry) {
-        var head = '<div class="kb-key">' + escHtml(key) + (entry.t ? ' ' + escHtml(entry.t) : '') + '</div>';
-        var text = '<div class="kb-text">' + escHtml(entry.c) + '</div>';
+        var title = (entry.t || '').trim();
+        var rawBody = (entry.c || '').trim();
+        var safeBody = escHtml(rawBody);
+        var safeTitle = escHtml(title);
+        var head = '<div class="kb-key"><span class="kb-no">' + escHtml(key) + '</span></div>';
+        var body2 = safeBody;
+        // 术语条目：从正文提取「中文术语 + 英文术语」作为标题
+        var tm = safeBody.match(/^([\u4e00-\u9fff（）()a-zA-Z0-9\-]{2,26})\s+([A-Za-z][A-Za-z\s\-]{2,50})\s+([\s\S]+)$/);
+        if (tm && !title) {
+          head = '<div class="kb-key"><span class="kb-no">' + escHtml(key) + '</span><span class="kb-title">' + tm[1] + '</span></div>';
+          body2 = '<b>' + tm[2] + '</b> ' + tm[3];
+        } else if (title && title !== key && title.length <= 24 && !/[，。；！？：、]/.test(title)) {
+          // 短标题（如"安全锁""轿厢"）显示在标题位；与 key 相同（如"前言""表3"）不重复
+          head = '<div class="kb-key"><span class="kb-no">' + escHtml(key) + '</span><span class="kb-title">' + safeTitle + '</span></div>';
+        } else if (title && title !== key) {
+          // 长标题实为正文首句，并入正文；与 key 相同的标题直接忽略，避免「前言 前言」式重复
+          body2 = (safeTitle + ' ' + safeBody).trim();
+        }
+        var text = '<div class="kb-text">' + fmtKbText(body2) + '</div>';
         html += '<div class="kb-item">' + head + text + '</div>';
       } else {
-        html += '<div class="kb-item"><div class="kb-key">' + escHtml(p) + '</div><div class="kb-text">（该出处暂无知识库条目）</div></div>';
+        html += '<div class="kb-item"><div class="kb-key"><span class="kb-no">' + escHtml(p) + '</span></div><div class="kb-text">（该出处暂无知识库条目）</div></div>';
       }
     });
     $('kbTitle').textContent = label + '：' + src;
